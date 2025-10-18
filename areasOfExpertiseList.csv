@@ -1,0 +1,1128 @@
+1,"Bilgi ve Bilgi İşleme
+Bilimleri",Information and Computing Sciences
+2,Bilgi Sistemleri,Information Systems
+3,Bilgi Güvenliği Yönetimi,Information Security Management
+3,"Bilgi Modelleme, Yönetim ve Ontolojiler","Information Modelling, Management and Ontologies"
+3,Bilgi Sistemleri Eğitimi,Information Systems Education
+3,"Bilgi Sistemleri Felsefesi, Araştırma Yöntemleri ve Teori","Information Systems Philosophy, Research Methods and Theory"
+3,Bilgi Sistemleri Geliştirme Metodolojileri ve Uygulamaları,Information Systems Development Methodologies and Practice
+3,Bilgi Sistemleri Kullanıcı Deneyimi Tasarımı ve Geliştirme,Information Systems User Experience Design and Development
+3,Bilgi Sistemleri Organizasyonu ve Yönetimi,Information Systems Organisation and Management
+3,E-Devlet,E-State
+3,Elektronik Belge Yönetim Sistemleri,Electronic Documentation Management Systems
+3,İş Süreçleri Yönetimi,Business Process Management
+3,Karar Desteği ve Grup Destek Sistemleri,Decision Support and Group Support Systems
+3,"Organizasyonel, Organizasyon Dışı ve Küresel Bilgi Sistemleri","Inter- Organisational, Extra- Organisational and Global Information Systems"
+3,Sürdürülebilir Kalkınma ve Kamu Yararına Bilgi Sistemleri,Information Systems For Sustainable Development and The Public Good
+3,Yönetim Bilişim Sistemleri,Management Information Systems
+3,Bilgi Sistemleri (Diğer),Information Systems (Other)
+2,Bilgisayar Görüşü ve Çoklu Ortam Hesaplama,Computer Vision and Multimedia Computation
+3,Aktif Algılama,Active Sensing
+3,Bilgisayar Görüşü,Computer Vision
+3,Görüntü İşleme,Image Processing
+3,"Hesaplamalı
+Görüntüleme","Computational
+Imaging"
+3,Multimodal Analiz ve Sentez,Multimodal Analysis and Synthesis
+3,Örüntü Tanıma,Pattern Recognition
+3,Resim ve Video Kodlama,Image and Video Coding
+3,Ses İşleme,Audio Processing
+3,Video İşleme,Video Processing
+3,Bilgisayar Görüşü ve Çoklu Ortam Hesaplama (Diğer),Computer Vision and Multimedia Computation (Other)
+2,Dağıtık Bilgi İşleme ve Sistem Yazılımı,Distributed Computing and Systems Software
+3,"Ağ Oluşturma ve
+İletişim",Networking and Communications
+3,Bulut Bilişim,Cloud Computing
+3,"Dağıtılmış Sistemler
+ve Algoritmalar","Distributed Systems
+and Algorithms"
+3,Enerji Tasarruflu Hesaplama,Energy-Efficient Computing
+3,Eşzamanlı / Paralel Sistemler ve Teknolojiler,Concurrent/Parallel Systems and Technologies
+3,Güvenilir Sistemler,Dependable Systems
+3,İşletim Sistemleri,Operating Systems
+3,Paralel ve Dağıtık Sistemler,Parallel and Distributed System
+3,Performans Değerlendirmesi,Performance Evaluation
+3,Servis Odaklı Hesaplama,Service Oriented Computing
+3,Siberfizik Sistemleri ve Nesnelerin İnterneti,Cyberphysical Systems and Internet of Things
+3,"Uç Nokta
+Hesaplama",Edge Computing
+3,Yüksek Performanslı Hesaplama,High Performance Computing
+3,Dağıtık Bilgi İşleme ve Sistem Yazılımı (Diğer),Distributed Computing and Systems Software (Other)
+2,"Grafikler, Artırılmış Gerçeklik ve Oyunlar","Graphics, Augmented Reality and Games"
+3,Bilgisayar Destekli Tasarım,Computer Aided Design in Visual Communication
+3,Bilgisayar Grafikleri,Computer Graphics
+3,Ciddi Oyunlar ve Simülasyonlar,Serious Games and Simulations
+3,Eğlence ve Oyun,"Entertainment and
+Gaming"
+3,Etkileşimli Anlatım,Interactive Narrative
+3,Prosedürel İçerik Üretimi,Procedural Content Generation
+3,Sanal ve Karma Gerçeklik,Virtual and Mixed Reality
+3,"Ses ve Müzik
+İşleme","Sound and Music
+Computing"
+3,Dijitalleşme,Digitalization
+3,Artırılmış Gerçeklik,Augmented Reality
+3,Metaevren,Metaverse
+3,Oyunlaştırma,Gamification
+3,"Grafikler, Artırılmış Gerçeklik ve Oyunlar (Diğer)","Graphics, Augmented Reality and Games (Other)"
+2,Hesaplama Teorisi,Theory of Computation
+3,Algoritmalar ve Hesaplama Kuramı,Algorithms and Calculation Theory
+3,Eşzamanlılık Teorisi,Concurrency Theory
+3,Hesaplama Karmaşıklığı ve Hesaplanabilirlik,Computational Complexity and Computability
+3,Hesaplamalı Mantık ve Biçimsel Diller,Computational Logic and Formal Languages
+3,"Kodlama, Bilgi Teorisi ve Sıkıştırma","Coding, Information Theory and Compression"
+3,Kuantum Hesaplama,Quantum Computation
+3,Sayısal Hesaplama ve Matematiksel Yazılım,Numerical Computation and Mathematical Software
+3,Veri Yapıları ve Algoritmalar,Data Structures and Algorithms
+3,"Hesaplama Teorisi
+(Diğer)",Theory of Computation (Other)
+2,"İnsan Merkezli Bilgi
+İşleme",Human Centered Computing
+3,Bilgi Görselleştirme,Information Visualisation
+3,Bilgi İşlem Eğitimi,Computing Education
+3,"Bilgisayar Sistemlerinin Adalet, Hesap Verebilirlik, Şeffaflık, Güven ve Etiği","Fairness, Accountability, Transparency, Trust and Ethics of Computer Systems"
+3,"Duygusal Bilgi
+İşleme",Affective Computing
+3,"Erişilebilir Bilgi
+İşlem",Accessible Computing
+3,İnsan Bilgisayar Etkileşimi,Human-Computer Interaction
+3,"İşbirlikçi ve Sosyal
+Bilgi İşleme","Collaborative and
+Social Computing"
+3,Karışık İnisiyatif ve Döngüdeki İnsan,Mixed Initiative and Human-In-The-Loop
+3,Sosyal Robotik,Social Robotics
+3,Yaygın Hesaplama,Pervasive Computing
+3,"İnsan Merkezli Bilgi
+İşleme (Diğer)","Human Centered
+Computing (Other)"
+2,Kütüphane ve Bilgi Çalışmaları,Library and Information Studies
+3,Açık Erişim,Open Access
+3,Arşiv,Archive
+3,"Bilgi Arama
+Davranışı","Information
+Research Behavior"
+3,Bilgi Çıkarımı,Information Retrival
+3,Bilgi Etkileşimi,Information Interaction
+3,Bilgi ve Bilgi Kaynaklarının Organizasyonu,Organisation of Information and Knowledge Resources
+3,"Bilgi Yönetişimi, Politika ve Etik","Information Governance, Policy and Ethics"
+3,Dijital Küratörlük ve Koruma,Digital Curation and Preservation
+3,Dokümantasyon,Documentation
+3,İnformetrik,Informetrics
+3,Kayıt Tutma Bilişimi,Recordkeeping Informatics
+3,Kütüphane Çalışmaları,Library Studies
+3,"Sosyal ve Topluluk
+Bilişimi",Social and Community Informatics
+3,Bilgi Okuryazarlığı,Information Literacy
+3,Kütüphane ve Bilgi Çalışmaları (Diğer),Library and Information Studies (Other)
+2,Makine Öğrenme,Machine Learning
+3,Bağlam Öğrenimi,Context Learning
+3,Derin Öğrenme,Deep Learning
+3,Nöral Ağlar,Neural Networks
+3,"Şaşırtmalı Makine
+Öğrenimi",Adversarial Machine Learning
+3,Takviyeli Öğrenme,Reinforcement Learning
+3,Yapay Görme,Machine Vision
+3,"Yarı ve Denetimsiz
+Öğrenme",Semi- and Unsupervised Learning
+3,Denetimli Öğrenme,Supervised Learning
+3,Makine Öğrenmesi Algoritmaları,Machine Learning Algorithms
+3,Aşırı Öğrenme Makineleri,Extreme Learning Machines
+3,"Sınıflandırma
+algoritmaları","Classification
+Algorithms"
+3,Biyoenformatik,Bioinformatics
+3,Makine Öğrenme (Diğer),Machine Learning (Other)
+2,Siber Güvenlik ve Gizlilik,Cybersecurity and Privacy
+3,Adli Bilişim,Computer Forensics
+3,Bilgi Güvenliği ve Kriptoloji,Information Security and Cryptology
+3,Bulut Bilişim Güvenliği,Cloud Computing Security
+3,Dijital Adli Tıp,Digital Forensics
+3,Donanım Güvenliği,Hardware Security
+3,Kriptografi,Cryptography
+3,Sistem ve Ağ Güvenliği,System and Network Security
+3,Veri Güvenliği ve Korunması,Data Security and Protection
+3,Veri ve Bilgi Gizliliği,Data and Information Privacy
+3,Yazılım ve Uygulama Güvenliği,Software and Application Security
+3,Siber İstihbarat,Cyber Espionage
+3,"Siber Güvenlik
+Politikaları","Cybersecurity
+Policy"
+3,Siber Güvenlik ve Gizlilik (Diğer),Cybersecurity and Privacy (Other)
+2,"Uygulamalı Bilgi
+İşleme",Applied Computing
+3,Fizik Bilimlerinde Bilgi İşleme,Computing Applications in Physical Sciences
+3,Mekansal Veri ve Bilgi İşleme,Spatial Data and Computing Applications
+3,Sağlıkta Bilgi İşleme,Computing Applications in Health
+3,Sanat ve Beşeri Bilimlerde Bilgi İşleme,Computing Applications in Arts and Humanities
+3,Sosyal Bilimlerde ve Eğitimde Bilgi İşleme,Computing Applications in Social Sciences and Education
+3,Yaşam Bilimlerinde Bilgi İşleme,Computing Applications in Life Sciences
+3,"Uygulamalı Bilgi
+İşleme (Diğer)",Applied Computing (Other)
+2,"Veri Yönetimi ve
+Veri Bilimi","Data Management
+and Data Science"
+3,Akış ve Sensör Verileri,Stream and Sensor Data
+3,Bilgi Alma ve Web Arama,Information Retrieval and Web Search
+3,Bilgi Çıkarma ve Füzyon,Information Extraction and Fusion
+3,Büyük Veri,Big Data
+3,"Grafik, Sosyal ve Multimedya Verileri","Graph, Social and Multimedia Data"
+3,Sorgu İşleme ve Optimizasyon,Query Processing and Optimisation
+3,Tavsiye Sistemleri,Recommender Systems
+3,Veri Kalitesi,Data Quality
+3,Veri Madenciliği ve Bilgi Keşfi,Data Mining and Knowledge Discovery
+3,"Veri Modelleri, Depolama ve Dizinleme","Data Models, Storage and Indexing"
+3,Veri Mühendisliği ve Veri Bilimi,Data Engineering and Data Science
+3,"Veritabanı
+Sistemleri",Database Systems
+3,Veri Analizi,Data Analysis
+3,Veri Yönetimi ve Veri Bilimi (Diğer),Data Management and Data Science (Other)
+2,Yapay Zeka,Artificial Intelligence
+3,Akıllı Robotik,Intelligent Robotics
+3,Bilgi Temsili ve Akıl Yürütme,Knowledge Representation and Reasoning
+3,Bulanık Hesaplama,Fuzzy Computation
+3,Doğal Dil İşleme,Natural Language Processing
+3,Evrimsel Hesaplama,Evolutionary Computation
+3,Konuşma Tanıma,Speech Recognition
+3,Konuşma Üretimi,Speech Production
+3,Memnuniyet ve Optimizasyon,Satisfiability and Optimisation
+3,Modelleme ve Simülasyon,Modelling and Simulation
+3,Otonom Ajanlar ve Çok Yönlü Sistemler,Autonomous Agents and Multiagent Systems
+3,"Planlama ve Karar
+Verme","Planning and
+Decision Making"
+3,Sanal Gerçeklik,Artificial Reality
+3,Yapay Yaşam ve Karmaşık Uyarlanabilir Sistemler,Artificial Life and Complex Adaptive Systems
+3,Yapay Zeka (Diğer),Artificial Intelligence (Other)
+2,Yazılım Mühendisliği,Software Engineering
+3,Ampirik Yazılım Mühendisliği,Empirical Software Engineering
+3,Bilgisayar Sistem Yazılımı,Computer System Software
+3,Bilgisayar Yazılımı,Computer Software
+3,Gereksinim Mühendisliği,Requirements Engineering
+3,Otomatik Yazılım Mühendisliği,Automated Software Engineering
+3,Programlama Dilleri,Programming Languages
+3,Yazılım İçin Resmi Yöntemler,Formal Methods For Software
+3,"Yazılım Kalitesi, Süreçler ve Metrikler","Software Quality, Processes and Metrics"
+3,Yazılım Mimarisi,Software Architecture
+3,"Yazılım Testi, Doğrulama ve Validasyon","Software Testing, Verification and Validation"
+3,"Pekiştirmeli
+Öğrenme",Reinforcement Learning
+3,Yazılım Mühendisliği (Diğer),Software Engineering (Other)
+1,Biyoloji,Biological Sciences
+2,Bitki Bilimi,Botany
+3,Algoloji,Algology
+3,Bitki Biyokimyası,Plant Biochemistry
+3,Bitki Biyoteknolojisi,Plant Biotechnology
+3,Bitki Fizyolojisi,Plant Physiology
+3,Bitki Gelişim ve Üreme Biyolojisi,Plant Developmental and Reproductive Biology
+3,Bitki Hücresi ve Moleküler Biyoloji,Plant Cell and Molecular Biology
+3,Bitki Morfolojisi ve Anatomisi,Plant Morphology and Anatomy
+3,Bitki Patolojisi,Plant Pathology
+3,Polen Bilimi,Palynology
+3,Etnobotanik,Ethobotany
+3,Briyofit,Bryophyte
+3,Bitki Doku ve Organ Kültürü,Plant Tissue and Cell Culture
+3,Bitki Bilimi (Diğer),Botany (Other)
+2,Biyoinformatik ve Hesaplamalı Biyoloji,Bioinformatics and Computational Biology
+3,Biyoinformatik Yöntem Geliştirme,Bioinformatic Methods Development
+3,Biyolojik Ağ Analizi,Biological Network Analysis
+3,Genomik ve Transkriptomik,Genomics and Transcriptomics
+3,Hesaplamalı Ekoloji ve Filogenetik,Computational Ecology and Phylogenetics
+3,İstatistiksel ve Nicel Genetik,Statistical and Quantitative Genetics
+3,Proteomik ve Metabolomik,Proteomics and Metabolomics
+3,Sekans Analizi,Sequence Analysis
+3,Translasyonel ve Uygulamalı Biyoinformatik,Translational and Applied Bioinformatics
+3,Moleküler Yerleştirme,Molecular Docking
+3,Biyoinformatik ve Hesaplamalı Biyoloji (Diğer),Bioinformatics and Computational Biology (Other)
+2,Biyokimya ve Hücre Biyolojisi,Biochemistry and Cell Biology
+3,Analitik Biyokimya,Analytical Biochemistry
+3,Enzimler,Enzymes
+3,Glikobiyoloji,Glycobiology
+3,"Hücre Gelişimi, Proliferasyon ve Ölümü","Cell Development, Proliferation and Death"
+3,Hücre Metabolizması,Cell Metabolism
+3,Hücre Nörokimyası,Cell Neurochemistry
+3,Hücresel Etkileşimler,Cellular Interactions
+3,Protein Trafiği,Protein Trafficking
+3,Proteomik ve Moleküller Arası Etkileşimler,Proteomics and Intermolecular Interactions
+3,Radyobiyoloji,Radiobiology
+3,Reseptörler ve Membran Biyolojisi,Receptors and Membrane Biology
+3,Sentetik Biyoloji,Synthetic Biology
+3,Sinyal İletimi,Signal Transduction
+3,Sistem Biyolojisi,Systems Biology
+3,Yapısal Biyoloji,Structural Biology
+3,Kanser Biyolojisi,Cancer Biology
+3,Genotoksisite ve Sitotoksisite,Genotoxicity and Cytotoxicity
+3,Biyokimya ve Hücre Biyolojisi (Diğer),Biochemistry and Cell Biology (Other)
+2,Ekoloji,Ecology
+3,Davranışsal Ekoloji,Behavioural Ecology
+3,Deniz ve Nehir Ağzı Ekolojisi,Marine and Estuarine Ecology
+3,Ekolojik Fizyoloji,Ecological Physiology
+3,Hidrobiyoloji,Hydrobiology
+3,Karasal Ekoloji,Terrestrial Ecology
+3,Küresel Değişim Biyolojisi,Global Change Biology
+3,Paleoekoloji,Palaeoecology
+3,Popülasyon Ekolojisi,Population Ecology
+3,Radyoekoloji,Radioecology
+3,Tatlı Su Ekolojisi,Freshwater Ecology
+3,Topluluk Ekolojisi,Community Ecology
+3,Moleküler Ekoloji,Molecular Ecology
+3,Ekotoksikoloji,Ecotoxicology
+3,İstila Ekolojisi,Invasion Ecology
+3,Ekoloji (Diğer),Ecology (Other)
+2,"Endüstriyel
+Biyoteknoloji","Industrial
+Biotechnology"
+3,"Biyoişlem, Biyoüretim ve Biyoürünler","Bioprocessing, Bioproduction and Bioproducts"
+3,Biyokataliz ve Enzim Teknolojisi,Biocatalysis and Enzyme Technology
+3,Endüstriyel Biyoteknolojik Tanılama,Industrial Biotechnology Diagnostics
+3,Endüstriyel Mikrobiyoloji,Industrial Microbiology
+3,Fermantasyon,Fermentation
+3,Nanobiyoteknoloji,Nanobiotechnology
+3,Nükleik Asitlerin ve Proteinlerin Endüstriyel Moleküler Mühendisliği,Industrial Molecular Engineering of Nucleic Acids and Proteins
+3,Endüstriyel Biyoteknoloji (Diğer),Industrial Biotechnology (Other)
+2,Evrimsel Biyoloji,Evolutionary Biology
+3,Bitki ve Mantar Sistematiği ve Taksonomi,Plant and Fungus Systematics and Taxonomy
+3,"Biyocoğrafya ve
+Filocoğrafya","Biogeography and
+Phylogeography"
+3,Biyolojik Adaptasyon,Biological Adaptation
+3,Evrimsel Ekoloji,Evolutionary Ecology
+3,Filogeni ve Karşılaştırmalı Analiz,Phylogeny and Comparative Analysis
+3,Gelişim Sistemlerinin Evrimi,Evolution of Developmental Systems
+3,Hayvan Sistematiği ve Taksonomi,Animal Systematics and Taxonomy
+3,"İklim Değişikliğinin
+Evrimsel Etkileri",Evolutionary Impacts of Climate Change
+3,Konakçı- Parazit Etkileşimi,Host-Parasite Interactions
+3,Mikrobiyal Taksonomi,Microbial Taxonomy
+3,Türleşme ve Soyun Tükenmesi,Speciation and Extinction
+3,Yaşam Öyküsü,Life Histories
+3,Evrimsel Biyoloji (Diğer),Evolutionary Biology (Other)
+2,Genetik,Genetics
+3,Adli Biyoloji,Forensic Biology
+3,Antropolojik Genetik,Anthropological Genetics
+3,Epigenetik,Epigenetics
+3,Gelişimsel Genetik,Developmental Genetics
+3,Gen Haritalaması,Gene Mapping
+3,Gen İfadesi,Gene Expression
+3,Genetik İmmünoloji,Genetic Immunology
+3,Genom Yapısı ve Düzenlemesi,Genome Structure and Regulation
+3,Genomik,Genomics
+3,Hücre ve Çekirdek Bölünmesi,Cell and Nuclear Division
+3,Moleküler Evrim,Molecular Evolution
+3,Nörogenetik,Neurogenetics
+3,Optogenetik,Optogenetics
+3,Sitogenetik,Cytogenetic
+3,Moleküler Genetik,Molecular Genetics
+3,Genetik (Diğer),Genetics (Other)
+2,Hayvan Bilimi,Zoology
+3,Akaroloji,Acarology
+3,Entomoloji,Entomology
+3,Hayvan Biyoteknolojisi,Animal Biotechnology
+3,Hayvan Davranışı,Animal Behaviour
+3,Hayvan Diyeti ve Beslenme,Animal Diet and Nutrition
+3,Hayvan Fizyolojisi - Biyofizik,Animal Physiology - Biophysics
+3,Hayvan Fizyolojisi - Ekofizyoloji,Animal Physiology- Ecophysiology
+3,Hayvan Fizyolojisi - Hücre,Animal Physiology - Cell
+3,"Hayvan Fizyolojisi -
+Sistemler","Animal Physiology -
+Systems"
+3,Hayvan Gelişim ve Üreme Biyolojisi,Animal Developmental and Reproductive Biology
+3,Hayvan Hücresi ve Moleküler Biyoloji,Animal Cell and Molecular Biology
+3,"Hayvan
+İmmünolojisi",Animal Immunology
+3,Hayvan Nörobiyolojisi,Animal Neurobiology
+3,"Hayvan Yapısı ve
+İşlevi",Animal Structure and Function
+3,Karşılaştırmalı Fizyoloji,Comparative Physiology
+3,Kuş Bilimi,Ornithology
+3,Omurgalı Biyolojisi,Vertebrate Biology
+3,Omurgasız Biyolojisi,Invertebrate Biology
+3,Sucul Toksikoloji,Aquatic Toxicology
+3,Hayvan Bilimi (Diğer),Zoology (Other)
+2,Mikrobiyoloji,Microbiology
+3,Bakteriyoloji,Bacteriology
+3,Bulaşıcı Ajanlar,Infectious Agents
+3,Mikoloji,Mycology
+3,Mikrobiyal Ekoloji,Microbial Ecology
+3,Mikrobiyal Genetik,Microbial Genetics
+3,Parazitoloji,Parasitology
+3,Viroloji,Virology
+3,Mikrobiyoloji (Diğer),Microbiology (Other)
+1,Biyomedikal ve Klinik Bilimler,Biomedical and Clinical Sciences
+2,Beslenme ve Diyetetik,Nutrition and Dietetics
+3,Beslenme Bilimi,Nutritional Science
+3,Genetik ve Kişiselleştirilmiş Beslenme Bilimi,Nutrigenomics and Personalised Nutrition
+3,Gıda Özellikleri,Food Properties
+3,Gıda ve Beslenme Dengesi,Food Nutritional Balance
+3,Halk Sağlığı Beslenmesi,Public Health Nutrition
+3,Klinik Beslenme,Clinical Nutrition
+3,Spor ve Egzersiz Beslenmesi,Sport and Exercise Nutrition
+3,Yeme Davranışları,Eating Behaviours
+3,Beslenme ve Diyetetik (Diğer),Nutrition and Dietetics (Other)
+2,Cerrahi,Surgery
+3,"Ağız, Yüz ve Çene Cerrahisi",Facial Plastic Surgery
+3,Beyin ve Sinir Cerrahisi (Nöroşirurji),Brain and Nerve Surgery (Neurosurgery)
+3,Cerrahi Onkoloji,Oncologic Surgery
+3,Çocuk Cerrahisi,Pediatric Surgery
+3,El Cerrahisi,Hand Surgery
+3,Gastroenteroloji Cerrahisi,Gastroenterology Surgery
+3,Genel Cerrahi,General Surgery
+3,Göğüs Cerrahisi,Thoracic Surgery
+3,Harp Cerrahisi,War Surgery
+3,Jinekolojik Onkoloji Cerrahisi,Gynecologic Oncology Surgery
+3,Kalp ve Damar Cerrahisi,Cardiovascular Surgery
+3,"Plastik, Rekonstrüktif ve Estetik Cerrahi",Plastic Reconstructive and Aesthetic Surgery
+3,Organ Nakli,Transplantation
+3,Radyocerrahi,Radiosurgery
+3,Cerrahi (Diğer),Surgery (Other)
+2,Çocuk Sağlığı ve Hastalıkları,Paediatrics
+3,"Bebek ve Çocuk
+Sağlığı","Infant and Child
+Health"
+3,Çocuk Acil,Pediatric Emergency
+3,Çocuk Bulaşıcı Hastalıkları,Pediatric Infectious Diseases
+3,Çocuk Endokrinolojisi,Pediatric Endocrinology
+3,Çocuk Gastroenterolojisi,Pediatric Gastroenterology
+3,Çocuk Genetik Hastalıkları,Pediatric Genetic Illnesses
+3,Çocuk Göğüs Hastalıkları,Pediatric Chest Diseases
+3,Çocuk Hematolojisi ve Onkolojisi,Pediatric Hematology and Oncology
+3,Çocuk İmmünolojisi ve Alerji Hastalıkları,Pediatric Immunology and Allergic Diseases
+3,Çocuk Kardiyolojisi,Pediatric Cardiology
+3,"Çocuk Metabolizma
+Hastalıkları",Pediatric Metabolism Diseases
+3,Çocuk Nefrolojisi,Pediatric Nephrology
+3,Çocuk Nörolojisi,Pediatric Neurology
+3,Çocuk Romatolojisi,Pediatric Rheumatology
+3,Çocuk Ürolojisi,Pediatric Urology
+3,Çocuk ve Ergen Ruh Sağlığı ve Hastalıkları,Child and Adolescent Psychiatry
+3,Çocuk Yoğun Bakımı,Pediatric Intensive Care
+3,Ergen Sağlığı,Adolescent Health
+3,Yenidoğan,Neonatology
+3,Çocuk Sağlığı ve Hastalıkları (Diğer),Paediatrics (Other)
+2,Diş Hekimliği,Dentistry
+3,Ağız ve Çene Cerrahisi,Oral and Maxillofacial Surgery
+3,"Ağız, Diş ve Çene Radyolojisi",Oral and Maxillofacial Radiology
+3,Çocuk Diş Hekimliği,Paedodontics
+3,"Diş Malzemeleri ve
+Ekipmanı","Dental Materials
+and Equipment"
+3,"Diş Terapötikleri, Farmakoloji ve Toksikoloji","Dental Therapeutics, Pharmacology and Toxicology"
+3,Endodonti,Endodontics
+3,Kraniyofasiyal Biyoloji,Craniofacial Biology
+3,Oral İmplantoloji,Oral Implantology
+3,Oral Tıp ve Patoloji,Oral Medicine and Pathology
+3,Ortodonti ve Dentofasiyal Ortopedi,Orthodontics and Dentofacial Orthopaedics
+3,Özel Bakım Diş Hekimliği,Special Needs Dentistry
+3,Periodontoloji,Periodontics
+3,Protez,Prosthodontics
+3,"Restoratif Diş
+Tedavisi","Restorative
+Dentistry"
+3,Adli Diş Hekimliği,Forensic Dentistry
+3,Halk Sağlığı Diş Hekimliği,Public Health Dentistry
+3,Toplum Ağız ve Diş Sağlığı,Dental Public Health
+3,Dental Materyaller,Dental Materials
+3,Diş Hekimliği (Diğer),Dentistry (Other)
+2,Eczacılık ve İlaç Bilimleri,Pharmacology and Pharmaceutical Sciences
+3,Eczacılık Bilimleri,Pharmaceutical Sciences
+3,Eczacılık Biyokimyası,Pharmaceutical Biochemistry
+3,"Eczacılık
+İşletmeciliği",Pharmacy Management
+3,Eczacılıkta Analitik Kimya,Pharmaceutical Analytical Chemistry
+3,Farmakogenomik,Pharmacogenomics
+3,Farmakognozi,Pharmacognosy
+3,Farmasotik Biyoteknoloji,Pharmaceutical Biotechnology
+3,Farmasotik Botanik,"Pharmaceutical
+Botany"
+3,Farmasotik Kimya,Pharmaceutical Chemistry
+3,Farmasotik Mikrobiyoloji,Pharmaceutical Microbiology
+3,"Farmasotik
+Toksikoloji","Pharmaceutical
+Toxicology"
+3,İlaç Dağıtım Teknolojileri,Pharmaceutical Delivery Technologies
+3,Klinik Eczacılık ve Eczacılık Uygulaması,Clinical Pharmacy and Pharmacy Practice
+3,Klinik Farmakoloji ve Terapötikler,Clinical Pharmacology and Therapeutics
+3,Radyofarmasi,Radiopharmacy
+3,Temel Farmakoloji,Basic Pharmacology
+3,Tıbbi Farmakoloji,Medical Pharmacology
+3,Toksikoloji,Toxicology
+3,Eczacılık ve İlaç Bilimleri (Diğer),Pharmacology and Pharmaceutical Sciences (Other)
+2,"Göz Hastalıkları ve
+Göz Ölçümleri","Ophthalmology and
+Optometry"
+3,Görme Bilimi,Vision Science
+3,Göz Hastalıkları,Ophthalmology
+3,Göz Ölçümleri,Optometry
+3,Optik Teknoloji,Optical Technology
+3,Göz Hastalıkları ve Göz Ölçümleri (Diğer),"Ophthalmology and
+Optometry (Other)"
+2,İmmünoloji,Immunology
+3,Alerji,Allergy
+3,Doğuştan Bağışıklık,Innate Immunity
+3,"Hücresel
+İmmünoloji","Cellular
+Immunology"
+3,Humoural İmmünoloji ve İmmünokimya,Humoural Immunology and Immunochemistry
+3,İmmünogenetik,Immunogenetics
+3,Nakil İmmünolojisi,Transplantation Immunology
+3,Otoimmünite,Autoimmunity
+3,Tümör İmmünolojisi,Tumour Immunology
+3,Uygulamalı İmmünoloji,Applied Immunology
+3,İmmünoloji (Diğer),Immunology (Other)
+2,Kardiyovasküler Tıp ve Hematoloji,Cardiovascular Medicine and Haematology
+3,Hematoloji,Haematology
+3,Kardiyoloji,Cardiology
+3,"Solunum
+Hastalıkları","Respiratory
+Diseases"
+3,Kardiyovasküler Tıp ve Hematoloji (Diğer),Cardiovascular Medicine and Haematology (Other)
+2,Klinik Tıp Bilimleri,Clinical Sciences
+3,Acil Tıp,Emergency Medicine
+3,Ağrı,Pain
+3,Anesteziyoloji,Anaesthesiology
+3,Askeri Psikiyatri,Military Psychiatry
+3,Bulaşıcı Hastalıklar,Infectious Diseases
+3,Dermatoloji,Dermatology
+3,Endokrinoloji,Endocrinology
+3,Gastroenteroloji ve Hepatoloji,Gastroenterology and Hepatology
+3,Geriatri ve Gerontoloji,Geriatrics and Gerontology
+3,Göğüs Hastalıkları,Chest Diseases
+3,İç Hastalıkları,Internal Diseases
+3,İş ve Meslek Hastalıkları,Work and Occupational Diseases
+3,Kırsal Klinik Sağlık,"Rural Clinical
+Health"
+3,Klinik Kimya,Clinical Chemistry
+3,Klinik Mikrobiyoloji,Clinical Microbiology
+3,Klinik Onkoloji,Clinical Oncology
+3,Klinimetrik,Clinimetrics
+3,Kulak Burun Boğaz,Otorhinolaryngology
+3,Nefroloji,Nefroloji
+3,Nükleer Tıp,Nuclear Medicine
+3,Ortopedi,Orthopaedics
+3,Paramedik,Paramedicine
+3,Patoloji,Pathology
+3,Psikiyatri,Psychiatry
+3,Radyoloji ve Organ Görüntüleme,Radiology and Organ Imaging
+3,Romatoloji ve Artrit,Rheumatology and Arthritis
+3,Spor Hekimliği,Sports Medicine
+3,Tanı Radyografisi,Diagnostic Radiography
+3,Tıbbi Genetik (Kanser Genetiği hariç),Medical Genetics (Excl. Cancer Genetics)
+3,Üroloji,Urology
+3,Venereoloji (Cinsel Yolla Bulaşan Hastalık Bilimi),Venereology
+3,Yoğun Bakım,Intensive Care
+3,Adli Tıp,Forensic Medicine
+3,Anatomi,Anatomy
+3,Klinik Tıp Bilimleri (Diğer),Clinical Sciences (Other)
+2,Onkoloji ve Karsinogenez,Oncology and Carcinogenesis
+3,Hematolojik Tümörler,Haematological Tumours
+3,Kanser Genetiği,Cancer Genetics
+3,Kanser Hücre Biyolojisi,Cancer Cell Biology
+3,Kanser Tanısı,Cancer Diagnosis
+3,Kanser Tedavisi (Kemoterapi ve Radyoterapi hariç),"Cancer Therapy (Excl.
+Chemotherapy and Radiation Therapy)"
+3,Katı Tümörler,Solid Tumours
+3,Kemoterapi,Chemotherapy
+3,Moleküler Hedefler,Molecular Targets
+3,Öngörücü ve Prognostik Belirteçler,Predictive and Prognostic Markers
+3,Radyoterapi,Radiation Therapy
+3,Sıvı Biyopsileri,Liquid Biopsies
+3,Onkoloji ve Karsinogenez (Diğer),Oncology and Carcinogenesis (Other)
+2,Sinirbilim,Neurosciences
+3,Duyusal Sistemler,Sensory Systems
+3,Hesaplamalı Sinirbilim,Computational Neuroscience
+3,Hücresel Sinir Sistemi,Cellular Nervous System
+3,Merkezi Sinir Sistemi,Central Nervous System
+3,Nöroloji ve Nöromüsküler Hastalıklar,Neurology and Neuromuscular Diseases
+3,Otonom Sinir Sistemi,Autonomic Nervous System
+3,Periferik Sinir Sistemi,Peripheral Nervous System
+3,Sinirbilim (Diğer),"Neurosciences
+(Other)"
+2,Tıbbi Biyokimya ve Metabolomik,Medical Biochemistry and Metabolomics
+3,Metabolik Tıp,Metabolic Medicine
+3,Tıbbi Biyokimya - Amino Asitler ve Metabolitler,Medical Biochemistry - Amino Acids and Metabolites
+3,Tıbbi biyokimya - İnorganik Elementler ve Bileşikler,Medical Biochemistry - Inorganic Elements and Compounds
+3,"Tıbbi Biyokimya -
+Karbonhidratlar",Medical Biochemistry - Carbohydrates
+3,Tıbbi Biyokimya - Lipidler,Medical Biochemistry - Lipids
+3,Tıbbi Biyokimya - Nükleik Asitler,Medical Biochemistry - Nucleic Acids
+3,"Tıbbi biyokimya - Proteinler, Peptitler ve Proteomik","Medical Biochemistry - Proteins, Peptides and Proteomics"
+3,"Tıbbi Biyokimya ve
+Metabolomik (Diğer)",Medical Biochemistry and Metabolomics (Other)
+2,Tıbbi Biyoteknoloji,Medical Biotechnology
+3,Gen ve Moleküler Tedavi,Gene and Molecular Therapy
+3,Nanoilaç,Nanomedicine
+3,"Nanotoksikoloji, Sağlık ve Güvenlik","Nanotoxicology, Health and Safety"
+3,Nükleik Asit ve Proteinlerin Tıbbi Moleküler Mühendisliği,Medical Molecular Engineering of Nucleic Acids and Proteins
+3,Rejeneratif Tıp (kök hücreler dahil),Regenerative Medicine (Incl. Stem Cells)
+3,Tıbbi Biyoteknolojik Tanılama,Medical Biotechnology Diagnostics
+3,"Tıbbi Biyoteknoloji
+(Diğer)",Medical Biotechnology (Other)
+2,Tıbbi Fizyoloji,Medical Physiology
+3,Fizyopatoloji,Physiopathology
+3,Hücre Fizyolojisi,Cell Physiology
+3,İnsan Biyofiziği,Human Biophysics
+3,Sistem Fizyolojisi,Systems Physiology
+3,Tıbbi Fizyoloji (Diğer),Medical Physiology (Other)
+2,Tıbbi Mikrobiyoloji,Medical Microbiology
+3,Temel İmmünoloji,Basic Immunology
+3,Tıbbi Bakteriyoloji,Medical Bacteriology
+3,Tıbbi Biyoloji,Tıbbi Biyoloji
+3,Tıbbi Ekoloji ve Hidroklimatoloji,Medical Ecology and Hydroclimatology
+3,Tıbbi Enfeksiyon Ajanları,Medical Infection Agents
+3,Tıbbi Mikoloji,Medical Mycology
+3,Tıbbi Parazitoloji,Medical Parasitology
+3,Tıbbi Viroloji,Medical Virology
+3,Tıbbi Mikrobiyoloji (Diğer),Medical Microbiology (Other)
+2,Üreme Tıbbı,Reproductive Medicine
+3,Fetal Gelişim ve Tıp,"Foetal Development
+and Medicine"
+3,Histoloji ve Embriyoloji,Histology and Embryology
+3,Kadın Hastalıkları ve Doğum,Obstetrics and Gynaecology
+3,Üreme,Reproduction
+3,Üreme Tıbbı (Diğer),Reproductive Medicine (Other)
+1,Çevre Bilimleri,Environmental Sciences
+2,Çevre Yönetimi,Environmental Management
+3,Çevre Eğitimi ve Yaygınlaştırılması,Environmental Education and Extension
+3,Çevre Rehabilitasyonu ve Restorasyonu,Environmental Rehabilitation and Restoration
+3,Çevresel Değerlendirme ve İzleme,Environmental Assessment and Monitoring
+3,Doğal Kaynak Yönetimi,Natural Resource Management
+3,Koruma ve Biyolojik Çeşitlilik,Conservation and Biodiversity
+3,"Yaban Hayatı ve
+Habitat Yönetimi","Wildlife and Habitat
+Management"
+3,Çevre Yönetimi (Diğer),Environmental Management (Other)
+2,Çevresel Biyoteknoloji,Environmental Biotechnology
+3,Biyokeşif,Biodiscovery
+3,Biyolojik Kontrol,Biological Control
+3,Biyoremediasyon,Bioremediation
+3,Çevresel Biyoteknoloji Tanılama (Biyosensörler dahil),Environmental Biotechnology Diagnostics (Incl. Biosensors)
+3,Çevresel Deniz Biyoteknolojisi,Environmental Marine Biotechnology
+3,Çevresel Nanoteknoloji ve Nanometroloji,Environmental Nanotechnology and Nanometrology
+3,Çevresel Biyoteknoloji (Diğer),Environmental Biotechnology (Other)
+2,Ekolojik Uygulamalar,Ecological Applications
+3,Biyoemniyet Bilimi ve İstilacı Türler Ekolojisi,Biosecurity Science and Invasive Species Ecology
+3,Ekotoksikoloji,Ecotoxicology
+3,Ekosistem Hizmetleri (Tozlaşma dahil),Ecosystem Services (Incl. Pollination)
+3,Ekosistem İşlevi,Ecosystem Function
+3,Manzara Ekolojisi,Landscape Ecology
+3,Yangın Ekolojisi,Fire Ecology
+3,Ekolojik Uygulamalar (Diğer),Ecological Applications (Other)
+2,İklim Değişikliği- Etkiler ve Adaptasyon,Climate Change- Impact and Adaptation
+3,İklim Değişikliğinin Ekolojik Etkileri ve Ekolojik Adaptasyon,Ecological Impacts of Climate Change and Ecological Adaptation
+3,İklim Değişikliğinin ve İnsan Adaptasyonunun Beşeri Etkileri,Human Impacts of Climate Change and Human Adaptation
+3,Karbon Ayırma Bilimi,Carbon Sequestration Science
+3,İklim Değişikliği Etkileri ve Uyarlama (Diğer),Climate Change Impacts and Adaptation (Other)
+2,Kirlilik ve Kontaminasyon,Pollution and Contamination
+3,Çevresel Biyojeokimya,Environmental Biogeochemistry
+3,Gürültü ve Dalga Kirliliği Süreçleri ve Ölçümü,Noise and Wave Pollution Processes and Measurement
+3,Su Kalitesi ve Su Kirliliği,Water Quality and Water Pollution
+3,Yeraltı Suyu Kalite Süreçleri ve Bozulmuş Arazi Ölçümü,Groundwater Quality Processes and Contaminated Land Assessment
+3,Yüzey Suyu Kalite Süreçleri ve Bozulmuş Tortu Ölçümü,Surface Water Quality Processes and Contaminated Sediment Assessment
+3,Kirlilik ve Kontaminasyon (Diğer),Pollution and Contamination (Other)
+1,"Dil, İletişim ve Kültür","Language, Communication and Culture"
+2,Çağdaş Türk Lehçeleri ve Edebiyatları,Modern Turkic Languages and Literatures
+3,Çuvaş Dil ve Edebiyatı,Chuvash Language and Literature
+3,Güney-Batı (Oğuz) Türk Lehçeleri ve Edebiyatları,South-West (Oghuz) Turkic Dialects and Literatures
+3,Güney-Doğu (Yeni Uygur/Özbek) Türk Lehçeleri ve Edebiyatları,South-East (Latest Uyghur/Uzbek) Turkic Dialects and Literatures
+3,Kuzey-Batı (Kıpçak) Türk Lehçeleri ve Edebiyatları,North-West (Kipczak) Turkic Dialects and Literatures
+3,"Kuzey-Doğu (Altay, Hakas, Tuva, Saha/Yakut) Türk Lehçeleri ve Edebiyatları","North-East (Altai, Khakas, Tuva, Sakha/Yakut) Turkic Dialects and Literatures"
+3,İletişim Çalışmaları,"Communication
+Studies"
+3,Ağız Araştırmaları Bilimi,Dialectology
+3,Çağdaş Türk Lehçeleri ve Edebiyatları (Diğer),Modern Turkic Languages and Literatures (Other)
+2,Dil Çalışmaları,Language Studies
+3,Çeviri ve Yorum Çalışmaları,Translation and Interpretation Studies
+3,Erken İngilizce Dilleri,Early English Languages
+3,"İkinci Bir Dil Olarak
+İngilizce",English As A Second Language
+3,Karşılaştırmalı Dil Çalışmaları,Comparative Language Studies
+3,Latince ve Klasik Yunan Dilleri,Latin and Classical Greek Languages
+3,Çeviribilim,Translation Studies
+3,Dil Edinimi,Language Acquisition
+3,Dil Çalışmaları (Diğer),Language Studies (Other)
+2,Dilbilim,Linguistics
+3,Bilişsel Dilbilimi,Cognitive Linguistics
+3,Bütünce Dilbilimi,Corpus Linguistics
+3,Çocuğun Dil Edinimi,Child Language Acquisition
+3,Dil Belgeleme ve Açıklama,Language Documentation and Description
+3,Dil Kullanım Bilimi,Linguistic Performance Science
+3,"Dilsel Yapılar (Fonoloji, Morfoloji ve Sözdizimi dahil)","Linguistic Structures (Incl. Phonology, Morphology and Syntax)"
+3,Fonetik ve Konuşma Bilimi,Phonetics and Speech Science
+3,Hesaplamalı Dilbilim,Computational Linguistics
+3,Söylem ve Bağlamsal Dilbilim,Discourse and Pragmatics
+3,"Sözlükbilim ve
+Anlambilim","Lexicography and
+Semantics"
+3,"Tarihsel, Karşılaştırmalı ve Biçimsel Dilbilim","Historical, Comparative and Typological Linguistics"
+3,Toplumsal Dilbilim,Sociolinguistics
+3,"Uygulamalı Dilbilim
+ve Eğitim Dilbilimi",Applied Linguistics and Educational Linguistics
+3,Karşılaştırmalı Dilbilim,Linguistic Contrastif
+3,Metindilbilim,Textlinguistics
+3,Dilbilim (Diğer),Linguistics (Other)
+2,"Dünya Dilleri,
+Edebiyatı ve Kültürü","World Languages, Literature and Culture"
+3,"Afrika Dilleri, Edebiyatları ve Kültürleri","African Language, Literature and Culture"
+3,"Alman Dili, Edebiyatı ve Kültürü","German Language, Literature and Culture"
+3,"Arap Dili, Edebiyatı ve Kültürü","Arabic Language, Literature and Culture"
+3,"Arnavut Dili, Edebiyatı ve Kültürü",Albanian Language Literature and Culture
+3,"Asya Dilleri, Edebiyatları ve Kültürleri","Asian Language, Literature and Culture"
+3,"Avrupa Dilleri, Edebiyatları ve Kültürleri","European Language, Literature and Culture"
+3,"Boşnak Dili,
+Edebiyatı ve Kültürü","Bosnian Language, Literature and Culture"
+3,"Bulgar Dili, Edebiyatı ve Kültürü","Bulgarian Language, Literature and Culture"
+3,"Çağdaş Yunan Dili,
+Edebiyatı ve Kültürü","Modern Greek Language, Literature and Culture"
+3,"Çin Dili, Edebiyatı ve Kültürü","Chinese Language, Literature and Culture"
+3,"Ermeni Dili, Edebiyatı ve Kültürü","Armenian Language, Literature and Culture"
+3,"Fars Dili, Edebiyatı ve Kültürü","Persian Language, Literature and Culture"
+3,"Fransız Dili,
+Edebiyatı ve Kültürü","French Language, Literature and Culture"
+3,"Güney-Doğu Asya Dilleri, Edebiyatları ve Kültürleri","South-East Asian Language, Literature and Culture"
+3,"Hint Dili, Edebiyatı ve Kültürü","Indian Language, Literature and Culture"
+3,"Hırvat Dili,  Edebiyatı ve Kültürü","Croatian Language, Literature and Culture"
+3,"Hollanda Dili, Edebiyatı ve Kültürü","Dutch Language, Literature and Culture"
+3,"İngiliz ve İrlanda Dili, Edebiyatı ve Kültürü","British and Irish Language, Literature and Culture"
+3,"İspanyol Dili, Edebiyatı ve Kültürü","Spanish Language, Literature and Culture"
+3,"İtalyan Dili, Edebiyatı ve Kültürü","Italian Language, Literature and Culture"
+3,"Japon Dili, Edebiyatı ve Kültürü","Japanese Language, Literature and Culture"
+3,"Kafkas Dilleri, Edebiyatları ve Kültürleri","Caucasian Language, Literature and Culture"
+3,"Kore Dili, Edebiyatı ve Kültürü","Korean Language, Literature and Culture"
+3,"Kürt Dili, Edebiyatı ve Kültürü","Kurdish Language, Literature and Culture"
+3,"Kuzey Amerika Dilleri, Edebiyatları ve Kültürleri","North American Language, Literature and Culture"
+3,"Latin Amerika Dilleri, Edebiyatları ve Kültürleri","Latin American Language, Literature and Culture"
+3,"Leh Dili, Edebiyatı ve Kültürü","Polish Language, Literature and Culture"
+3,"Macar Dili, Edebiyatı ve Kültürü","Hungarian Language, Literature and Culture"
+3,"Portekiz Dili, Edebiyatı ve Kültürü","Portuguese Language, Literature and Culture"
+3,"Rus Dili, Edebiyatı
+ve Kültürü","Russian Language, Literature and Culture"
+3,"Slav Dilleri, Edebiyatları ve Kültürleri","Slavic Language, Literature and Culture"
+3,"Urdu Dili, Edebiyatı ve Kültürü","Urdu Language, Literature and Culture"
+3,Modern Türk Edebiyatı,Modern Turkish Literature
+3,"Anadolu Dilleri, Edebiyatı ve Kültürü","Anatolia Language, Literature and Culture"
+3,"Dünya Dilleri, Edebiyatı ve Kültürü (Diğer)","World Languages, Literature and Culture (Other)"
+2,Edebi Çalışmalar,Literary Studies
+3,Basılı Kültür,Print Culture
+3,Çağdaş Tiyatro Çalışmaları,Contemporary Drama Studies
+3,Çocuk Edebiyatı,Children's Literature
+3,Dijital Edebiyat,Digital Literature
+3,Edebi Teori,Literary Theory
+3,Ekoeleştiri,Ecocriticism
+3,Genç Yetişkin Edebiyatı,Young Adult Literature
+3,Hititoloji,Hittitology
+3,Karşılaştırmalı ve Ulusötesi Edebiyat,Comparative and Transnational Literature
+3,Latince ve Klasik Yunan Edebiyatı,Latin and Classical Greek Literature
+3,Modern ve Postmodern Edebiyat,Modernist/Postmod ernist Literature
+3,Ortaçağ Edebiyatı,Medieval Literature
+3,Popüler ve Tür Edebiyatı,Popular and Genre Literature
+3,"Romantik Dönem
+Edebiyatı",Romantic Literature
+3,Rönesans Edebiyatı,Reinessance Literature
+3,Sömürge Dönemi Sonrası Edebiyatı,Postcolonial Literature
+3,Stilistik ve Metinsel Analiz,Stylistics and Textual Analysis
+3,Sümeroloji,Sumerology
+3,Türk İslam Edebiyatı,Turkish Islamic Literature
+3,Edebi Çalışmalar (Diğer),Literary Studies (Other)
+2,İletişim ve Medya Çalışmaları,Communication and Media Studies
+3,Basın Çalışmaları,Media Studies
+3,Çevresel İletişim,Environmental Communication
+3,Gazetecilik,Journalism
+3,Gazetecilik Çalışmaları,Journalism Studies
+3,İletişim Çalışmaları,Communication Studies
+3,İletişim Eğitimi,Communication Education
+3,İletişim Kuramları,"Communication
+Theories"
+3,İletişim Sistemleri,Communication Systems
+3,İletişim Teknolojisi ve Dijital Medya Çalışmaları,Communication Technology and Digital Media Studies
+3,İnternet,Internet
+3,İnternet Yayıncılığı,Internet Publishing
+3,Kitle İletişimi,Mass Media
+3,Medya Endüstrisi Çalışmaları,Media Industry Studies
+3,Medya Okuryazarlığı,Media Literacy
+3,Medya Teknolojileri,Media Technologies
+3,"Örgütsel, Kişilerarası ve Kültürlerarası İletişim","Organisational, Interpersonal and Intercultural Communication"
+3,Radyo Programcılığı,Radio Programming
+3,Radyo Yayıncılığı,Radio Broadcasting
+3,Radyo-Televizyon,Radio-Television
+3,Sosyal Medya Çalışmaları,Social Media Studies
+3,Sosyal Medya Uygulamaları ve Analizi,Social Media Applications and Analysis
+3,Televizyon Programcılığı,Television Programming
+3,Televizyon Yayıncılığı,Television Broadcasting
+3,Transmedya,Transmedia
+3,Uluslararası ve Kalkınma İletişimi,International and Development Communication
+3,Yeni İletişim Teknolojileri,New Communication Technologies
+3,Yeni Medya,New Media
+3,İletişim ve Medya Çalışmaları (Diğer),Communication and Media Studies (Other)
+2,Kültürel çalışmalar,Cultural Studies
+3,"Asya Kültürü
+Çalışmaları","Asian Cultural
+Studies"
+3,Çevre ve Kültür,Environment and Culture
+3,Çok Kültürlü ve Kültürlerarası Çalışmalar,"Multicultural, Intercultural and Cross-Cultural Studies"
+3,"Ekran ve Medya
+Kültürü","Screen and Media
+Culture"
+3,Göçmen Kültürü Çalışmaları,Migrant Cultural Studies
+3,Günlük Yaşam ve Tüketim,Consumption and Everyday Life
+3,"Kültür, Temsil ve Kimlik","Culture, Representation and Identity"
+3,Kültürel Teori,Cultural Theory
+3,Kültürel ve Yaratıcı Endüstriler,Cultural and Creative Industries
+3,Küreselleşme ve Kültür,Globalisation and Culture
+3,Postkolonyal Çalışmalar,Postcolonial Studies
+3,Sanat ve Kültür Politikası,Arts and Cultural Policy
+3,"Tarım, Yiyecek ve İçeceğin Kültürel Çalışmaları","Cultural Studies of Agriculture, Food and Beverage"
+3,Ulus ve Bölgenin Kültürel Çalışmaları,Cultural Studies of Nation and Region
+3,Kültürel çalışmalar (Diğer),Cultural Studies (Other)
+2,Reklamcılık,Advertising
+3,Dijital Reklamcılık,Digital Advertising
+3,Reklam Araştırmaları,Advertising Studies
+3,Reklam Çözümlemesi,Advertising Analysis
+3,Reklam Kampanyaları,Advertising Campaigns
+3,Reklam Stratejileri,Advertising Strategies
+3,Reklam Yazarlığı,Ad Writing
+3,Reklam-Medya Planlamaları,Advertising Media Planning
+3,Siyasal Reklamcılık,Political Advertising
+3,Sosyal Reklamcılık,Social Advertising
+3,Reklamcılık (Diğer),Advertising (Other)
+2,Türk Dili ve Edebiyatı,Turkish Language and Literature
+3,"Eski Türk Dili (Orhun, Uygur, Karahanlı)","Old Turkic Language (Orhon, Uyghur, Karahan)"
+3,Osmanlı Sahası Dışındaki Klasik Türk Edebiyatı,Classical Turkish Literature Out of Ottoman Field
+3,Osmanlı Sahası Klasik Türk Edebiyatı,Classical Turkish Literature of Ottoman Field
+3,"Tarihi Kuzey Doğu Türk Dili (Harezm, Kıpçak, Çağatay)","Historical North East Turkish Language (Khwarezm, Kipchak, Chagatai)"
+3,Türkiye Sahası Yeni Türk Edebiyatı,Modern Turkish Literature in Turkiye Field
+3,"Yeni Türk Dili (Eski Anadolu, Osmanlı, Türkiye Türkçesi)","New Turkish Language (Turkish of Old Anatolia, Ottoman, Turkiye)"
+3,Anadolu Dilleri,Anatolian Languages
+3,Türk Halk Edebiyatı,"Turkish Folk
+Literature"
+3,Klasik Türk Edebiyatı,Classical Turkish Literature
+3,Türk Dili ve Edebiyatı (Diğer),Turkish Language and Literature (Other)
+2,Türk Halk Bilimi,Turkish Folklore
+3,Alevilik Bektaşilik Araştırmaları,Alawism Bektashism Studies
+3,Türkiye Dışındaki Türk Halk Bilimi,Turkish Community Science Out of Turkiye
+3,"Türkiye Sahası Türk
+Halk Bilimi",Turkish Community Science in Turkish Field
+3,Türk Halk Bilimi (Diğer),Turkish Folklore (Other)
+1,Eğitim,Education
+2,Eğitimde Ölçme ve Değerlendirme,Open and Distance Learning
+3,Eğitimde ve Psikolojide Ölçme Teorileri ve Uygulamaları,Measurement Theories and Applications in Education and Psychology
+3,Ölçek Geliştirme,Scale Development
+3,Standart Belirleme ve Normlar,Setting Standards and Norms
+3,Kültürlerarası Ölçek Uyarlama,Cross-Cultural Scale Adaptation
+3,Sınıfiçi Ölçme Uygulamaları,Classroom Measurement Practices
+2,Bilgisayar Tabanlı Sınav Uygulamaları,Computer Based Exam Applications
+3,Ulusal ve Uluslararası Başarı Karşılaştırmaları,National and International Success Comparisons
+3,Eğitimin Kültürler Arası Karşılaştırmaları:Ul uslararası Sınavlar,Cross-Cultural Comparisons of Education: International Examinations
+3,Similasyon çalışmaları,Similation Study
+3,Eğitimde Ölçme ve Değerlendirme (Diğer),Measurement and Evaluation in Education (Other)
+2,"Eğitim Yönetimi, Teftişi, Planlaması ve Ekonomisi","Educational Administration, Supervision, Planning and Economics"
+3,Eğitim Yönetimi,"Education
+Management"
+3,Eğitimde Denetim,Supervision in Education
+3,Eğitim Planlaması,Education Planning
+3,Teftiş ve Planlama,Inspection and Planning
+3,Eğitimde Liderlik,Leadership in Education
+3,"Eğitim Yönetimi, Teftişi, Planlaması ve Ekonomisi (Diğer)","Educational Administration, Supervision, Planning and Economics (Other)"
+2,Rehberlik ve Psikolojik Danışmanlık,Psychological Counseling and Guidance
+3,Aile Danışmanlığı,Family Counseling
+3,Kariyer Danışmanlığı,Career Counseling
+3,Madde Bağımlılığı Danışmanlığı,Drug Addiction Consultancy
+3,Okul Psikolojik Danışmanlığı,School Counseling
+3,Psikolojik Danışmanlık Eğitimi,Psychological Counseling Education
+3,Rehberlik ve Psikolojik Danışmanlık (Diğer),Psychological Counseling and Guidance (Other)
+2,Eğitim Programları ve Öğretim,Curriculum and Instration
+3,Eğitimde Program Geliştirme,Curriculum Development in Education
+3,Eğitimde Program Değerlendirme,Curriculum Evaluation in Education
+3,Program Tasarımı,Program Design
+3,Öğrenme Kuramları,Learning Theories
+3,Hizmetiçi Eğitim,In-Service Training
+3,Eğitimde Hazırbulunuşluluk,Readiness in Education
+3,Öğretim Kuramları,Curriculum Design Instructional Theories
+3,Öğretim Tasarımı,Instructional Design
+3,Öğretim Teknolojileri,Instructional Technologies
+3,Informal Öğrenme,Informal Learning
+3,Okul Dışı Öğrenme,Out-of-School Learning
+3,"Hayat Boyu
+Öğrenme",Lifelong learning
+3,Yetişkin Eğitimi,Adult Education
+3,Değerler Eğitimi,Values education
+3,Eğitimin Felsefi ve Sosyal Temelleri,Philosophical and Social Foundations of Education
+3,Eğitimin Psikolojik Temelleri,Psychological Foundations of Education
+3,Çok Kültürlü Eğitim,Multicultural Education
+3,"Karşılaştırmalı ve
+Kültürlerarası Eğitim",Comparative and Cross-Cultural Education
+3,Öğretmen Eğitimi ve Eğitimcilerin Mesleki Gelişimi,Teacher Education and Professional Development of Educators
+3,Eğitim Programları ve Öğretim (Diğer),Curriculum and Instration (Other)
+2,Temel Eğitim,Basic Training
+3,Okul Öncesi Eğitim,Early Childhood Education
+3,Sınıf Eğitimi,Classroom Education
+3,İlköğretim,Primary Education
+3,Temel Eğitim (Diğer),Basic Training (Other)
+2,Fen ve Matematik Alanları Eğitimi,Science and Mathematics Education
+3,Matematik Eğitimi,"Mathematics
+Education"
+3,Fizik Eğitimi,Physics Education
+3,Kimya Eğitimi,Chemistry Education
+3,Biyoloji Eğitimi,Biology Education
+3,Fen Bilgisi Eğitimi,Science Education
+3,STEM Eğitimi,STEM Education
+3,Fen ve Matematik Alanları Eğitimi (Diğer),Science and Mathematics Education (Other)
+2,Türkçe ve Sosyal Bilimler Eğitimi,Turkish and Social Sciences Education
+3,Türkçe Eğitimi,Turkish Education
+3,Türk Dili ve Edebiyatı Eğitimi,Turkish Language and Literature Education
+3,Tarih Eğitimi,History Education
+3,Coğrafya Eğitimi,Geography Education
+3,Psikoloji Eğitimi,Psychology Education
+3,Sosyoloji Eğitimi,Sociology Education
+3,Felsefe Eğitimi,Philosophy Education
+3,Sosyal Bilgiler Eğitimi,Social Studies Education
+3,Din Eğitimi,Religious Education
+3,Türkçe ve Sosyal Bilimler Eğitimi (Diğer),Turkish and Social Sciences Education (Diğer)
+2,"Mesleki Eğitim ve
+Öğretim",Vocational Education and Instraction
+3,"Teknik, Mesleki ve
+İş Yeri Eğitimi","Technical, Vocational and Workplace Education"
+3,Mesleki Eğitim,Development of Vocational Education
+3,"Mesleki Eğitim ve
+Öğretim(Diğer)",Vocational Education and Instraction(Other)
+2,Alan Eğitimleri,Other Fields of Education
+3,Beden Eğitimi ve,Development of
+,Eğitim,Physical Education
+,Programlarının,and Education
+,Geliştirilmesi,Programs
+3,"Sosyal ve Beşeri Bilimler Eğitimi (Ekonomi, İşletme ve Yönetim Hariç)","Social and Humanities Education (Excluding Economics, Business and Management)"
+3,"Bilim, Teknoloji ve Mühendislik Eğitimi ve Programlarının Geliştirilmesi","Development of Science, Technology and Engineering Education and Programs"
+3,"Ekonomi, İşletme ve Yönetim Müfredatı ve Öğretimi","Curriculum and Teaching in Economics, Business and Management"
+3,Çevre Eğitimi ve Programlarının Geliştirilmesi,Development of Environmental Education and Programs
+3,"Sağlık Bilimleri Eğitimi ve Program Geliştirme: Tıp, Hemşirelik ve Sağlık Bilimleri","Health Sciences Education and Development of Programs: Medicine, Nursing and Health Sciences"
+3,Çocuk Gelişimi Eğitimi,Child Development Education
+3,Alan Eğitimleri (Diğer),Other Fields of Education (Other)
+2,Sanat Eğitimi,Art Education
+3,Yaratıcı Drama Eğitimi,Creative Drama Education
+3,"Medya ve İletişim
+Eğitimi",Development of Media and Communication Education and Programs
+3,Güzel Sanatlar Eğitimi,Fine Arts Education
+3,Müze Eğitimi,Museum Education
+3,Sanat Eğitimi (Diğer),Art Education (Other)
+2,Özel Eğitim ve Engelli Eğitimi,Special Education and Disabled Education
+3,"Çoklu Engelli
+Eğitimi","Multi Disabled
+Education"
+3,Görme Engelli Eğitimi,Sight Disabled Education
+3,İşitme Engelli Eğitimi,Impaired Hearing Education
+3,Konuşma Engelli Eğitimi,Speech Handicapped Education
+3,Otistik Çocuklar Eğitimi,Education for Autistic Children
+3,Özel Yetenekli Eğitimi,Special Talented Education
+3,"Zihinsel Engelli
+Eğitimi","Mental Disability
+Education"
+3,Otizm ve Spekrum Bozukluğu Eğitimi,Autism and Spectrum Disorder Education
+3,Özel Eğitim ve Engelli Eğitimi (Diğer),Special Education and Disability (Other)
+2,Yükseköğretim Çalışmaları,Higher Education Studies
+3,Yükseköğretim Finansmanı,Higher Education Financing
+3,Yükseköğretim Politikaları,Higher Education Policies
+3,Yükseköğretim Sistemleri,Higher Education Systems
+3,Yükseköğretim Yönetimi,Higher Education Management
+3,Yükseköğretimde Kalite Güvencesi,Quality Assurance in Higher Education
+3,Yükseköğretimde Program Geliştirme ve Yeterlilikler,Program Development and Qualifications in Higher Education
+3,Yükseköğretimde Tanınma ve Denklik,Recognition and Equivalency in Higher Education
+3,"Yükseköğretimde
+Uluslararasılaşma","Internationalization
+in Higher Education"
+3,Lisans ve Lisansüstü Eğitim Programlarının Akretitasyonu,Accreditation of Undergraduate and Graduate Education Programs
+3,Yükseköğretim Çalışmaları (Diğer),Higher Education Studies (Other)
+2,Eğitim Üzerine Çalışmalar,Studies on Education
+3,"Cinsiyet, Cinsellik ve Eğitim","Gender, Sexuality and Education"
+3,Eğitim Politikası,Education Policy
+3,Eğitim Teknolojisi ve Bilgi İşlem,Educational Technology and Computing
+3,Kapsayıcı Eğitim,Inclusive Education
+3,Öğrenme Analitiği,Learning Analytics
+3,Öğrenme Bilimleri,Learning Sciences
+3,"Öğretmen ve
+Öğrenci Refahı","Teacher and
+Student Wellbeing"
+3,Eğitim Üzerine Çalışmalar (Diğer),Specialist Studies in Education (Other)
+1,Ekonomi,Economics
+2,Ekonometri,Econometrics
+3,Ekonometri Teorisi,"Econometrics
+Theory"
+3,Ekonometrik ve İstatistiksel Yöntemler,Econometric and Statistical Methods
+3,Ekonomik Modeller ve Öngörü,Economic Models and Forecasting
+3,Karşılaştırmalı Ekonomik Sistemler,Comparative Economic Systems
+3,Panel Veri Analizi,Panel Data Analysis
+3,Uygulamalı Makro Ekonometri,Applied Macroeconometrics
+3,Uygulamalı Mikro Ekonometri,Applied Microeconometrics
+3,Yatay Kesit Analizi,Cross-Sectional Analysis
+3,Zaman Serileri Analizi,Time-Series Analysis
+3,Yöneylem Araştırması,Operations Research
+3,Ekonometri (Diğer),Econometrics (Other)
+2,Ekonomi Teorisi,Economic Theory
+3,Ekolojik İktisat,Ecological Economics
+3,"Ekonomi Politik
+Teorisi","Political Economy
+Theory"
+3,Feminist Ekonomi,Feminist Economy
+3,Heterodoks İktisat,Heterodox Economics
+3,İktisat Metodolojisi,Economic Methodology
+3,İslam Ekonomisi,Islamic Economy
+3,Kurumsal İktisat Teorisi,Institutional Economics Theory
+3,Makroekonomik Teori,Macroeconomic Theory
+3,Matematiksel İktisat,Mathematical Economics
+3,Mikroekonomik Teori,Microeconomic Theory
+3,Radikal İktisat,Radical Economy
+3,Ekonomi Teorisi (Diğer),Economic Theory (Other)
+2,Makro İktisat,Macroeconomics
+3,Büyüme,Growth
+3,Enflasyon,Inflation
+3,İstihdam,Employment
+3,"Kalkınma
+Ekonomisi - Makro","Development
+Economics - Macro"
+3,Kayıt Dışı Ekonomi,Informal Economy
+3,Konjonktür Dalgalanmaları,Cyclical Fluctuations
+3,Maliye Politikası,Policy of Treasury
+3,Para Politikası,Monetary Policy
+3,Para-Bankacılık,Monetary-Banking
+3,Sermaye Piyasaları,Capital Market
+3,Uluslararası Finans,International Finance
+3,İktisadi Düşünceler,Economic Thought
+3,Döngüsel Ekonomi,Circular Economy
+3,Göç Ekonomisi,Migration Economics
+3,Uzay Ekonomisi,Space Economy
+3,Gelişme Ekonomisi,Development Economics
+3,Afet Ekonomisi,Disaster Economy
+3,Makro İktisat (Diğer),Macroeconomics (Other)
+2,Mikro İktisat,Microeconomics
+3,Bölgesel Ekonomi,Regional Economy
+3,Çalışma Ekonomisi,Labor Economics
+3,Çevre Ekonomisi,Environmental Economy
+3,Davranışsal İktisat,Behavioural Economy
+3,Deneysel İktisat,Experimental Economy
+3,Doğal Kaynaklar Ekonomisi,Natural Resources Economy
+3,Finansal Ekonomi,Financial Economy
+3,Hukuk ve İktisat,Law and Economy
+3,İktisadi Tasarım,Economic Design
+3,İktisat Teorisi,Theory of Economy
+3,Kalkınma Ekonomisi - Mikro,Developmental Economy - Micro
+3,Kent Ekonomisi,Urban Economy
+3,Kurumsal İktisat,Institutional Economics
+3,Oyun Teorisi,Game Theory
+3,Politik Ekonomi,Political Economy
+3,Refah Ekonomisi,Welfare Economics
+3,Sanayi Ekonomisi,Industrial Economy
+3,Suç Ekonomisi,Criminal Economy
+3,Mikro İktisat (Diğer),"Microeconomics
+(Other)"
+2,Uluslararası İktisat,International Economics
+3,Avrupa Birliği Ekonomisi,European Union Economy
+3,Uluslararası İktisadi Kuruluşlar,International Economic Foundation
+3,Uluslararası İktisatta Bölgesel Gelişme ve Küreselleşme,Regional Development and Globalisation in International Economics
+3,"Uluslararası
+İşletmecilik","International
+Corporation"
+3,Dış Ticaret,Foreign Trade
+3,Dış Ticaret Politikaları,Foreign Trade Policy
+3,Ekonomi Diplomasisi,Economic Diplomacy
+3,Uluslararası İktisat (Diğer),International Economics (Other)
+2,Uygulamalı Ekonomi,Applied Economics
+3,Eğitim Ekonomisi,Economics of Education
+3,Ev Ekonomisi,Domestic Economy
+3,Gemilerde Enerji Ekonomisi,Energy Economy On Ships
+3,İletişim Ekonomisi,Communication Economy
+3,Kamu Ekonomisi,Public Economy
+3,"Kamu Ekonomisi -
+Kamu Seçimi","Public Economics -
+Public Choice"
+3,Kamu Ekonomisi - Kamuya Sağlanan Mallar,Public Economics - Publicly Provided Goods
+3,Kamu Ekonomisi - Vergilendirme ve Gelir,Public Economics - Taxation and Revenue
+3,Mühendislik Ekonomisi,Engineering Economy
+3,Örgüt Ekonomisi,Organisation Economy
+3,Sağlık Ekonomisi,Health Economy
+3,"Şehir Ekonomisi (
+Kent Ekonomisi)",Urban Economics
+3,Sigorta Ekonomisi,Insurance Economy
+3,Sürdürülebilir Kalkınma,Sustainable Development
+3,Tarım Ekonomisi,Agricultural Economics
+3,Tekstil Ekonomisi,Textile Economy
+3,Turizm Ekonomisi,Tourism Economics
+3,Ulaşım Ekonomisi,Transport Economics
+3,Yeşil Ekonomi,Green Economy
+3,"Uygulamalı
+Ekonomi (Diğer)","Applied Economics
+(Other)"
+1,Felsefe,Philosophy
+2,Sistematik Felsefe,Systematic Philosophy
+3,Metafelsefe,Metaphilosophy
+3,Bilgi Felsefesi,Epistemology
+3,Bilim Felsefesi,Philosophy of Science
+3,Bilişim Felsefesi,Philosophy of Informatics
+3,Çevre Felsefesi,Philosophy of Environment
+3,Değer Felsefesi,Philosophy of Value
+3,Devlet Felsefesi,Philosophy of State
+3,Dil Felsefesi,Philosophy of Language
+3,Din Felsefesi,Philosophy of Religion
+3,Eğitim Felsefesi,"Philosophy of
+Education"
+3,Estetik,Aesthetics
+3,Etik,Ethics
+3,Hukuk Felsefesi,Philosophy of Law
+3,İktisat Felsefesi,"Philosophy of
+Economics"
+3,İnsan Felsefesi,"Philosophy
+of Human Being"
+3,İslam Felsefesi,Islamic Philosophy
+3,Kültür Felsefesi,Philosophy of Culture
+3,Mantık Felsefesi,Philosophy of Logic
+3,Metafizik,Metaphysics
+3,Varlık Felsefesi,Ontology
+3,Sanat Felsefesi,Philosophy of Art
+3,Siyaset Felsefesi,Philosophy of Society
+3,Tarih Felsefesi,Philosophy of History
+3,Teknoloji Felsefesi,Philosophy of Technology
+3,Toplum Felsefesi,Philosophy of Society
+3,Türk İslam Felsefesi,"Turkish Islamic
+Philosophy"
+3,Yapay Zekâ Felsefesi,Philosophy of Artificial Intelligence
+3,Zihin Felsefesi,Philosophy of Mind
+3,İletişim Felsefesi,Philosophy of Communication
+3,Mantık,Logic
+3,Sistematik Felsefe (Diğer),Systematic Philosophy (Other)
+2,Felsefe Tarihi,History of Philosophy
+3,17. Yüzyıl Felsefesi,17th Century Philosophy
+3,18. Yüzyıl Felsefesi,18th Century Philosophy
+3,19. Yüzyıl Felsefesi,19th Century Philosophy
+3,20. Yüzyıl Felsefesi,20th Century Philosophy
+3,21. Yüzyıl Felsefesi,21st Century Philosophy
+3,Aydınlanma (Felsefede Aydınlanma Tarihi),Enlightenment
+3,Çağdaş Felsefe,"Contemporary
+Philosophy"
+3,Düşünce Tarihi,History of Ideas
+3,Eskiçağ Felsefesi,Ancient Philosophy
+3,Helenistik Felsefe,Hellenistic Philosophy
+3,Kıta Felsefesi,"Continental
+Philosophy"
+3,Modern Felsefe,Modern Philosophy
+3,Ortaçağ Felsefesi,Medieval Philosophy
+3,Rönesans Felsefesi,Renaissance Philosophy
+3,Türkiye’de Felsefe,Philosophy in Turkiye
+3,Uzakdoğu Felsefesi,Eastern Philosophies
+3,Mantık Tarihi,History of Logic
+3,Türk Düşünce Tarihi,History of Turkish Ideas
+3,Felsefe Tarihi (Diğer),History of Philosophy (Other)
+2,Uygulamalı Felsefe,Applied Philosophy
+3,Biyoetik,Bioethics
+3,"Çocuklar için
+Felsefe","Philosophy for
+Children"
+3,Felsefe Öğretimi,Teaching Philosophy
+3,Felsefi Danışmanlık,Philosophical Counselling
+3,İletişim Etiği,Communication Ethics
+3,Meslek Etiği,Professional Ethics
+3,Tıp Etiği,Medical Ethics
+3,Uygulamalı Etik,Applied Ethics
+3,Uygulamalı Felsefe(Diğer),Applied Philosophy (Other)
+1,Fizik,Physical Sciences
+2,Astronomik Bilimler,Astronomical Sciences
+3,Astrobiyoloji,Astrobiology
+3,Astronomik Aygıtlar,Astronomical Instrumentation
+3,Galaktik Astronomi,Galactic Astronomy
+3,Genel Görelilik ve Çekimsel Dalgalar,General Relativity and Gravitational Waves
+3,Gezegen Bilimi (Güneş Sistemi ve Gezegen Jeolojisi hariç),Planetary Science (Excl. Solar System and Planetary Geology)

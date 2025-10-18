@@ -1,0 +1,42 @@
+KVKK AYDINLATMA METNİ
+
+Bu aydınlatma metni, 6698 sayılı Kişisel Verilerin Korunması Kanununun 10. maddesi ile Aydınlatma Yükümlülüğünün Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ kapsamında veri sorumlusu sıfatıyla TÜBİTAK ULAKBİM tarafından hazırlanmıştır.
+
+İşbu Aydınlatma Metninin amacı, Home alan adlı internet sitesi ile mobil uygulama platformlarının işletilmesi sırasında platform üyeleri/ziyaretçileri/kullanıcıları (akademisyen, yazar, editör, editör ve hakem grubu, dergi yöneticisi, araştırmacı, okur, öğrenci, vatandaş vb. hepsi birlikte "İlgili Kişi" olarak anılacaktır) tarafından Kurumumuz ile paylaşılan veya Kurumumuzun, İlgili Kişi'nin Paltform'u kullanımı sırasında işlediği kişisel verilerin kullanımına ilişkin koşulları belirlemektir.
+
+TÜBİTAK ULAKBİM, akademik süreli yayıncılığın, Türkiye'de kaliteli ve standartlara uygun olarak gelişmesini sağlamak, ulusal akademik dergilerin tüm dünyada görünürlüğü ve kullanımını artırmak, dergilerin elektronik ortamda yönetilmesini sağlayan bir sistemin yaygın ve ileri düzeyde kullanımını sağlamak, TR Dizin ve Ulusal Atıf Dizini için ölçülebilir temiz veri sağlamak amacıyla, sunmuş olduğu DergiPark hizmeti kapsamında, Türkiye'de yayımlanan akademik hakemli dergiler için elektronik ortamda barındırma ve editoryal süreç yönetimi hizmeti sunmakta, ulusal akademik dergilerin standartlara uygun olarak varlık kazanmasına ve uluslararası görünürlüğünün artırılmasına destek olmakta dergilerin işleyişine, yönetimine ve içeriğine karışmaksızın, sadece alt yapı sunmakta ve sistemin kullanımı için "teknik destek" sağlamaktadır. DergiPark, yazar, editör ve hakem grubu, dergi yöneticisi, sayfa düzenleyici, son okuyucu, okur, kullanıcı arasındaki bilgi akışının, elektronik ortamda yönetilmesine, paylaşılmasına ve yayıma hazır olan makalelere hızlı bir şekilde erişime imkan sağlamaktadır.
+
+Açık erişim, bilimsel literatürün internet aracılığıyla finansal, yasal ve teknik bariyerler olmaksızın, erişilebilir okunabilir, kaydedilebilir, kopyalanabilir, yazdırılabilir, taranabilir, dizinlenebilir, tam metne bağlantı verilebilir, yazılıma veri olarak aktarılabilir ve her türlü yasal amaç için kullanılabilir biçimde kamuya ücretsiz açık olmasıdır. Açık erişimin temel mantığı kullanıcıların bilimsel araştırma sonuçlarına kolayca erişmelerine olanak sağlayarak araştırmaların etkisini artırmaktır. Açık erişim sayesinde bir araştırmacı, çalışmasını potansiyel olarak internet ortamında bütün dünyadaki kullanıcılara kolayca açabilir. Açık erişimle araştırma sonuçları daha fazla kişi tarafından kullanılmakta, bu kullanım yeni araştırmaların yapılmasını sağlamaktadır. TÜBİTAK ULAKBİM Türkiye'de yürütülen ulusal Açık Bilim çalışmalarına DergiPark Projesi ile destek vermektedir.
+
+İlgililere ait aşağıda listelenen kişisel veriler, sözlü, yazılı veya elektronik ortamda, doğrudan ilgililerden veya dolaylı olarak Türkiye Cumhuriyeti Devleti'nin tüm resmî Kurumlarından veya TÜBİTAK ULAKBİM'in işbirliği yaptığı ulusal ve uluslararası tüm kurum ve kuruluşlardan kişisel veriler otomatik ya da otomatik olmayan yöntemlerle ve benzeri vasıtalarla sözlü, yazılı ya da elektronik olarak toplanmakta, işlenmekte ve aktarılabilmektedir. Aşağıda detaylı listelenmektedir.
+
+• Adı ve Soyadı
+• Ünvan
+• E-posta Adresleri
+• Web Adresleri
+• Orcid
+• Bilimsel Teknolojik Faaliyet Alanları ve Konuları
+• Yetkinlikler
+• Çalıştığı Kurum
+• Telefon
+• Adres
+
+DergiPark hizmeti kapsamında paylaşmış olduğunuz kişisel verileriniz DergiPark'ın yukarıda açıklanan kuruluş amaçlarını yerine getirebilmesi için KVKK 5. madde hükmü uyarınca, "veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi için zorunlu olması" ve "ilgili kişinin temel hak ve özgürlüklerine zarar vermemek kaydıyla, veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması" koşulları ile 6. Madde hükümlerinde yer alan hukuki sebeplere dayanarak Veri Sorumlusu sıfatıyla Kurumumuzca, (herhangi bir dilde) sistemlerimize kaydedilecek, depolanacak, muhafaza edilecek, saklanacak, yasal/bilimsel/finansal gerekler ve nedenler ile sınıflandırılacak, güncellenecek ve mevzuatın izin verdiği durumlarda ve yasal sınırlar dâhilinde ihtiyaç duyulması halinde yurt içindeki gerçek ve tüzel kişilere açıklanabilecek, sınıflandırılabilecek, raporlanabilecek, paylaşılabilecek ve işlenebilecektir. DergiPark hizmeti yalnızca ulusal ölçekte değil açık erişim prensibi kapsamında uluslararası ölçekte de farklı dillerde dergilere yer vermesi nedeniyle, yurtdışında yerleşik olan ilgililere de hizmet verdiğinden, yurtiçi ve yurtdışındaki ilgililere ilişkin kişisel veriler Kanunun 9. Maddesinde düzenlenen şartlara uymak koşuluyla ve bu metinde belirtilen amaçlarla sınırlı olmak üzere yurtdışı ile de paylaşılmaktadır.
+
+Kişisel verileriniz yasal saklama süresince veya böyle bir süre öngörülmemişse işleme amacının gerekli kıldığı süre boyunca saklanacak, bu süre sona erdiğinde, kişisel verileriniz silinme yok edilme ya da anonimleştirme (Kişisel verilerin, başka verilerle eşleştirilerek dahi hiçbir surette kimliği belirli ya da belirlenebilir bir gerçek kişiyle ilişkilendirilemeyecek hale getirilmesi) yöntemleriyle Kurumumuz veri akışlarından çıkarılacaktır.
+
+Kurumsal süreçler ve DergiPark ile ilgili bilgilendirmeler, duyurular, uyarılar, bilgi talepleri ve tanıtımlar açık rıza veren ilgililere e-posta ve telefon bilgileri kullanılarak tarafınıza iletilebilecektir.
+
+KVKK'nın 11. maddesi gereği Kurumumuza başvurarak, kişisel verilerinizin;
+
+a) İşlenip işlenmediğini öğrenme,
+b) İşlenmişse bilgi talep etme,
+c) İşlenme amacını ve amacına uygun kullanılıp kullanılmadığını öğrenme,
+ç) Yurt içinde/yurt dışında aktarıldığı 3. kişileri bilme,
+d) Eksik/yanlış işlenmişse düzeltilmesini isteme,
+e) KVKK'nın 7. maddesinde öngörülen şartlar çerçevesinde silinmesini/yok edilmesini isteme,
+f) Aktarıldığı 3. kişilere yukarıda sayılan (d) ve (e) bentleri uyarınca yapılan işlemlerin bildirilmesini isteme,
+g) Münhasıran otomatik sistemler ile analiz edilmesi nedeniyle aleyhinize bir sonucun ortaya çıkmasına itiraz etme,
+ğ) Kanuna aykırı olarak işlenmesi sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme hakkına sahipsiniz.
+
+Bu kapsamdaki haklarınız, iş bu muvafakatnameyi okuyup onayladığınız tarihten itibaren yürürlüğe girecektir.

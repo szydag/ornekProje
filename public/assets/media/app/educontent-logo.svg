@@ -1,0 +1,18 @@
+<svg width="170" height="67" viewBox="0 0 170 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- EduContent Logo -->
+  <rect width="170" height="67" rx="8" fill="#2563eb"/>
+  
+  <!-- Book Icon -->
+  <path d="M25 20h20v30H25V20z" fill="white"/>
+  <path d="M30 20h10v30H30V20z" fill="#3b82f6"/>
+  <path d="M25 20h20v5H25v-5z" fill="#1d4ed8"/>
+  
+  <!-- Graduation Cap -->
+  <path d="M60 25l15-5v15l-15 5V25z" fill="white"/>
+  <path d="M55 30l20-5v5l-20 5v-5z" fill="#3b82f6"/>
+  
+  <!-- Text -->
+  <text x="90" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">EduContent</text>
+  <text x="90" y="50" font-family="Arial, sans-serif" font-size="12" fill="#93c5fd">Eğitim İçerik Yönetimi</text>
+</svg>
+

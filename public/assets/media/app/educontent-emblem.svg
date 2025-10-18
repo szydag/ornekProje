@@ -1,0 +1,14 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- EduContent Emblem -->
+  <circle cx="20" cy="20" r="18" fill="#2563eb"/>
+  
+  <!-- Book Icon -->
+  <rect x="12" y="10" width="16" height="20" rx="2" fill="white"/>
+  <rect x="14" y="10" width="12" height="20" fill="#3b82f6"/>
+  <rect x="12" y="10" width="16" height="3" fill="#1d4ed8"/>
+  
+  <!-- Graduation Cap -->
+  <path d="M8 18l6-2v6l-6 2v-6z" fill="white"/>
+  <path d="M6 20l8-2v2l-8 2v-2z" fill="#3b82f6"/>
+</svg>
+
