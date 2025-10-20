@@ -24,7 +24,7 @@ final class TransactionHistoryService
         ?LearningMaterialReviewerModel $reviewers = null,
         ?\Config\Processes $cfg = null
     ) {
-        $this->materials = $contents ?? new ContentsModel();
+        $this->materials = $contents ?? new LearningMaterialsModel();
         $this->workflows = $processes ?? new LearningMaterialWorkflowModel();
         $this->reviewers = $reviewers ?? new LearningMaterialReviewerModel();
         $this->cfg = $cfg ?? new \Config\Processes();
@@ -233,8 +233,8 @@ final class TransactionHistoryService
         }
 
         $contentMeta = $this->materials
-            ->select(['contents.created_at', "CONCAT_WS(' ', u.name, u.surname) AS author_name"])
-            ->join('users u', 'u.id = contents.user_id', 'left')
+            ->select(['learning_materials.created_at', "CONCAT_WS(' ', u.name, u.surname) AS author_name"])
+            ->join('users u', 'u.id = learning_materials.user_id', 'left')
             ->find($contentId);
 
         $baseCreatedAt = $contentMeta['created_at']

@@ -224,7 +224,7 @@
                     window.contentUpdate.setInitialPayload(initialData);
                 } else if (CONTENT_ID && !window.contentUpdate.getInitialPayload()) {
                     window.contentUpdate.bootstrap({ learningMaterialId: CONTENT_ID }).catch((error) => {
-                        console.error('[ArticleUpdate] İlk veriler yüklenemedi', error);
+                        console.error('[ContentUpdate] İlk veriler yüklenemedi', error);
                     });
                 }
             };
@@ -311,7 +311,7 @@
                         window.location.href = response.next;
                     }
                 } catch (error) {
-                    console.error('[ArticleUpdate] Güncelleme başarısız', error);
+                    console.error('[ContentUpdate] Güncelleme başarısız', error);
                     alert(error?.message ?? 'Güncelleme sırasında hata oluştu.');
                 } finally {
                     button.innerHTML = button.dataset.originalLabel ?? 'Kaydet';

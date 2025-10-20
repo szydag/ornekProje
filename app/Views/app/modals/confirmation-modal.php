@@ -49,9 +49,9 @@
         const titles = {
             'edit': 'Kurs Düzenle',
             'addEditor': 'Yönetici Ekle',
-            'addArticle': 'İçerik Ekle',
+            'addContent': 'İçerik Ekle',
             'delete': 'Kurs Sil',
-            'removeArticle': 'Eğitim İçeriği Çıkar',
+            'removeContent': 'Eğitim İçeriği Çıkar',
             'approve': 'Eğitim İçeriği Onayla',
             'revision': 'Eğitim İçeriği Revizyon',
             'reject': 'Eğitim İçeriği Reddet'
@@ -60,9 +60,9 @@
         const messages = {
             'edit': 'Kursyi düzenlemek istediğinizden emin misiniz?',
             'addEditor': 'Bu kursye yönetici eklemek istediğinizden emin misiniz?',
-            'addArticle': 'Bu kursye içerik eklemek istediğinizden emin misiniz?',
+            'addContent': 'Bu kursye içerik eklemek istediğinizden emin misiniz?',
             'delete': 'Bu kursyi silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.',
-            'removeArticle': 'Bu içerikyi kursden çıkarmak istediğinizden emin misiniz?',
+            'removeContent': 'Bu içerikyi kursden çıkarmak istediğinizden emin misiniz?',
             'approve': 'Bu içerikyi onaylamak istediğinizden emin misiniz? Lütfen açıklama ekleyin.',
             'revision': 'Bu içerik için revizyon istemek istediğinizden emin misiniz? Lütfen revizyon açıklaması ekleyin.',
             'reject': 'Bu içerikyi reddetmek istediğinizden emin misiniz? Lütfen red nedeni açıklayın.'
@@ -75,13 +75,13 @@
             'addEditor': function() {
                 addEditor(itemId);
             },
-            'addArticle': function() {
+            'addContent': function() {
                 addContent(itemId);
             },
             'delete': function() {
                 deleteCourse(itemId);
             },
-            'removeArticle': function() {
+            'removeContent': function() {
                 removeContent(itemId);
             },
             'approve': function() {
@@ -106,7 +106,7 @@
                 color: 'text-green-500',
                 bgColor: 'bg-green-500/10'
             },
-            'addArticle': {
+            'addContent': {
                 icon: 'ki-document',
                 color: 'text-blue-500',
                 bgColor: 'bg-blue-500/10'
@@ -116,7 +116,7 @@
                 color: 'text-red-500',
                 bgColor: 'bg-red-500/10'
             },
-            'removeArticle': {
+            'removeContent': {
                 icon: 'ki-cross',
                 color: 'text-red-500',
                 bgColor: 'bg-red-500/10'

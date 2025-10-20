@@ -1,5 +1,5 @@
 <!-- Kurs Düzenle Modal -->
-<div class="kt-modal" data-kt-modal="true" id="editEncyclopediaModal">
+<div class="kt-modal" data-kt-modal="true" id="editCourseModal">
     <div class="kt-modal-content max-w-[800px]" style="top: 7%;">
         <div class="kt-modal-header py-4 px-5">
             <div class="flex items-center gap-3">
@@ -17,7 +17,7 @@
                 <!-- Alerts will be dynamically inserted here -->
             </div>
             
-            <form id="editEncyclopediaForm" class="space-y-4">
+            <form id="editCourseForm" class="space-y-4">
                 <input type="hidden" name="course_id" id="edit_course_id" value="" />
                 
                 <div class="flex flex-col gap-2">
@@ -85,7 +85,7 @@
             <button class="kt-btn kt-btn-outline" data-kt-modal-dismiss="true">
                 İptal
             </button>
-            <button class="kt-btn kt-btn-primary" onclick="saveEditEncyclopedia()">
+            <button class="kt-btn kt-btn-primary" onclick="saveEditCourse()">
                 Güncelle
             </button>
         </div>
@@ -142,9 +142,9 @@ function loadEditManagers() {
             });
             
             // Mevcut kurs verisinden yöneticiyi seç
-            if (window.currentEncyclopedia) {
+            if (window.currentCourse) {
                 setTimeout(() => {
-                    selectCurrentManager(window.currentEncyclopedia);
+                    selectCurrentManager(window.currentCourse);
                 }, 100);
             }
         }
@@ -204,7 +204,7 @@ function toggleEditEndDate() {
 }
 
 // Kurs güncelle
-function saveEditEncyclopedia() {
+function saveEditCourse() {
     clearEditAlerts();
     clearAllEditErrors();
     
@@ -300,7 +300,7 @@ function saveEditEncyclopedia() {
             
             // Modal'ı kapat
             setTimeout(() => {
-                const modal = document.getElementById('editEncyclopediaModal');
+                const modal = document.getElementById('editCourseModal');
                 if (modal) {
                     modal.style.display = 'none';
                     modal.classList.remove('show');
@@ -310,8 +310,8 @@ function saveEditEncyclopedia() {
                 showEditPageAlert('success', 'Kurs başarıyla güncellendi.', 'Başarılı!');
                 
                 // Sayfayı yenile veya listeyi güncelle
-                if (typeof refreshEncyclopediaList === 'function') {
-                    refreshEncyclopediaList();
+                if (typeof refreshCourseList === 'function') {
+                    refreshCourseList();
                 } else {
                     window.location.reload();
                 }
@@ -516,13 +516,13 @@ function clearEditAlerts() {
 <style>
 /* Responsive modal top position */
 @media (min-width: 640px) {
-    #editEncyclopediaModal .kt-modal-content {
+    #editCourseModal .kt-modal-content {
         top: 15% !important;
     }
 }
 
 @media (max-width: 639px) {
-    #editEncyclopediaModal .kt-modal-content {
+    #editCourseModal .kt-modal-content {
         top: 7% !important;
     }
 }

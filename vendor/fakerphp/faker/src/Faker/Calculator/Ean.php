@@ -15,7 +15,7 @@ class Ean
     /**
      * Computes the checksum of an EAN number.
      *
-     * @see https://en.wikipedia.org/wiki/International_Article_Number
+     * @see https://en.wikipedia.org/wiki/International_Content_Number
      *
      * @return int
      */

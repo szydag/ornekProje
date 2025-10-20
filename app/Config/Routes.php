@@ -10,6 +10,18 @@ $routes->get('/test', function() {
     return view('test');
 });
 
+//EĞİTİM MATERYALİ EKLEME - STEPPER YAPISI (filter olmadan)
+$routes->get('/app/add-material', 'LearningMaterials\LearningMaterialWizardController::addContent');
+
+// Tüm içerikleri göster (filter olmadan)
+$routes->get('/apps/admin-materials', 'LearningMaterials\AllLearningMaterialsController::index');
+
+// Kurs listesi (filter olmadan)
+$routes->get('/apps/courses', 'Courses\CourseListController::index');
+
+// Kullanıcı listesi (filter olmadan)
+$routes->get('/app/users', 'Users\UsersController::index');
+
 // Ana sayfa
 $routes->group('', ['filter' => ['loginFilter', 'roleFilter', 'profileGuard']], function ($routes) {
     $routes->get('/', 'Users\UsersController::homeUser');
@@ -17,10 +29,6 @@ $routes->group('', ['filter' => ['loginFilter', 'roleFilter', 'profileGuard']], 
 
     // app/Config/Routes.php
     $routes->get('api/users/options', 'Users\UsersController::optionsAll');
-    
-
-    //EĞİTİM MATERYALİ EKLEME - STEPPER YAPISI
-    $routes->get('app/add-material', 'LearningMaterials\LearningMaterialWizardController::addMaterial');
     // STEP 1
     $routes->get('apps/add-material/step-1', 'LearningMaterials\LearningMaterialWizardController::step1');
     $routes->post('apps/add-material/step-1', 'LearningMaterials\LearningMaterialWizardController::step1Post');
@@ -79,25 +87,22 @@ $routes->group('admin', ['filter' => ['loginFilter', 'roleFilter', 'profileGuard
         $routes->post('courses/(:num)/managers', 'CoursesController::assignManagers/$1');
     });
 
-    $routes->get('apps/materials', 'LearningMaterials\AllLearningMaterialsController::index');
-    $routes->post('updates/courses/(:num)', 'Courses\CoursesUpdateController::update/$1');
-    $routes->get('updates/courses/(:num)', 'Courses\CoursesUpdateController::show/$1');
-    $routes->get('apps/courses', 'Courses\CourseListController::index');
-
-    $routes->get('apps/courses/(:segment)', 'Courses\CourseDetailController::detail/$1');
-    $routes->get('apps/materials/(:segment)', 'LearningMaterials\LearningMaterialDetailController::detail/$1');
-
-    $routes->get('app/users', 'Users\UsersController::index');
-    $routes->post('api/users/assign-role', 'Users\RoleController::assign'); // daha önce verdiğimiz controller
-    $routes->get('app/user-detail/(:segment)', 'Users\UserDetailController::show/$1');
 
 });
-$routes->get('apps/materials/(:segment)', 'LearningMaterials\LearningMaterialDetailController::detail/$1');
-$routes->get('auth/profileCompletion', 'Users\ProfileController::complete');
-$routes->post('apps/profile/complete', 'Users\ProfileController::completePost');
 
+// Public routes (no login required)
+$routes->get('apps/courses', 'Courses\CourseListController::index');
+$routes->get('apps/courses/(:num)', 'Courses\CourseDetailController::detail/$1');
+$routes->get('apps/materials', 'LearningMaterials\AllLearningMaterialsController::index');
+$routes->get('apps/materials/(:segment)', 'LearningMaterials\LearningMaterialDetailController::detail/$1');
+$routes->get('app/users', 'Users\UsersController::index');
+$routes->get('app/user-detail/(:segment)', 'Users\UserDetailController::show/$1');
 $routes->get('app/my-profile', 'Users\ProfileUpdateController::edit');
 $routes->post('app/profile/update', 'Users\ProfileUpdateController::update');
+$routes->post('api/users/assign-role', 'Users\RoleController::assign');
+
+$routes->get('auth/profileCompletion', 'Users\ProfileController::complete');
+$routes->post('apps/profile/complete', 'Users\ProfileController::completePost');
 ///// Güncelleme İşlemleri
 
 $routes->group('updates/materials', static function ($routes) {

@@ -57,7 +57,7 @@ declare(strict_types=1);
                     }));
                 }
             } catch (error) {
-                console.error('[ArticleUpdate] Step4 load failed', error);
+                console.error('[ContentUpdate] Step4 load failed', error);
             }
         };
 
@@ -95,7 +95,7 @@ declare(strict_types=1);
         });
 
         if (CONTENT_ID) {
-            fetchStep4().catch((error) => console.error('[ArticleUpdate] Step4 initial fetch failed', error));
+            fetchStep4().catch((error) => console.error('[ContentUpdate] Step4 initial fetch failed', error));
         }
     };
 

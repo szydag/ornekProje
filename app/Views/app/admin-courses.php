@@ -14,7 +14,7 @@
             </h3>
             <div class="kt-card-toolbar">
                 <div class="flex items-center gap-2">
-                    <button class="kt-btn kt-btn-primary kt-btn-sm" data-kt-modal-toggle="#addEncyclopediaModal">
+                    <button class="kt-btn kt-btn-primary kt-btn-sm" data-kt-modal-toggle="#addCourseModal">
                         <i class="ki-filled ki-plus text-sm"></i>
                         Kurs Ekle
                     </button>
@@ -181,12 +181,12 @@
                 }
             }
         } catch (error) {
-            console.debug('[AdminEncyclopedias] Datatable state reset skipped:', error);
+            console.debug('[AdminCourses] Datatable state reset skipped:', error);
         }
     })();
 
     // Modal'dan kurs eklendikten sonra sayfayı yenile
-    function refreshEncyclopediaList() {
+    function refreshCourseList() {
         // Sayfa yenilenerek güncel listeyi göster
         window.location.reload();
     }

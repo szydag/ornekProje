@@ -10,19 +10,19 @@
     <!-- Container -->
     <?php
     // Kullanıcı/Katkıda Bulunan Dashboard - Kendi içeriklerini takip et
-    $myArticlesCount = 5;
+    $myContentsCount = 5;
     $publishedCount = 2;
     $inReviewCount = 2;
     $draftCount = 1;
 
     $userStats = [
-        ['label' => 'Toplam İçerik', 'count' => $myArticlesCount, 'color' => 'primary', 'icon' => 'ki-book'],
+        ['label' => 'Toplam İçerik', 'count' => $myContentsCount, 'color' => 'primary', 'icon' => 'ki-book'],
         ['label' => 'Yayında', 'count' => $publishedCount, 'color' => 'success', 'icon' => 'ki-check-circle'],
         ['label' => 'İncelemede', 'count' => $inReviewCount, 'color' => 'warning', 'icon' => 'ki-time'],
         ['label' => 'Taslak', 'count' => $draftCount, 'color' => 'secondary', 'icon' => 'ki-file-sheet'],
     ];
 
-    $myArticles = [
+    $myContents = [
         [
             'id' => 1,
             'title' => 'Yapay Zeka Destekli Medikal Görüntüleme',
@@ -165,7 +165,7 @@
             <content class="kt-card channel-stats-bg flex flex-col justify-between gap-6 bg-cover bg-no-repeat p-5">
                 <i class="ki-filled ki-book text-2xl text-primary"></i>
                 <div class="flex flex-col gap-1">
-                    <span class="text-3xl font-semibold text-mono"><?= esc($myArticlesCount) ?></span>
+                    <span class="text-3xl font-semibold text-mono"><?= esc($myContentsCount) ?></span>
                     <span class="text-sm font-medium text-secondary-foreground">Toplam İçerik</span>
                 </div>
             </content>

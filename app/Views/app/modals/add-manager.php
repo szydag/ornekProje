@@ -388,7 +388,7 @@
     }
 
     // Kurs ID'sini alma fonksiyonu
-    function getEncyclopediaId() {
+    function getCourseId() {
         // URL'den kurs ID'sini al
         const pathParts = window.location.pathname.split('/');
         const courseIndex = pathParts.indexOf('course');
@@ -397,8 +397,8 @@
         }
         
         // Global değişkenden al
-        if (typeof currentEncyclopediaId !== 'undefined') {
-            return currentEncyclopediaId;
+        if (typeof currentCourseId !== 'undefined') {
+            return currentCourseId;
         }
         
         // Varsayılan değer

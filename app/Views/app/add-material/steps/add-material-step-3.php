@@ -965,13 +965,13 @@
         };
 
         function registerWizardIntegration() {
-            if (!window.articleWizard) {
+            if (!window.contentWizard) {
                 setTimeout(registerWizardIntegration, 100);
                 return;
             }
-            window.articleWizard.registerHydrator(3, (payload) => hydrateStep(payload));
-            window.articleWizard.registerCollector(3, () => collectPayload());
-            window.articleWizard.registerValidator(3, () => stepHandlers.validate());
+            window.contentWizard.registerHydrator(3, (payload) => hydrateStep(payload));
+            window.contentWizard.registerCollector(3, () => collectPayload());
+            window.contentWizard.registerValidator(3, () => stepHandlers.validate());
         }
 
         function bindEvents() {
@@ -996,7 +996,7 @@
             }
         }
 
-        const articleStep3Api = {
+        const contentStep3Api = {
             hydrate: (payload) => hydrateStep(payload),
             collect: () => collectPayload(),
             validate: () => stepHandlers.validate(),
@@ -1004,8 +1004,8 @@
             submit: () => stepHandlers.submit(),
         };
 
-        window.__articleStep3State = state;
-        window.__articleStep3 = articleStep3Api;
+        window.__contentStep3State = state;
+        window.__contentStep3 = contentStep3Api;
 
         window.setRequiredFileModalContent = function (key, title, description) {
             const normalizedKey = resolveRequiredKeyFromFile({ role: key }) ?? key;

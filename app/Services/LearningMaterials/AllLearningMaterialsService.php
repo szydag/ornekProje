@@ -55,7 +55,7 @@ final class AllLearningMaterialsService
 
         $translationRows = $this->translations
             ->whereIn('learning_material_id', $learningMaterialIds)
-            ->select('content_id, lang, title, short_title, self_description')
+            ->select('learning_material_id, lang, title, short_title, self_description')
             ->findAll();
 
         $translationsByContent = [];

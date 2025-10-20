@@ -4,24 +4,25 @@ declare(strict_types=1);
 
 namespace App\Services\LearningMaterials;
 
-use App\DTOs\Articles\Step1DTO;
-use App\DTOs\Articles\Step2DTO;
-use App\DTOs\Articles\Step3DTO;
+use App\DTOs\LearningMaterials\Step1DTO;
+use App\DTOs\LearningMaterials\Step2DTO;
+use App\DTOs\LearningMaterials\Step3DTO;
 use App\Exceptions\DtoValidationException;
 use App\Models\Users\TitleModel;
 use CodeIgniter\HTTP\Files\UploadedFile;
 use CodeIgniter\Files\File;
-use App\Models\Articles\ContentTypeModel;
-use App\Models\Articles\TopicModel;
-use App\Models\Articles\LearningMaterialsModel;
 use App\Models\Users\UserModel;
-use App\Models\Articles\LearningMaterialTranslationsModel;
-use App\Models\Articles\LearningMaterialContributorsModel;
-use App\Models\Articles\LearningMaterialFilesModel;
-use App\Models\Articles\LearningMaterialExtraInfoModel;
+use App\Models\LearningMaterials\ContentTypeModel;
+use App\Models\LearningMaterials\TopicModel;
+use App\Models\LearningMaterials\LearningMaterialsModel;
+use App\Models\LearningMaterials\LearningMaterialTranslationsModel;
+use App\Models\LearningMaterials\LearningMaterialContributorsModel;
+use App\Models\LearningMaterials\LearningMaterialFilesModel;
+use App\Models\LearningMaterials\LearningMaterialExtraInfoModel;
+use App\Models\LearningMaterials\LearningMaterialApprovalsModel;
 use CodeIgniter\Database\Exceptions\DatabaseException;
-use App\DTOs\Articles\Step5DTO;
-use App\Models\Articles\LearningMaterialApprovalsModel;
+use App\DTOs\LearningMaterials\Step4DTO;
+use App\DTOs\LearningMaterials\Step5DTO;
 use CodeIgniter\HTTP\IncomingRequest;
 use RuntimeException;
 use App\Models\Users\İnstitutionModel;
@@ -177,7 +178,7 @@ final class LearningMaterialWizardService
         ];
     }
 
-    // app/Services/Articles/LearningMaterialWizardService.php:150 civarı
+    // app/Services/Contents/LearningMaterialWizardService.php:150 civarı
     public function getStep2Data(): array
     {
         return $this->getStep2Defaults();
@@ -369,7 +370,7 @@ final class LearningMaterialWizardService
     // Step 4 POST: doğrula + session'a yaz
     public function handleStep4(\CodeIgniter\HTTP\IncomingRequest $request): array
     {
-        $dto = \App\DTOs\Articles\Step4DTO::fromRequest($request);
+        $dto = \App\DTOs\LearningMaterials\Step4DTO::fromRequest($request);
         $clean = $dto->validate();
 
         //$this->sessionSet('step4', $clean);
@@ -478,7 +479,7 @@ final class LearningMaterialWizardService
     // LearningMaterialWizardService
     public function handleStep5(IncomingRequest $r): array
     {
-        $dto = \App\DTOs\Articles\Step5DTO::fromRequest($r);
+        $dto = \App\DTOs\LearningMaterials\Step5DTO::fromRequest($r);
         $clean = $dto->toArray();
 
         //$this->sessionSet('step5', $clean);
@@ -492,7 +493,7 @@ final class LearningMaterialWizardService
      * Sadece Step-5 verisini DB'ye yazar (learning_material_approvals).
      * @return int inserted_or_updated_id
      */
-    public function saveStep5ForArticle(int $learningMaterialId, array $step5): int
+    public function saveStep5ForContent(int $learningMaterialId, array $step5): int
     {
         if ($step5 === []) {
             throw new \RuntimeException('Step 5 verisi sağlanmadı.');
@@ -531,7 +532,7 @@ final class LearningMaterialWizardService
 
 
 
-    // app/Services/Articles/LearningMaterialWizardService.php
+    // app/Services/Contents/LearningMaterialWizardService.php
     private function requireStep(array $wizardData, string $key): array
     {
         $data = $wizardData[$key] ?? null;
@@ -754,5 +755,14 @@ final class LearningMaterialWizardService
         }
     }
 
+    public function getContentTypes(): array
+    {
+        return [
+            ['id' => 1, 'name' => 'Eğitim İçeriği Metni'],
+            ['id' => 2, 'name' => 'Görsel Materyal'],
+            ['id' => 3, 'name' => 'Video İçeriği'],
+            ['id' => 4, 'name' => 'Ses Dosyası'],
+        ];
+    }
 
 }

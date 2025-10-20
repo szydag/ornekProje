@@ -55,7 +55,7 @@ declare(strict_types=1);
                     step2Api.hydrate({ data: { authors: payload.authors ?? [] } });
                 }
             } catch (error) {
-                console.error('[ArticleUpdate] Step2 load failed', error);
+                console.error('[ContentUpdate] Step2 load failed', error);
             }
         };
 
@@ -231,7 +231,7 @@ declare(strict_types=1);
         });
 
         if (CONTENT_ID) {
-            fetchStep2().catch((error) => console.error('[ArticleUpdate] Step2 initial fetch failed', error));
+            fetchStep2().catch((error) => console.error('[ContentUpdate] Step2 initial fetch failed', error));
         }
     };
 

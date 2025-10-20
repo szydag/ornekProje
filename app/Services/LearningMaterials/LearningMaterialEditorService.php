@@ -151,7 +151,7 @@ final class LearningMaterialEditorService
 
         $countBuilder = clone $baseBuilder;
         $totalRow = $countBuilder
-            ->select('COUNT(DISTINCT ae.content_id) AS aggregate', false)
+            ->select('COUNT(DISTINCT ae.learning_material_id) AS aggregate', false)
             ->get()
             ->getRowArray();
 
@@ -162,7 +162,7 @@ final class LearningMaterialEditorService
 
         $offset = ($dto->page - 1) * $dto->per_page;
         $itemsBuilder = clone $baseBuilder;
-        $itemsBuilder->join('contents a', 'a.id = ae.content_id');
+        $itemsBuilder->join('learning_materials a', 'a.id = ae.learning_material_id');
         $itemsBuilder->select([
             'a.id',
             'a.course_id',
@@ -187,7 +187,7 @@ final class LearningMaterialEditorService
             return ['items' => [], 'meta' => $this->buildMeta($total, $dto)];
         }
 
-        $items = $this->hydrateArticles($rows);
+        $items = $this->hydrateContents($rows);
 
         return [
             'items' => $items,
@@ -199,7 +199,7 @@ final class LearningMaterialEditorService
      * @param array<int,array<string,mixed>> $contentRows
      * @return array<int,array<string,mixed>>
      */
-    private function hydrateArticles(array $contentRows): array
+    private function hydrateContents(array $contentRows): array
     {
         $learningMaterialIds = array_map(static fn(array $row) => (int) $row['id'], $contentRows);
 
@@ -208,17 +208,17 @@ final class LearningMaterialEditorService
             ->select('content_id, lang, title, short_title, self_description')
             ->findAll();
 
-        $translationsByArticle = [];
+        $translationsByContent = [];
         foreach ($translationRows as $row) {
             $aid  = (int) $row['learning_material_id'];
             $lang = (string) $row['lang'];
-            $translationsByArticle[$aid][$lang] = $row;
+            $translationsByContent[$aid][$lang] = $row;
         }
 
         $items = [];
         foreach ($contentRows as $row) {
             $row = $this->normalizeAssignmentMeta($row);
-            $items[] = $this->formatArticleRow($row, $translationsByArticle);
+            $items[] = $this->formatContentRow($row, $translationsByContent);
         }
 
         return $items;
@@ -226,13 +226,13 @@ final class LearningMaterialEditorService
 
     /**
      * @param array<string,mixed> $row
-     * @param array<int,array<string,mixed>> $translationsByArticle
+     * @param array<int,array<string,mixed>> $translationsByContent
      * @return array<string,mixed>
      */
-    private function formatArticleRow(array $row, array $translationsByArticle): array
+    private function formatContentRow(array $row, array $translationsByContent): array
     {
         $id    = (int) $row['id'];
-        $langs = $translationsByArticle[$id] ?? [];
+        $langs = $translationsByContent[$id] ?? [];
 
         $preferredLang = (string) ($row['first_language'] ?? '');
         $translation   = $langs[$preferredLang]
@@ -340,7 +340,7 @@ final class LearningMaterialEditorService
         $builder = $this->editors->builder('learning_material_editors ae');
         $builder->select([
             'ae.id',
-            'ae.content_id',
+            'ae.learning_material_id',
             'ae.editor_email',
             'ae.editor_id',
             'ae.assigned_at',
@@ -348,7 +348,7 @@ final class LearningMaterialEditorService
             'u.surname AS user_surname',
         ]);
         $builder->join('users u', 'u.id = ae.editor_id', 'left');
-        $builder->where('ae.content_id', $learningMaterialId);
+        $builder->where('ae.learning_material_id', $learningMaterialId);
         $builder->orderBy('ae.assigned_at', 'DESC');
 
         $rows = $builder->get()->getResultArray();

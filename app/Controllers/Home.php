@@ -93,74 +93,74 @@ class Home extends BaseController
         return view('app/admin-materials', $data);
     }
 
-    public function addArticle()
+    public function addContent()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content'));
     }
 
-    public function processAddArticle()
+    public function processAddContent()
     {
         // Legacy method - redirect to step-1
         return redirect()->to('/app/add-content');
     }
 
     // Step-based content creation methods
-    public function addArticleStep1()
+    public function addContentStep1()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-1'));
     }
 
-    public function processAddArticleStep1()
+    public function processAddContentStep1()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-1/process'));
     }
 
-    public function addArticleStep2()
+    public function addContentStep2()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-2'));
     }
 
-    public function processAddArticleStep2()
+    public function processAddContentStep2()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-2/process'));
     }
 
-    public function addArticleStep3()
+    public function addContentStep3()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-3'));
     }
 
-    public function processAddArticleStep3()
+    public function processAddContentStep3()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-3/process'));
     }
 
-    public function addArticleStep4()
+    public function addContentStep4()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-4'));
     }
 
-    public function processAddArticleStep4()
+    public function processAddContentStep4()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-4/process'));
     }
 
-    public function addArticleStep5()
+    public function addContentStep5()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-5'));
     }
 
-    public function processAddArticleStep5()
+    public function processAddContentStep5()
     {
         // Gerçek API endpoint'ine yönlendir
         return redirect()->to(base_url('apps/add-content/step-5/process'));
@@ -239,7 +239,7 @@ class Home extends BaseController
         return view('app/material-detail', $data);
     }
 
-    public function encyclopediaDetail($encyclopediaId): string
+    public function courseDetail($courseId): string
     {
         // Profil tamamlama kontrolü
         $showProfileCompletionWarning = !$this->checkProfileCompletion();

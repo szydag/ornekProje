@@ -38,7 +38,7 @@ final class CourseDetailService
 
         $editors = $this->fetchManagers($id);
 
-        $contents = $this->fetchArticlesWithTranslationsAndAuthors($id);
+        $contents = $this->fetchContentsWithTranslationsAndAuthors($id);
 
         $statusColor = $this->statusToColor((string) ($ency['status'] ?? 'unknown'));
 
@@ -143,9 +143,9 @@ final class CourseDetailService
     /**
      * Eğitim içeriklerini, first_language'a göre translations ile birleştirir ve yazarları ekler.
      */
-    private function fetchArticlesWithTranslationsAndAuthors(int $encyId): array
+    private function fetchContentsWithTranslationsAndAuthors(int $encyId): array
     {
-        // 1) Articles
+        // 1) Contents
         $contents = $this->materialsModel
             ->select('id, created_at, status, user_id, first_language, course_id')
             ->where('course_id', $encyId)
@@ -160,28 +160,28 @@ final class CourseDetailService
 
         // 2) Translations (first_language öncelikli)
         $transRows = $this->translationsModel
-            ->whereIn('content_id', $contentIds)
+            ->whereIn('learning_material_id', $contentIds)
             ->whereIn('lang', ['tr', 'en'])
-            ->select('id, content_id, lang, title, short_title, self_description')
+            ->select('id, learning_material_id, lang, title, short_title, self_description')
             ->findAll();
 
-        $byArticleLang = [];
+        $byContentLang = [];
         foreach ($transRows as $t) {
-            $aid = (int) $t['content_id'];
+            $aid = (int) $t['learning_material_id'];
             $lang = (string) $t['lang'];
-            $byArticleLang[$aid][$lang] = $t;
+            $byContentLang[$aid][$lang] = $t;
         }
 
         // 3) Authors
         $authorRows = $this->db->table('learning_material_contributors')
-            ->select('content_id, name, surname,mail')
-            ->whereIn('content_id', $contentIds)
+            ->select('learning_material_id, name, surname,mail')
+            ->whereIn('learning_material_id', $contentIds)
             ->get()->getResultArray();
 
-        $authorsByArticle = [];
+        $authorsByContent = [];
         foreach ($authorRows as $ar) {
-            $aid = (int) $ar['content_id'];
-            $authorsByArticle[$aid][] = [
+            $aid = (int) $ar['learning_material_id'];
+            $authorsByContent[$aid][] = [
                 'name' => $ar['name'] ?? '',
                 'surname' => $ar['surname'] ?? null,
                 'mail' => $ar['mail'] ?? null,
@@ -194,8 +194,8 @@ final class CourseDetailService
             $aid = (int) $a['id'];
             $fl = (string) ($a['first_language'] ?? 'tr');
 
-            $tran = $byArticleLang[$aid][$fl]
-                ?? ($byArticleLang[$aid]['tr'] ?? (array) ($byArticleLang[$aid]['en'] ?? []));
+            $tran = $byContentLang[$aid][$fl]
+                ?? ($byContentLang[$aid]['tr'] ?? (array) ($byContentLang[$aid]['en'] ?? []));
 
             $out[] = [
                 'id' => $aid,
@@ -205,7 +205,7 @@ final class CourseDetailService
                 'created_at' => (string) $a['created_at'],
                 'status' => $a['status'] ?? null,
                 'status_color' => $this->statusToColor((string) ($a['status'] ?? 'unknown')),
-                'authors' => $authorsByArticle[$aid] ?? [],
+                'authors' => $authorsByContent[$aid] ?? [],
             ];
         }
 

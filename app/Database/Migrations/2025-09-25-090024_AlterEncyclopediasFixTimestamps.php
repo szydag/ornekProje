@@ -35,7 +35,7 @@ class AlterCoursesFixTimestamps extends Migration
         $this->db->query("ALTER TABLE `courses` MODIFY `created_at` DATETIME NULL");
 
         // NOT: İsterseniz:
-        // $this->db->query("ALTER TABLE `encyclopedias` 
+        // $this->db->query("ALTER TABLE `courses` 
         //   MODIFY `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP");
     }
 

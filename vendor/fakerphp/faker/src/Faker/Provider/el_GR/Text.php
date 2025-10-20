@@ -2290,7 +2290,7 @@ EOT;
     work, performance or phonogram, the synchronization of the Work in
     timed-relation with a moving image ("synching") will be considered an
     Adaptation for the purpose of this License. "Collection" means a
-    collection of literary or artistic works, such as encyclopedias and
+    collection of literary or artistic works, such as courses and
     anthologies, or performances, phonograms or broadcasts, or other works
     or subject matter other than works listed in Section 1(f) below,
     which, by reason of the selection and arrangement of their contents,

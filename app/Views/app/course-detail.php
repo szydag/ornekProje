@@ -92,7 +92,7 @@ $hasManagementAccess = $isAdmin;
             </div>
             <div class="flex flex-col sm:flex-row sm:items-start justify-end grow lg:grow-0 lg:pb-4 gap-2.5 mb-3 lg:mb-0">
                 <button class="kt-btn kt-btn-outline sm:w-auto" style="border-color: #3b82f6; color: #3b82f6; font-weight: bold;"
-                    onclick="openEncyclopediaEditModal()" data-kt-modal-toggle="#editEncyclopediaModal">
+                    onclick="openCourseEditModal()" data-kt-modal-toggle="#editCourseModal">
                     <i class="ki-filled ki-pencil me-1" style="color: #3b82f6;"></i>
                     Düzenle
                 </button>
@@ -413,7 +413,7 @@ $hasManagementAccess = $isAdmin;
                             Bu kursye henüz yönetici atanmamış.
                         </p>
                         <?php if ($hasManagementAccess): ?>
-                            <button class="kt-btn kt-btn-primary" data-kt-modal-toggle="#addEncyclopediaModal"
+                            <button class="kt-btn kt-btn-primary" data-kt-modal-toggle="#addCourseModal"
                                 onclick="openAddEditorModal(<?= $course['id'] ?>)">
                                 <i class="ki-filled ki-user-plus me-2"></i>
                                 Yönetici Ekle
@@ -440,7 +440,7 @@ $hasManagementAccess = $isAdmin;
                 <?php if (!empty($course['contents'])): ?>
                     <div class="space-y-4">
                         <?php foreach ($course['contents'] as $content): ?>
-                            <?php $encryptedArticleId = App\Helpers\EncryptHelper::encrypt((string) $content['id']); ?>
+                            <?php $encryptedContentId = App\Helpers\EncryptHelper::encrypt((string) $content['id']); ?>
                             <div class="kt-card">
                                 <div class="kt-card-content">
                                     <div class="flex items-start justify-between gap-4">
@@ -482,13 +482,13 @@ $hasManagementAccess = $isAdmin;
 
                                         <div class="flex items-center gap-2 flex-shrink-0">
                                             <button class="kt-btn kt-btn-sm kt-btn-outline"
-                                                onclick="viewArticleDetail('<?= $encryptedArticleId ?>')">
+                                                onclick="viewContentDetail('<?= $encryptedContentId ?>')">
                                                 <i class="ki-filled ki-eye text-sm"></i>
                                                 Detay
                                             </button>
                                             <button class="kt-btn kt-btn-sm kt-btn-outline kt-btn-danger"
                                                 data-kt-modal-toggle="#confirmationModal"
-                                                onclick="setConfirmationData('removeArticle', <?= $content['id'] ?>)">
+                                                onclick="setConfirmationData('removeContent', <?= $content['id'] ?>)">
                                                 <i class="ki-filled ki-trash text-sm"></i>
                                                 Sil
                                             </button>
@@ -525,10 +525,10 @@ $hasManagementAccess = $isAdmin;
 
 <script>
     // Global değişken - kurs verisini sakla (PHP'den gelen veri ile başlat)
-    let currentEncyclopedia = <?= json_encode($course) ?>;
-    let currentEncyclopediaId = <?= $course['id'] ?? 0 ?>;
+    let currentCourse = <?= json_encode($course) ?>;
+    let currentCourseId = <?= $course['id'] ?? 0 ?>;
     const addManagerUrl = <?= isset($course['id'])
-                                ? json_encode(base_url('admin/api/encyclopedias/' . $course['id'] . '/managers'))
+                                ? json_encode(base_url('admin/api/courses/' . $course['id'] . '/managers'))
                                 : 'null' ?>;
 
     // Sayfa yüklendiğinde - PHP'den gelen veriyi kullan, gereksiz AJAX çağrısı YOK!
@@ -580,8 +580,8 @@ $hasManagementAccess = $isAdmin;
     }
 
     // Kurs düzenleme modalını aç
-    function openEncyclopediaEditModal() {
-        if (!currentEncyclopedia) {
+    function openCourseEditModal() {
+        if (!currentCourse) {
             alert('Kurs verisi yüklenmedi. Lütfen sayfayı yenileyin.');
             return false;
         }
@@ -602,31 +602,31 @@ $hasManagementAccess = $isAdmin;
         // Modal açıldıktan sonra form doldur
         setTimeout(() => {
             const idField = document.getElementById('edit_course_id');
-            const nameField = document.getElementById('edit_encyclopedia_name-input');
-            const descField = document.getElementById('edit_encyclopedia_description-input');
+            const nameField = document.getElementById('edit_course_name-input');
+            const descField = document.getElementById('edit_course_description-input');
             const startDateField = document.getElementById('edit_start_date-input');
             const endDateField = document.getElementById('edit_end_date-input');
             const unlimitedCheckbox = document.getElementById('edit_unlimited-checkbox');
 
             // Form alanlarını doldur
-            if (idField) idField.value = currentEncyclopedia.id || '';
-            if (nameField) nameField.value = currentEncyclopedia.title || '';
-            if (descField) descField.value = currentEncyclopedia.description || '';
+            if (idField) idField.value = currentCourse.id || '';
+            if (nameField) nameField.value = currentCourse.title || '';
+            if (descField) descField.value = currentCourse.description || '';
 
             // Başlangıç tarihi
-            if (startDateField && currentEncyclopedia.start_date) {
-                const startDate = new Date(currentEncyclopedia.start_date);
+            if (startDateField && currentCourse.start_date) {
+                const startDate = new Date(currentCourse.start_date);
                 startDateField.value = startDate.toISOString().split('T')[0];
             }
 
             // Bitiş tarihi veya süresiz
-            const isUnlimited = currentEncyclopedia.indefinite == 1 ||
-                currentEncyclopedia.indefinite === true ||
-                currentEncyclopedia.indefinite === '1' ||
-                currentEncyclopedia.unlimited == 1 ||
-                currentEncyclopedia.unlimited === true ||
-                currentEncyclopedia.unlimited === '1' ||
-                !currentEncyclopedia.end_date;
+            const isUnlimited = currentCourse.indefinite == 1 ||
+                currentCourse.indefinite === true ||
+                currentCourse.indefinite === '1' ||
+                currentCourse.unlimited == 1 ||
+                currentCourse.unlimited === true ||
+                currentCourse.unlimited === '1' ||
+                !currentCourse.end_date;
 
             if (isUnlimited) {
                 if (unlimitedCheckbox) unlimitedCheckbox.checked = true;
@@ -634,8 +634,8 @@ $hasManagementAccess = $isAdmin;
                     endDateField.disabled = true;
                     endDateField.value = '';
                 }
-            } else if (endDateField && currentEncyclopedia.end_date) {
-                const endDate = new Date(currentEncyclopedia.end_date);
+            } else if (endDateField && currentCourse.end_date) {
+                const endDate = new Date(currentCourse.end_date);
                 endDateField.value = endDate.toISOString().split('T')[0];
                 endDateField.disabled = false;
                 if (unlimitedCheckbox) unlimitedCheckbox.checked = false;
@@ -650,7 +650,7 @@ $hasManagementAccess = $isAdmin;
             // Yönetici seçimini yap
             setTimeout(() => {
                 if (typeof selectCurrentManager === 'function') {
-                    selectCurrentManager(currentEncyclopedia);
+                    selectCurrentManager(currentCourse);
                 }
             }, 1000);
 
@@ -661,41 +661,41 @@ $hasManagementAccess = $isAdmin;
 
     function openAddEditorModal(courseId) {
         // Modal başlığını güncelle
-        const modalTitle = document.querySelector('#addEncyclopediaModal .kt-modal-header h3');
+        const modalTitle = document.querySelector('#addCourseModal .kt-modal-header h3');
         if (modalTitle) {
             modalTitle.textContent = 'Yönetici Ekle';
         }
 
         // Modal ikonunu güncelle
-        const modalIcon = document.querySelector('#addEncyclopediaModal .kt-modal-header i');
+        const modalIcon = document.querySelector('#addCourseModal .kt-modal-header i');
         if (modalIcon) {
             modalIcon.className = 'ki-filled ki-users text-primary text-xl';
         }
 
         // Form'u temizle
-        const form = document.getElementById('addEncyclopediaForm');
+        const form = document.getElementById('addCourseForm');
         if (form) {
             form.reset();
         }
 
         // Kaydet butonunu güncelle
-        const saveButton = document.querySelector('#addEncyclopediaModal .kt-modal-footer button:last-child');
+        const saveButton = document.querySelector('#addCourseModal .kt-modal-footer button:last-child');
         if (saveButton) {
             saveButton.textContent = 'Yönetici Ekle';
             saveButton.onclick = function() {
-                addEditorToEncyclopedia(courseId);
+                addEditorToCourse(courseId);
             };
         }
     }
 
-    function addEditorToEncyclopedia(courseId) {
-        const form = document.getElementById('addEncyclopediaForm');
+    function addEditorToCourse(courseId) {
+        const form = document.getElementById('addCourseForm');
         if (!form) return;
 
         const formData = new FormData(form);
 
         // Modal'ı kapat
-        const dismissButton = document.querySelector('#addEncyclopediaModal [data-kt-modal-dismiss="true"]');
+        const dismissButton = document.querySelector('#addCourseModal [data-kt-modal-dismiss="true"]');
         if (dismissButton) {
             dismissButton.click();
         }
@@ -704,7 +704,7 @@ $hasManagementAccess = $isAdmin;
         showPageAlert('success', 'Yönetici başarıyla eklendi!', 'İşlem Başarılı');
     }
 
-    function deleteEncyclopedia(courseId) {
+    function deleteCourse(courseId) {
         // TODO: Kurs silme işlemi
         showPageAlert('destructive', 'Kurs başarıyla silindi!', 'İşlem Tamamlandı');
     }
@@ -714,8 +714,8 @@ $hasManagementAccess = $isAdmin;
         showPageAlert('primary', 'Yönetici detay sayfasına yönlendiriliyor...', 'Yönlendiriliyor');
     }
 
-    function viewArticleDetail(encryptedArticleId) {
-        window.location.href = '<?= base_url('admin/apps/materials/') ?>' + encryptedArticleId;
+    function viewContentDetail(encryptedContentId) {
+        window.location.href = '<?= base_url('admin/apps/materials/') ?>' + encryptedContentId;
     }
 
     function removeContent(learningMaterialId) {

@@ -31,8 +31,8 @@ final class UserDetailService
         return new UserDetailDTO(
             user: $user,
             roleNames: $roleNames,
-            userArticles: $this->fetchArticles($userId),
-            userEncyclopedias: $this->fetchEncyclopedias($userId),
+            userContents: $this->fetchContents($userId),
+            userCourses: $this->fetchCourses($userId),
         );
     }
 
@@ -120,7 +120,7 @@ final class UserDetailService
         return $out;
     }
 
-    private function fetchArticles(int $userId): array
+    private function fetchContents(int $userId): array
     {
         $rows = $this->db->table('contents a')
             ->select('a.id, a.created_at, a.status, a.first_language')
@@ -144,17 +144,17 @@ final class UserDetailService
             ->get()
             ->getResultArray();
 
-        $byArticle = [];
+        $byContent = [];
         foreach ($translations as $trans) {
             $aid  = (int) $trans['content_id'];
             $lang = (string) $trans['lang'];
-            $byArticle[$aid][$lang] = $trans;
+            $byContent[$aid][$lang] = $trans;
         }
 
         $items = [];
         foreach ($rows as $row) {
             $aid   = (int) $row['id'];
-            $langs = $byArticle[$aid] ?? [];
+            $langs = $byContent[$aid] ?? [];
 
             $preferredLang = $row['first_language'] ?? '';
             $trans         = $preferredLang && isset($langs[$preferredLang])
@@ -176,11 +176,11 @@ final class UserDetailService
         return $items;
     }
 
-    private function fetchEncyclopedias(int $userId): array
+    private function fetchCourses(int $userId): array
     {
         $rows = $this->db->table('course_authorities ea')
             ->select('e.id, e.title, e.status, e.created_at')
-            ->join('encyclopedias e', 'e.id = ea.course_id', 'inner')
+            ->join('courses e', 'e.id = ea.course_id', 'inner')
             ->where('ea.user_id', $userId)
             ->orderBy('e.created_at', 'DESC')
             ->get()

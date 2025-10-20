@@ -1423,9 +1423,9 @@
         };
         window.validateStep2 = () => step2.validate();
         window.submitStep2 = () => step2.submit();
-        window.addArticleStep2SaveAuthor = () => step2.addAuthorFromModal();
-        window.addArticleStep2UpdateAuthor = () => step2.updateAuthorFromModal();
-        window.updateAuthor = window.addArticleStep2UpdateAuthor;
+        window.addContentStep2SaveAuthor = () => step2.addAuthorFromModal();
+        window.addContentStep2UpdateAuthor = () => step2.updateAuthorFromModal();
+        window.updateAuthor = window.addContentStep2UpdateAuthor;
         window.openEditAuthorModal = (index) => step2.openEdit(index);
         window.removeAuthor = (index) => step2.remove(index);
         window.setModalTitle = (type) => step2.setModalType(type);

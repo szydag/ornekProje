@@ -830,7 +830,7 @@ $canManageEditors = $isAdmin || $isManager;
                                             <?php foreach ($content['history'] as $item): ?>
                                                 <?php
                                                     $statusKey = $item['status_code'] ?? ($item['status'] ?? '');
-                                                    $historyClasses = \App\Support\ArticleStatusFormatter::historyClasses($statusKey);
+                                                    $historyClasses = \App\Support\LearningMaterialStatusFormatter::historyClasses($statusKey);
                                                     $badgeClass = $historyClasses['badge'] ?? 'inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20';
                                                     $badgeStyle = $historyClasses['style'] ?? '';
                                                     ?>
@@ -1075,7 +1075,7 @@ $canManageEditors = $isAdmin || $isManager;
             };
         </script>
         <script>
-            window.ARTICLE_REVIEW_META = <?= json_encode($content['reviewers'] ?? ['total' => 0, 'pending' => 0], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?: '{ "total": 0, "pending": 0 }' ?>;
+            window.CONTENT_REVIEW_META = <?= json_encode($content['reviewers'] ?? ['total' => 0, 'pending' => 0], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?: '{ "total": 0, "pending": 0 }' ?>;
         </script>
 
         <script>
@@ -1133,7 +1133,7 @@ $canManageEditors = $isAdmin || $isManager;
                 container.innerHTML = '';
                 let hasActions = false;
 
-                const reviewMeta = window.ARTICLE_REVIEW_META || {};
+                const reviewMeta = window.CONTENT_REVIEW_META || {};
                 const activeAssignments = Number(reviewMeta.pending || reviewMeta.total || 0);
                 const hasOpenReviewerTasks = activeAssignments > 0;
 
@@ -1348,7 +1348,7 @@ $canManageEditors = $isAdmin || $isManager;
                 });
 
                 if (json.data?.reviewers) {
-                    window.ARTICLE_REVIEW_META = {
+                    window.CONTENT_REVIEW_META = {
                         total: Number(json.data.reviewers.total) || 0,
                         pending: Number(json.data.reviewers.pending) || 0,
                     };
@@ -1421,7 +1421,7 @@ $canManageEditors = $isAdmin || $isManager;
                 });
 
                 if (json.data?.reviewers) {
-                    window.ARTICLE_REVIEW_META = {
+                    window.CONTENT_REVIEW_META = {
                         total: Number(json.data.reviewers.total) || 0,
                         pending: Number(json.data.reviewers.pending) || 0,
                     };

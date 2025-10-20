@@ -345,7 +345,7 @@
             }
             
             // Sayfa yenilenmesi için event dispatch et
-            window.dispatchEvent(new CustomEvent('articleStateChanged', {
+            window.dispatchEvent(new CustomEvent('contentStateChanged', {
               detail: { actionCode: currentActionCode, success: true }
             }));
             

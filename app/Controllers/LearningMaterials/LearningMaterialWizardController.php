@@ -27,6 +27,7 @@ final class LearningMaterialWizardController extends BaseController
             'titles' => $this->service->getTitles(),
             'institutions' => $this->service->getInstitutions(),
             'institutionTypes' => $this->service->getInstitutionTypes(),
+            'contentTypes' => $this->service->getContentTypes(),
             // Edit modal için gerekli değişkenler
             'academicTitles' => $this->service->getTitles(),
             'universities' => $this->service->getInstitutions(),

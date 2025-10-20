@@ -122,27 +122,27 @@
                 <div class="kt-card-content px-3 sm:px-5 py-10 sm:py-20">
                     <div class="" id="stepper_1">
                         <div class="space-y-6">
-                            <?= $this->include('app/add-material/steps/add-content-step-1') ?>
+                            <?= $this->include('app/add-material/steps/add-material-step-1') ?>
                         </div>
                     </div>
                     <div class="hidden" id="stepper_2">
                         <div class="space-y-6">
-                            <?= $this->include('app/add-material/steps/add-content-step-2') ?>
+                            <?= $this->include('app/add-material/steps/add-material-step-2') ?>
                         </div>
                     </div>
                     <div class="hidden" id="stepper_3">
                         <div class="space-y-6">
-                            <?= $this->include('app/add-material/steps/add-content-step-3') ?>
+                            <?= $this->include('app/add-material/steps/add-material-step-3') ?>
                         </div>
                     </div>
                     <div class="hidden" id="stepper_4">
                         <div class="space-y-6">
-                            <?= $this->include('app/add-material/steps/add-content-step-4') ?>
+                            <?= $this->include('app/add-material/steps/add-material-step-4') ?>
                         </div>
                     </div>
                     <div class="hidden" id="stepper_5">
                         <div class="space-y-6">
-                            <?= $this->include('app/add-material/steps/add-content-step-5') ?>
+                            <?= $this->include('app/add-material/steps/add-material-step-5') ?>
                         </div>
                     </div>
                 </div>

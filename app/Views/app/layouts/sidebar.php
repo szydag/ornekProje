@@ -10,30 +10,17 @@ $hasEditorAssignments = (bool) (session('has_editor_assignments') ?? false);
 $currentUri = uri_string();
 $isAdminSection = strpos($currentUri, 'admin') === 0;
 
-$baseMenuItems = [
+// Kullanıcı tipi ayırmadan tüm içerikleri göster
+$menuItems = [
     ['url' => base_url('/'), 'title' => 'Ana Sayfa', 'icon' => 'ki-home-2', 'type' => 'single'],
     ['url' => base_url('apps/my-materials'), 'title' => 'İçeriklerim', 'icon' => 'ki-book', 'type' => 'single'],
     ['url' => base_url('app/add-material'), 'title' => 'İçerik Ekle', 'icon' => 'ki-plus', 'type' => 'single'],
+    ['url' => base_url('apps/reviewer-materials'), 'title' => 'Değerlendirme', 'icon' => 'ki-people', 'type' => 'single'],
+    ['url' => base_url('apps/editor-materials'), 'title' => 'Editörlük', 'icon' => 'ki-pencil', 'type' => 'single'],
+    ['url' => base_url('apps/admin-materials'), 'title' => 'Tüm İçerikler', 'icon' => 'ki-library', 'type' => 'single'],
+    ['url' => base_url('apps/courses'), 'title' => 'Kurslar', 'icon' => 'ki-folder', 'type' => 'single'],
+    ['url' => base_url('app/users'), 'title' => 'Kullanıcılar', 'icon' => 'ki-users', 'type' => 'single'],
 ];
-
-if ($hasReviewerRole) {
-    $baseMenuItems[] = ['url' => base_url('apps/reviewer-materials'), 'title' => 'Değerlendirme', 'icon' => 'ki-people', 'type' => 'single'];
-}
-
-if ($hasEditorAssignments) {
-    $baseMenuItems[] = ['url' => base_url('apps/editor-materials'), 'title' => 'Editörlük', 'icon' => 'ki-pencil', 'type' => 'single'];
-}
-
-if ($hasManagementAccess && $isAdminSection) {
-    $menuItems = [
-        ['url' => base_url('admin'), 'title' => 'Ana Sayfa', 'icon' => 'ki-home-2', 'type' => 'single'],
-        ['url' => base_url('admin/apps/materials'), 'title' => 'Eğitim İçerikleri', 'icon' => 'ki-book', 'type' => 'single'],
-        ['url' => base_url('admin/apps/courses'), 'title' => 'Kurslar', 'icon' => 'ki-folder', 'type' => 'single'],
-        ['url' => base_url('admin/app/users'), 'title' => 'Kullanıcılar', 'icon' => 'ki-users', 'type' => 'single'], // admin tarafında farklı rota varsa onu yaz
-    ];
-} else {
-    $menuItems = $baseMenuItems;
-}
 
 ?>
 
@@ -85,37 +72,32 @@ if ($hasManagementAccess && $isAdminSection) {
                         <?php
                         $isActive = false;
 
-                        if ($isAdminSection) {
+                        // Active state kontrolü
                         switch ($item['title']) {
                             case 'Ana Sayfa':
-                                $isActive = ($currentUri === 'admin');
+                                $isActive = ($currentUri === '' || $currentUri === '/');
                                 break;
-                            case 'Eğitim İçerikleri':
-                                $isActive = ($currentUri === 'admin/apps/materials' || preg_match('/^admin\/apps\/materials\/[A-Za-z0-9+\/=]+$/', $currentUri));
+                            case 'İçerik Ekle':
+                                $isActive = strpos($currentUri, 'add-material') !== false;
+                                break;
+                            case 'İçeriklerim':
+                                $isActive = ($currentUri === 'apps/my-materials' || preg_match('/^apps\/materials\/[A-Za-z0-9+\/=]+$/', $currentUri));
+                                break;
+                            case 'Değerlendirme':
+                                $isActive = ($currentUri === 'apps/reviewer-materials');
+                                break;
+                            case 'Editörlük':
+                                $isActive = ($currentUri === 'apps/editor-materials');
+                                break;
+                            case 'Tüm İçerikler':
+                                $isActive = ($currentUri === 'apps/admin-materials');
                                 break;
                             case 'Kurslar':
-                                $isActive = ($currentUri === 'admin/apps/courses' || preg_match('/^admin\/apps\/courses\/[A-Za-z0-9+\/=]+$/', $currentUri));
+                                $isActive = ($currentUri === 'apps/courses' || preg_match('/^apps\/courses\/[A-Za-z0-9+\/=]+$/', $currentUri));
                                 break;
-                                case 'Kullanıcılar':
-                                    $isActive = ($currentUri === 'admin/app/users' || preg_match('/^admin\/app\/user-detail\/[A-Za-z0-9+\/=]+$/', $currentUri));
-                                    break;
-                            }
-                        } else {
-                            if ($item['title'] === 'Ana Sayfa') {
-                                $isActive = ($currentUri === '' || $currentUri === '/');
-                            } elseif ($item['title'] === 'İçerik Ekle') {
-                                $isActive = strpos($currentUri, 'add-material') !== false;
-                            } elseif ($item['title'] === 'İçeriklerim') {
-                                $isActive = ($currentUri === 'apps/my-materials' || preg_match('/^apps\/materials\/[A-Za-z0-9+\/=]+$/', $currentUri));
-                            } elseif ($item['title'] === 'Değerlendirme') {
-                                $isActive = ($currentUri === 'apps/reviewer-materials');
-                            } elseif ($item['title'] === 'Editörlük') {
-                                $isActive = ($currentUri === 'apps/editor-materials');
-                            } elseif ($item['title'] === 'Kullanıcılar') {
+                            case 'Kullanıcılar':
                                 $isActive = ($currentUri === 'app/users' || preg_match('/^app\/user-detail\/\d+$/', $currentUri));
-                            } elseif ($item['title'] === 'Yönetim') {
-                                $isActive = $isAdminSection;
-                            }
+                                break;
                         }
 
                         if (!$isActive) {

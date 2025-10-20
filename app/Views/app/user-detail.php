@@ -192,18 +192,18 @@
                         <h3 class="kt-card-title">Eğitim İçerikleri</h3>
                         <div class="kt-card-toolbar">
                             <span class="kt-badge kt-badge-outline kt-badge-primary">
-                                <?= count($userArticles) ?> içerik
+                                <?= count($userContents) ?> içerik
                             </span>
                         </div>
                     </div>
                     <div class="kt-card-content">
-                        <?php if (!empty($userArticles)): ?>
+                        <?php if (!empty($userContents)): ?>
                             <div class="space-y-2">
-                                <?php foreach ($userArticles as $content): ?>
+                                <?php foreach ($userContents as $content): ?>
                                     <?php
                                         $contentCreatedAt = $content['created_at'] ?? null;
                                         $contentDate = $contentCreatedAt ? date('d.m.Y', strtotime($contentCreatedAt)) : '-';
-                                        $encryptedArticleId = $content['encrypted_id'] ?? App\Helpers\EncryptHelper::encrypt((string) ($content['id'] ?? ''));
+                                        $encryptedContentId = $content['encrypted_id'] ?? App\Helpers\EncryptHelper::encrypt((string) ($content['id'] ?? ''));
                                     ?>
                                     <div class="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-accent/5 transition-colors">
                                         <div class="flex items-center gap-3">
@@ -221,7 +221,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <a href="<?= base_url('admin/apps/materials/' . $encryptedArticleId) ?>" 
+                                        <a href="<?= base_url('admin/apps/materials/' . $encryptedContentId) ?>" 
                                            class="kt-btn kt-btn-sm kt-btn-outline">
                                             Detay
                                         </a>
@@ -248,18 +248,18 @@
                         <h3 class="kt-card-title">Kursler</h3>
                         <div class="kt-card-toolbar">
                             <span class="kt-badge kt-badge-outline kt-badge-primary">
-                                <?= count($userEncyclopedias) ?> kurs
+                                <?= count($userCourses) ?> kurs
                             </span>
                         </div>
                     </div>
                     <div class="kt-card-content">
-                        <?php if (!empty($userEncyclopedias)): ?>
+                        <?php if (!empty($userCourses)): ?>
                             <div class="space-y-4">
-                                <?php foreach ($userEncyclopedias as $course): ?>
+                                <?php foreach ($userCourses as $course): ?>
                                     <?php
                                         $encyCreatedAt = $course['created_at'] ?? null;
                                         $encyDate = $encyCreatedAt ? date('d.m.Y', strtotime($encyCreatedAt)) : '-';
-                                        $encryptedEncyclopediaId = $course['encrypted_id'] ?? App\Helpers\EncryptHelper::encrypt((string) ($course['id'] ?? ''));
+                                        $encryptedCourseId = $course['encrypted_id'] ?? App\Helpers\EncryptHelper::encrypt((string) ($course['id'] ?? ''));
                                     ?>
                                     <div class="flex items-center justify-between p-3 border border-border rounded-lg hover:bg-accent/5 transition-colors">
                                         <div class="flex items-center gap-3">
@@ -277,7 +277,7 @@
                                                 </p>
                                             </div>
                                         </div>
-                                        <a href="<?= base_url('admin/apps/courses/' . $encryptedEncyclopediaId) ?>" 
+                                        <a href="<?= base_url('admin/apps/courses/' . $encryptedCourseId) ?>" 
                                            class="kt-btn kt-btn-sm kt-btn-outline">
                                             Detay
                                         </a>

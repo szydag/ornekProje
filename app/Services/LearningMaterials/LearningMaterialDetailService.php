@@ -29,14 +29,14 @@ final class LearningMaterialDetailService
 
     public function getDetail(int $learningMaterialId): LearningMaterialDetailDTO
     {
-        $content = $this->contents->find($learningMaterialId);
+        $content = $this->learningMaterials->find($learningMaterialId);
         if (!$content) {
             throw new \RuntimeException('İçerik bulunamadı');
         }
 
         $ptName = null;
         if (!empty($content['content_type_id'])) {
-            $pt = $this->pubTypes->select('name')->find((int) $content['content_type_id']);
+            $pt = $this->contentTypes->select('name')->find((int) $content['content_type_id']);
             $ptName = $pt['name'] ?? null;
         }
 
@@ -53,15 +53,15 @@ final class LearningMaterialDetailService
 
         $top = new LearningMaterialTopDTO(
             id: (int) $content['id'],
-            content_type_id: (int) $content['content_type_id'],
-            content_type_name: $ptName,
-            first_language: $content['first_language'] ?? null,
+            contentTypeId: (int) $content['content_type_id'],
+            contentTypeName: $ptName,
+            firstLanguage: $content['first_language'] ?? 'tr',
             topics: $content['topics'] ?? null,
-            status: $content['status'] ?? null,
+            status: $content['status'] ?? 'on_inceleme',
             translations: $translationDTOs,
         );
 
-        $authorRows = $this->authors
+        $authorRows = $this->contributors
             ->where('learning_material_id', $learningMaterialId)
             ->orderBy('order_number', 'ASC')
             ->orderBy('id', 'ASC')

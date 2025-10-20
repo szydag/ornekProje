@@ -16,7 +16,7 @@
     $shouldLoadDictionaries = empty($institutions) || empty($titles) || empty($countries) || empty($institutionTypes);
     if ($shouldLoadDictionaries) {
         try {
-            $wizardService = new \App\Services\Articles\ContentWizardService();
+            $wizardService = new \App\Services\LearningMaterials\LearningMaterialWizardService();
             if (empty($institutions)) {
                 $institutions = $wizardService->getInstitutions();
             }

@@ -3,13 +3,13 @@
 namespace App\Controllers;
 
 use CodeIgniter\Controller;
-use App\Models\Articles\ArticleFilesModel;
+use App\Models\LearningMaterials\ContentFilesModel;
 use InvalidArgumentException;
 
 class FileController extends Controller
 {
     public function __construct(
-        private readonly ArticleFilesModel $files = new ArticleFilesModel()
+        private readonly ContentFilesModel $files = new ContentFilesModel()
     ) {
     }
 

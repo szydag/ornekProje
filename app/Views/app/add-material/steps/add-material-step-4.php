@@ -565,7 +565,7 @@
             });
     }
 
-    const articleStep4Api = {
+    const contentStep4Api = {
         hydrate: (payload) => hydrateStep(payload),
         collect: () => collectPayload(),
         validate: () => validateStep4Internal(),
@@ -576,17 +576,17 @@
         setProjectNumber: (value) => setProjectNumber(value),
     };
 
-    window.__articleStep4 = articleStep4Api;
+    window.__contentStep4 = contentStep4Api;
 
     function registerWithWizard() {
-        if (!window.articleWizard) {
-            console.warn('[Step 4] articleWizard henüz hazır değil, bekleniyor...');
+        if (!window.contentWizard) {
+            console.warn('[Step 4] contentWizard henüz hazır değil, bekleniyor...');
             setTimeout(registerWithWizard, 100);
             return;
         }
-        window.articleWizard.registerHydrator(4, (payload) => hydrateStep(payload));
-        window.articleWizard.registerCollector(4, () => collectPayload());
-        window.articleWizard.registerValidator(4, () => validateStep4Internal());
+        window.contentWizard.registerHydrator(4, (payload) => hydrateStep(payload));
+        window.contentWizard.registerCollector(4, () => collectPayload());
+        window.contentWizard.registerValidator(4, () => validateStep4Internal());
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -596,7 +596,7 @@
         if (!IS_UPDATE_MODE) {
             loadStep4();
         } else {
-            const cached = window.articleWizard?.getCached?.(4);
+            const cached = window.contentWizard?.getCached?.(4);
             if (cached) {
                 hydrateStep(cached);
             }
@@ -616,7 +616,7 @@
         if (!IS_UPDATE_MODE) {
             loadStep4();
         } else {
-            const cached = window.articleWizard?.getCached?.(4);
+            const cached = window.contentWizard?.getCached?.(4);
             if (cached) {
                 hydrateStep(cached);
             }

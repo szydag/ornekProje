@@ -24,25 +24,25 @@ final class CourseListService
         try {
             $builder = $this->model
                 ->select([
-                    'encyclopedias.id AS id',
-                    'encyclopedias.title AS title',
-                    'encyclopedias.description AS description',
-                    'encyclopedias.status AS status',
-                    'encyclopedias.start_date AS start_date',
-                    'encyclopedias.end_date AS end_date',
-                    'encyclopedias.indefinite AS indefinite',
-                    'encyclopedias.created_at AS created_at',
-                    'encyclopedias.updated_at AS updated_at'
+                    'courses.id AS id',
+                    'courses.title AS title',
+                    'courses.description AS description',
+                    'courses.status AS status',
+                    'courses.start_date AS start_date',
+                    'courses.end_date AS end_date',
+                    'courses.indefinite AS indefinite',
+                    'courses.created_at AS created_at',
+                    'courses.updated_at AS updated_at'
                 ]);
 
             if ($managerUserId !== null) {
                 $builder
-                    ->join('course_authorities ea', 'ea.course_id = encyclopedias.id', 'inner')
+                    ->join('course_authorities ea', 'ea.course_id = courses.id', 'inner')
                     ->where('ea.user_id', $managerUserId)
                     ->distinct();
             }
 
-            $builder->orderBy('encyclopedias.' . $dto->orderBy, $dto->orderDir);
+            $builder->orderBy('courses.' . $dto->orderBy, $dto->orderDir);
 
             // Toplam kayıt
             $total = $builder->countAllResults(false);

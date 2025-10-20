@@ -72,8 +72,8 @@
         const submitButton = modalElement.querySelector('[data-add-editor-submit]');
         const formElement = document.getElementById('addEditorForm');
         const emailInput = document.getElementById('editor_email');
-        const articleInput = formElement?.querySelector('input[name="learning_material_id"]');
-        let lastArticleId = parseInt(articleInput?.value ?? '0', 10) || 0;
+        const contentInput = formElement?.querySelector('input[name="learning_material_id"]');
+        let lastContentId = parseInt(contentInput?.value ?? '0', 10) || 0;
         const endpointSubmit = window.addEditorUrl ?? '<?= base_url('api/materials/add-editor') ?>';
 
         const showAlert = (type, message, title = null) => {
@@ -127,35 +127,35 @@
             showFieldError('editor_email', '');
         };
 
-        const resolveArticleId = (candidate) => {
+        const resolveContentId = (candidate) => {
             if (typeof candidate === 'number' && candidate > 0) {
-                lastArticleId = candidate;
-                if (articleInput) {
-                    articleInput.value = String(candidate);
+                lastContentId = candidate;
+                if (contentInput) {
+                    contentInput.value = String(candidate);
                 }
                 return candidate;
             }
 
-            const directInput = parseInt(articleInput?.value ?? '0', 10);
+            const directInput = parseInt(contentInput?.value ?? '0', 10);
             if (directInput > 0) {
-                lastArticleId = directInput;
+                lastContentId = directInput;
                 return directInput;
             }
 
             const modalDataId = parseInt(modalElement?.dataset?.learningMaterialId ?? '0', 10);
             if (modalDataId > 0) {
-                lastArticleId = modalDataId;
-                if (articleInput) {
-                    articleInput.value = String(modalDataId);
+                lastContentId = modalDataId;
+                if (contentInput) {
+                    contentInput.value = String(modalDataId);
                 }
                 return modalDataId;
             }
 
             const bodyDataId = parseInt(document.body.dataset.learningMaterialId ?? '0', 10);
             if (bodyDataId > 0) {
-                lastArticleId = bodyDataId;
-                if (articleInput) {
-                    articleInput.value = String(bodyDataId);
+                lastContentId = bodyDataId;
+                if (contentInput) {
+                    contentInput.value = String(bodyDataId);
                 }
                 return bodyDataId;
             }
@@ -174,7 +174,7 @@
                 document.body.classList.add('kt-modal-open');
             }
 
-            resolveArticleId(typeof learningMaterialId === 'number' ? learningMaterialId : parseInt(learningMaterialId ?? '0', 10));
+            resolveContentId(typeof learningMaterialId === 'number' ? learningMaterialId : parseInt(learningMaterialId ?? '0', 10));
 
             if (emailInput) {
                 emailInput.value = '';
@@ -183,7 +183,7 @@
         };
 
         const submit = async () => {
-            if (!formElement || !emailInput || !articleInput) {
+            if (!formElement || !emailInput || !contentInput) {
                 return;
             }
 
@@ -200,9 +200,9 @@
                 return;
             }
 
-            let learningMaterialId = parseInt(articleInput.value, 10) || 0;
+            let learningMaterialId = parseInt(contentInput.value, 10) || 0;
             if (learningMaterialId <= 0) {
-                learningMaterialId = resolveArticleId(lastArticleId);
+                learningMaterialId = resolveContentId(lastContentId);
             }
             if (learningMaterialId <= 0) {
                 showFieldError('editor_email', 'Eğitim içeriği bilgisine ulaşılamadı.');

@@ -9,8 +9,8 @@ final class UserDetailDTO
     public function __construct(
         public readonly array $user,
         public readonly array $roleNames,
-        public readonly array $userArticles,
-        public readonly array $userEncyclopedias,
+        public readonly array $userContents,
+        public readonly array $userCourses,
     ) {}
 
     public function toArray(): array
@@ -18,8 +18,8 @@ final class UserDetailDTO
         return [
             'user'              => $this->user,
             'roleNames'         => $this->roleNames,
-            'userArticles'      => $this->userArticles,
-            'userEncyclopedias' => $this->userEncyclopedias,
+            'userContents'      => $this->userContents,
+            'userCourses' => $this->userCourses,
         ];
     }
 }

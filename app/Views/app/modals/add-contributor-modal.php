@@ -526,8 +526,8 @@
             return; // Validasyon başarısızsa dur
         }
 
-        if (typeof window.addArticleStep2SaveAuthor === 'function') {
-            window.addArticleStep2SaveAuthor();
+        if (typeof window.addContentStep2SaveAuthor === 'function') {
+            window.addContentStep2SaveAuthor();
             return;
         }
 

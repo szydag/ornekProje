@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace App\Services\LearningMaterials;
 
-use App\DTOs\Articles\MyLearningMaterialsQueryDTO;
-use App\Models\Articles\LearningMaterialsModel;
-use App\Models\Articles\LearningMaterialTranslationsModel;
+use App\DTOs\LearningMaterials\MyLearningMaterialsQueryDTO;
+use App\Models\LearningMaterials\LearningMaterialsModel;
+use App\Models\LearningMaterials\LearningMaterialTranslationsModel;
 use App\Support\LearningMaterialStatusFormatter;
 
 final class MyLearningMaterialsService
@@ -23,13 +23,13 @@ final class MyLearningMaterialsService
      */
     public function listMine(int $userId, MyLearningMaterialsQueryDTO $dto): array
     {
-        $total = (clone $this->contents)
+        $total = (clone $this->learningMaterials)
             ->where('user_id', $userId)
             ->countAllResults();
 
         $offset = ($dto->page - 1) * $dto->per_page;
 
-        $contentRows = (clone $this->contents)
+        $contentRows = (clone $this->learningMaterials)
             ->select('id, course_id, content_type_id, first_language, topics, status, created_at')
             ->where('user_id', $userId)
             ->orderBy('id', 'DESC')
@@ -42,7 +42,7 @@ final class MyLearningMaterialsService
             ];
         }
 
-        $items = $this->hydrateArticles($contentRows);
+        $items = $this->hydrateContents($contentRows);
 
         return [
             'items' => $items,
@@ -50,34 +50,34 @@ final class MyLearningMaterialsService
         ];
     }
 
-    private function hydrateArticles(array $contentRows): array
+    private function hydrateContents(array $contentRows): array
     {
         $learningMaterialIds = array_map(static fn(array $row) => (int) $row['id'], $contentRows);
 
         $translationRows = $this->translations
             ->whereIn('learning_material_id', $learningMaterialIds)
-            ->select('content_id, lang, title, short_title, self_description')
+            ->select('learning_material_id, lang, title, short_title, self_description')
             ->findAll();
 
-        $translationsByArticle = [];
+        $translationsByContent = [];
         foreach ($translationRows as $row) {
             $aid  = (int) $row['learning_material_id'];
             $lang = (string) $row['lang'];
-            $translationsByArticle[$aid][$lang] = $row;
+            $translationsByContent[$aid][$lang] = $row;
         }
 
         $items = [];
         foreach ($contentRows as $row) {
-            $items[] = $this->formatArticleRow($row, $translationsByArticle);
+            $items[] = $this->formatContentRow($row, $translationsByContent);
         }
 
         return $items;
     }
 
-    private function formatArticleRow(array $row, array $translationsByArticle): array
+    private function formatContentRow(array $row, array $translationsByContent): array
     {
         $id    = (int) $row['id'];
-        $langs = $translationsByArticle[$id] ?? [];
+        $langs = $translationsByContent[$id] ?? [];
 
         $preferredLang = (string) ($row['first_language'] ?? '');
         $translation   = $langs[$preferredLang]

@@ -44,8 +44,8 @@
                     <select class="kt-select" data-kt-select="true" name="publication_type" id="publication_type"
                         data-kt-select-placeholder="Seçiniz">
                         <option value="">Seçiniz...</option>
-                        <?php foreach ($contentTypes as $key => $value): ?>
-                            <option value="<?= $key ?>"><?= $value ?></option>
+                        <?php foreach ($contentTypes as $contentType): ?>
+                            <option value="<?= $contentType['id'] ?>"><?= $contentType['name'] ?></option>
                         <?php endforeach; ?>
                     </select>
                     <div class="text-red-600 text-sm italic mt-1" id="publication_type-error" style="display: none;">
@@ -328,7 +328,7 @@
         contentType: null,
     };
 
-    function rememberEncyclopediaSelection(value) {
+    function rememberCourseSelection(value) {
         const normalized = value !== null && value !== undefined && value !== '' ? String(value) : null;
         step1SelectionCache.course = normalized;
     }
@@ -533,7 +533,7 @@
     }
 
     // Kurs verilerini çek
-    async function loadEncyclopedias() {
+    async function loadCourses() {
         try {
             const response = await fetch('<?= site_url('app/courses') ?>?full=1', {
                 method: 'GET',
@@ -858,7 +858,7 @@
         // Kurs seçimi
         const courseSelect = document.getElementById('course_select');
         const courseValue = data.course_id ?? data.course ?? null;
-        rememberEncyclopediaSelection(courseValue);
+        rememberCourseSelection(courseValue);
         applySelectValue(courseSelect, step1SelectionCache.course);
 
         const publicationSelect = document.getElementById('publication_type');
@@ -1078,11 +1078,11 @@
         const courseSelect = document.getElementById('course_select');
         if (courseSelect) {
             courseSelect.addEventListener('change', () => {
-                rememberEncyclopediaSelection(courseSelect.value);
+                rememberCourseSelection(courseSelect.value);
                 if (courseSelect.dataset) courseSelect.dataset.pendingValue = '';
             });
             if (courseSelect.value) {
-                rememberEncyclopediaSelection(courseSelect.value);
+                rememberCourseSelection(courseSelect.value);
             }
         }
         const publicationSelect = document.getElementById('publication_type');
@@ -1095,7 +1095,7 @@
                 rememberPublicationTypeSelection(publicationSelect.value);
             }
         }
-        loadEncyclopedias();
+        loadCourses();
         loadStep1SessionData();
         registerStep1Integrations();
 

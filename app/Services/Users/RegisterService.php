@@ -17,47 +17,8 @@ class RegisterService
     }
 
     /**
-     * Email doğrulama olmadan direkt kullanıcı oluştur
+     * 1) Kayıt başlat: doğrula → 6 haneli kod üret → email_verifications(pending) → e-posta gönder
      */
-    public function createUserDirectly(RegisterDTO $dto): array
-    {
-        $validation = service('validation');
-        $validation->setRules(RegisterDTO::rules());
-        if (!$validation->run($dto->toArray())) {
-            return ['success' => false, 'errors' => $validation->getErrors(), 'message' => 'Doğrulama hatası'];
-        }
-
-        // Email zaten var mı kontrol et
-        $existing = $this->users->where('mail', $dto->email)->first();
-        if ($existing) {
-            return ['success' => false, 'message' => 'Bu e-posta adresi zaten kullanılıyor.'];
-        }
-
-        try {
-            // Kullanıcı oluştur
-            $userId = $this->users->insert([
-                'name' => $dto->first_name,
-                'surname' => $dto->last_name,
-                'mail' => $dto->email,
-                'password' => password_hash($dto->password, PASSWORD_DEFAULT),
-                'created_at' => date('Y-m-d H:i:s'),
-            ]);
-
-            if (!$userId) {
-                return ['success' => false, 'message' => 'Kullanıcı oluşturulamadı.'];
-            }
-
-            return [
-                'success' => true,
-                'user_id' => $userId,
-                'user_name' => $dto->first_name . ' ' . $dto->last_name,
-                'message' => 'Kullanıcı başarıyla oluşturuldu.',
-            ];
-
-        } catch (DatabaseException $e) {
-            return ['success' => false, 'message' => 'Veritabanı hatası: ' . $e->getMessage()];
-        }
-    }
     public function start(RegisterDTO $dto): array
     {
         $validation = service('validation');

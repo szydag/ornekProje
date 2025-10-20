@@ -43,7 +43,7 @@ $learningMaterialId ??= null;
                         try {
                             handlers.hydrate(initialPayload);
                         } catch (error) {
-                            console.error(`[ArticleUpdate] Step ${numeric} hydrate failed`, error);
+                            console.error(`[ContentUpdate] Step ${numeric} hydrate failed`, error);
                         }
                     }
                 },
@@ -54,7 +54,7 @@ $learningMaterialId ??= null;
                             try {
                                 handlers.hydrate(initialPayload);
                             } catch (error) {
-                                console.error(`[ArticleUpdate] Step ${step} hydrate failed`, error);
+                                console.error(`[ContentUpdate] Step ${step} hydrate failed`, error);
                             }
                         }
                     });
@@ -73,7 +73,7 @@ $learningMaterialId ??= null;
                             try {
                                 merge(collected, handlers.collect());
                             } catch (error) {
-                                console.error(`[ArticleUpdate] Step ${step} collect failed`, error);
+                                console.error(`[ContentUpdate] Step ${step} collect failed`, error);
                             }
                         }
                     });
@@ -231,7 +231,7 @@ $learningMaterialId ??= null;
 
     assignOverrides();
     if (!window.contentUpdate.getInitialPayload() && CONTENT_ID) {
-        fetchStep1().catch((error) => console.error('[ArticleUpdate] Step1 fetch failed', error));
+        fetchStep1().catch((error) => console.error('[ContentUpdate] Step1 fetch failed', error));
     } else if (CONTENT_ID) {
         window.loadStep1SessionData?.();
     }

@@ -3,14 +3,14 @@ declare(strict_types=1);
 
 namespace App\Services\LearningMaterials;
 
-use App\DTOs\Articles\LearningMaterialUpdateDTO;
+use App\DTOs\LearningMaterials\LearningMaterialUpdateDTO;
 use App\Exceptions\DtoValidationException;
-use App\Models\Articles\LearningMaterialsModel;
-use App\Models\Articles\LearningMaterialTranslationsModel;
-use App\Models\Articles\LearningMaterialContributorsModel;
-use App\Models\Articles\LearningMaterialFilesModel;
-use App\Models\Articles\LearningMaterialExtraInfoModel;
-use App\Models\Articles\LearningMaterialApprovalsModel;
+use App\Models\LearningMaterials\LearningMaterialsModel;
+use App\Models\LearningMaterials\LearningMaterialTranslationsModel;
+use App\Models\LearningMaterials\LearningMaterialContributorsModel;
+use App\Models\LearningMaterials\LearningMaterialFilesModel;
+use App\Models\LearningMaterials\LearningMaterialExtraInfoModel;
+use App\Models\LearningMaterials\LearningMaterialApprovalsModel;
 use CodeIgniter\HTTP\IncomingRequest;
 
 final class LearningMaterialUpdateService

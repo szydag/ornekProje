@@ -43,7 +43,7 @@ declare(strict_types=1);
                     api.hydrate({ files: payload.files ?? [] });
                 }
             } catch (error) {
-                console.error('[ArticleUpdate] Step3 load failed', error);
+                console.error('[ContentUpdate] Step3 load failed', error);
             }
         };
 
@@ -96,7 +96,7 @@ declare(strict_types=1);
         });
 
         if (CONTENT_ID) {
-            fetchStep3().catch((error) => console.error('[ArticleUpdate] Step3 initial fetch failed', error));
+            fetchStep3().catch((error) => console.error('[ContentUpdate] Step3 initial fetch failed', error));
         }
     };
 

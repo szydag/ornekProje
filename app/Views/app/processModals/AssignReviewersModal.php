@@ -351,7 +351,7 @@
       }
 
       // Eğitim İçeriği ID'sini al
-      const learningMaterialId = getArticleId();
+      const learningMaterialId = getContentId();
       if (!learningMaterialId) {
         showAlert('destructive', 'Eğitim İçeriği ID bulunamadı', 'Hata');
         return;
@@ -375,7 +375,7 @@
         showPageAlert('success', 'Değerlendiriciler başarıyla atandı', 'Başarılı');
         const meta = result.data?.meta || null;
         if (meta) {
-          window.ARTICLE_REVIEW_META = {
+          window.CONTENT_REVIEW_META = {
             total: Number(meta.total) || 0,
             pending: Number(meta.pending) || 0,
           };
@@ -402,7 +402,7 @@
   }
 
   // Eğitim İçeriği ID'sini alma
-  function getArticleId() {
+  function getContentId() {
     // URL'den al
     const pathParts = window.location.pathname.split('/');
     const contentIndex = pathParts.indexOf('contents');

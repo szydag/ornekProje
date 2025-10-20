@@ -3,7 +3,7 @@ namespace App\Services\Users;
 
 use App\DTOs\Users\LoginDTO;
 use App\Models\Users\UserModel;
-use App\Services\Articles\ArticleEditorService;
+use App\Services\LearningMaterials\ContentEditorService;
 
 class LoginService
 {
@@ -62,7 +62,7 @@ class LoginService
             }
         }
 
-        $editorService = new ArticleEditorService();
+        $editorService = new ContentEditorService();
         $editorService->attachUserToAssignments((int) $user['id'], (string) $user['mail']);
         $hasEditorAssignments = $editorService->userHasAssignments((int) $user['id'], (string) $user['mail']);
         session()->set('has_editor_assignments', $hasEditorAssignments);

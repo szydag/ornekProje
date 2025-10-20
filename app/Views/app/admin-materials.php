@@ -50,7 +50,7 @@
                 }
             }
         } catch (error) {
-            console.debug('[AdminArticles] Datatable state reset skipped:', error);
+            console.debug('[AdminContents] Datatable state reset skipped:', error);
         }
     })();
 </script>

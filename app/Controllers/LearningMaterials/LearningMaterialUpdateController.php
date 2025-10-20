@@ -18,11 +18,11 @@ final class LearningMaterialUpdateController extends BaseController
     ) {
     }
 
-    // app/Controllers/Articles/ContentUpdateController.php
+    // app/Controllers/Contents/ContentUpdateController.php
 
     public function edit(int $id)
     {
-        log_message('debug', '[ArticleUpdate::edit] id=' . $id);
+        log_message('debug', '[ContentUpdate::edit] id=' . $id);
         try {
             $mode = (string) ($this->request->getGet('mode') ?? '');
             $userId = (int) (session('user_id') ?? 0);
@@ -53,7 +53,7 @@ final class LearningMaterialUpdateController extends BaseController
             }
 
             $data = $this->service->getEditData($id);
-            log_message('debug', '[ArticleUpdate::edit] data=' . json_encode($data, JSON_UNESCAPED_UNICODE));
+            log_message('debug', '[ContentUpdate::edit] data=' . json_encode($data, JSON_UNESCAPED_UNICODE));
 
             $common = [
                 'publicationTypes' => $this->wizard->getPublicationTypes(),
@@ -78,7 +78,7 @@ final class LearningMaterialUpdateController extends BaseController
                 'mode' => $mode,
             ]);
         } catch (\Throwable $e) {
-            log_message('error', '[ArticleUpdate] ' . $e->getMessage());
+            log_message('error', '[ContentUpdate] ' . $e->getMessage());
             return $this->response
                 ->setStatusCode(500)
                 ->setBody('Bir hata oluştu: ' . $e->getMessage());
@@ -105,7 +105,7 @@ final class LearningMaterialUpdateController extends BaseController
                 'errors' => $e->getErrors(),
             ]);
         } catch (\Throwable $e) {
-            log_message('error', '[ArticleUpdate] ' . $e->getMessage());
+            log_message('error', '[ContentUpdate] ' . $e->getMessage());
             $payload = ['status' => 'fatal', 'error' => 'Güncelleme sırasında hata oluştu'];
             if (defined('ENVIRONMENT') && ENVIRONMENT !== 'production') {
                 $payload['debug'] = $e->getMessage();
@@ -125,7 +125,7 @@ final class LearningMaterialUpdateController extends BaseController
                 'data' => $payload
             ]);
         } catch (\Throwable $e) {
-            log_message('error', '[ArticleUpdateUpload] ' . $e->getMessage());
+            log_message('error', '[ContentUpdateUpload] ' . $e->getMessage());
             return $this->response->setStatusCode(400)->setJSON([
                 'status' => 'error',
                 'error' => $e->getMessage(),

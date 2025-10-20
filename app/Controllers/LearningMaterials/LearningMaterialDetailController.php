@@ -104,7 +104,7 @@ final class LearningMaterialDetailController extends BaseController
     private function formatForView(LearningMaterialDetailDTO $dto, array $meta, array $reviewerStats = [], array $history = [], array $editors = []): array
     {
         $translations = $dto->top->translations;
-        $primaryLang = $dto->top->first_language ?: 'tr';
+        $primaryLang = $dto->top->firstLanguage ?: 'tr';
 
         /** @var LearningMaterialTranslationDTO|null $primary */
         $primary = $translations[$primaryLang] ?? ($translations['tr'] ?? (reset($translations) ?: null));
@@ -116,8 +116,8 @@ final class LearningMaterialDetailController extends BaseController
         $titleTr = $tr?->title;
         $titleEn = $en?->title;
         $fallbackTitle = $primary?->title ?? ('Başlıksız İçerik #' . $dto->top->id);
-        $encyclopediaId = isset($meta['course_id']) ? (int) $meta['course_id'] : null;
-        $encyclopediaTitle = $meta['encyclopedia_title'] ?? null;
+        $courseId = isset($meta['course_id']) ? (int) $meta['course_id'] : null;
+        $courseTitle = $meta['course_title'] ?? null;
 
         [$userMeta, $titleMap, $institutionMap] = $this->prepareAuthorMetadata($dto->authors);
 
@@ -131,11 +131,11 @@ final class LearningMaterialDetailController extends BaseController
             'status' => $statusCode,
             'status_label' => LearningMaterialStatusFormatter::label($statusCode),
             'status_color' => LearningMaterialStatusFormatter::color($statusCode),
-            'publication_type' => $dto->top->content_type_name,
-            'primary_language' => $dto->top->first_language,
+            'publication_type' => $dto->top->contentTypeName,
+            'primary_language' => $dto->top->firstLanguage,
             'course' => [
-                'id' => $encyclopediaId,
-                'title' => $encyclopediaTitle,
+                'id' => $courseId,
+                'title' => $courseTitle,
             ],
             'topics' => $dto->top->topics,
             'keywords_tr' => $tr?->keywords,
@@ -148,7 +148,7 @@ final class LearningMaterialDetailController extends BaseController
                 $dto->authors
             ),
             'files' => array_map([$this, 'formatFile'], $dto->files),
-            'additional_info' => $this->formatExtra($dto->extraInfoByLang),
+            'additional_info' => $this->formatExtra($dto->extraInfo),
             'reviewers' => $reviewerStats,
             'history' => $history,
             'editors' => $this->formatEditors($editors),
@@ -526,9 +526,9 @@ final class LearningMaterialDetailController extends BaseController
     private function getContentMeta(int $id): array
     {
         return $this->materials
-            ->select('contents.status, contents.created_at, contents.course_id, e.title AS encyclopedia_title')
-            ->join('encyclopedias e', 'e.id = contents.course_id', 'left')
-            ->where('contents.id', $id)
+            ->select('learning_materials.status, learning_materials.created_at, learning_materials.course_id, e.title AS course_title')
+            ->join('courses e', 'e.id = learning_materials.course_id', 'left')
+            ->where('learning_materials.id', $id)
             ->first() ?: [];
     }
 
@@ -538,11 +538,11 @@ final class LearningMaterialDetailController extends BaseController
     private function getReviewerStats(int $learningMaterialId): array
     {
         $total = (clone $this->reviewers)
-            ->where('content_id', $learningMaterialId)
+            ->where('learning_material_id', $learningMaterialId)
             ->countAllResults();
 
         $pending = (clone $this->reviewers)
-            ->where('content_id', $learningMaterialId)
+            ->where('learning_material_id', $learningMaterialId)
             ->where('decision_code', null)
             ->countAllResults();
 

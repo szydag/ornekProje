@@ -39,7 +39,7 @@ declare(strict_types=1);
                 if (!payload) return;
                 api.hydrate(payload.approvals ?? {});
             } catch (error) {
-                console.error('[ArticleUpdate] Step5 load failed', error);
+                console.error('[ContentUpdate] Step5 load failed', error);
             }
         };
 
@@ -77,7 +77,7 @@ declare(strict_types=1);
         });
 
         if (CONTENT_ID) {
-            fetchStep5().catch((error) => console.error('[ArticleUpdate] Step5 initial fetch failed', error));
+            fetchStep5().catch((error) => console.error('[ContentUpdate] Step5 initial fetch failed', error));
         }
     };
 

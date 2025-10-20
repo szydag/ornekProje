@@ -1,5 +1,5 @@
 <!-- Kurs Ekle/Düzenle Modal -->
-<div class="kt-modal" data-kt-modal="true" id="addEncyclopediaModal">
+<div class="kt-modal" data-kt-modal="true" id="addCourseModal">
     <div class="kt-modal-content max-w-[95vw] sm:max-w-[800px] top-[5%] sm:top-[15%] mx-2 sm:mx-auto">
         <div class="kt-modal-header py-3 px-3 sm:py-4 sm:px-5">
             <div class="flex items-center gap-3">
@@ -16,7 +16,7 @@
                 <!-- Alerts will be dynamically inserted here -->
             </div>
 
-            <form id="addEncyclopediaForm" class="space-y-4">
+            <form id="addCourseForm" class="space-y-4">
                 <input type="hidden" name="course_id" id="course_id" value="" />
 
                 <div class="flex flex-col sm:flex-row sm:items-baseline gap-2.5">
@@ -97,7 +97,7 @@
             <button class="kt-btn kt-btn-outline" data-kt-modal-dismiss="true">
                 İptal
             </button>
-            <button class="kt-btn kt-btn-primary" onclick="saveEncyclopedia()" id="saveButton">
+            <button class="kt-btn kt-btn-primary" onclick="saveCourse()" id="saveButton">
                 Kaydet
             </button>
         </div>
@@ -113,7 +113,7 @@
             if (checkbox.checked) {
                 endDateInput.disabled = true;
                 endDateInput.value = '';
-                clearEncyclopediaFieldError('end_date');
+                clearCourseFieldError('end_date');
             } else {
                 endDateInput.disabled = false;
             }
@@ -186,7 +186,7 @@
     }
 
     function closeModal() {
-        const modal = document.getElementById('addEncyclopediaModal');
+        const modal = document.getElementById('addCourseModal');
         if (modal) {
             modal.style.display = 'none';
             modal.classList.remove('kt-modal-open');
@@ -214,14 +214,14 @@
             document.body.style.paddingRight = '';
 
             // Form'u temizle
-            const form = document.getElementById('addEncyclopediaForm');
+            const form = document.getElementById('addCourseForm');
             if (form) {
                 form.reset();
             }
 
             // Alert'leri ve hata mesajlarını temizle
             clearAlerts();
-            clearAllEncyclopediaErrors();
+            clearAllCourseErrors();
         }
     }
 
@@ -290,21 +290,21 @@
     }
 
     // Modal'ı aç (ekleme veya düzenleme için)
-    function openEncyclopediaModal(courseId = null) {
+    function openCourseModal(courseId = null) {
 
         // Modal elementlerini bul
-        const modal = document.getElementById('addEncyclopediaModal');
+        const modal = document.getElementById('addCourseModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalIcon = document.getElementById('modalIcon');
         const saveButton = document.getElementById('saveButton');
-        const form = document.getElementById('addEncyclopediaForm');
+        const form = document.getElementById('addCourseForm');
 
         // Form ve hataları temizle
         if (form) {
             form.reset();
         }
         clearAlerts();
-        clearAllEncyclopediaErrors();
+        clearAllCourseErrors();
 
         // Modal başlığını ve butonunu güncelle
         if (courseId) {
@@ -325,7 +325,7 @@
             }
 
             // Kurs detaylarını yükle
-            loadEncyclopediaDetails(courseId);
+            loadCourseDetails(courseId);
         } else {
 
             // Başlık güncellemesi
@@ -363,7 +363,7 @@
     }
 
     // Kurs detaylarını yükle (düzenleme için)
-    function loadEncyclopediaDetails(courseId) {
+    function loadCourseDetails(courseId) {
 
         // Eğer ID yoksa hata göster
         if (!courseId) {
@@ -425,18 +425,18 @@
                 }
             })
             .catch(error => {
-                console.error('loadEncyclopediaDetails hatası:', error);
+                console.error('loadCourseDetails hatası:', error);
                 showAlert('destructive', `Kurs bilgileri yüklenirken bir hata oluştu: ${error.message}`, 'Hata');
             });
     }
 
-    function saveEncyclopedia() {
-        const form = document.getElementById('addEncyclopediaForm');
+    function saveCourse() {
+        const form = document.getElementById('addCourseForm');
         if (!form) return;
 
         // Clear previous alerts and errors
         clearAlerts();
-        clearAllEncyclopediaErrors();
+        clearAllCourseErrors();
 
         // Form verilerini al
         const courseId = document.getElementById('course_id').value;
@@ -451,43 +451,43 @@
 
         // Kurs adı validasyonu
         if (!courseName) {
-            showEncyclopediaFieldError('course_name', 'Kurs adı zorunludur.');
+            showCourseFieldError('course_name', 'Kurs adı zorunludur.');
             hasErrors = true;
         } else if (courseName.length < 3) {
-            showEncyclopediaFieldError('course_name', 'Kurs adı en az 3 karakter olmalıdır.');
+            showCourseFieldError('course_name', 'Kurs adı en az 3 karakter olmalıdır.');
             hasErrors = true;
         }
 
         // Kurs açıklama validasyonu
         if (!courseDescription) {
-            showEncyclopediaFieldError('course_description', 'Kurs açıklaması zorunludur.');
+            showCourseFieldError('course_description', 'Kurs açıklaması zorunludur.');
             hasErrors = true;
         } else if (courseDescription.length < 10) {
-            showEncyclopediaFieldError('course_description', 'Kurs açıklaması en az 10 karakter olmalıdır.');
+            showCourseFieldError('course_description', 'Kurs açıklaması en az 10 karakter olmalıdır.');
             hasErrors = true;
         }
 
         // Başlangıç tarihi validasyonu
         if (!startDate) {
-            showEncyclopediaFieldError('start_date', 'Başlangıç tarihi zorunludur.');
+            showCourseFieldError('start_date', 'Başlangıç tarihi zorunludur.');
             hasErrors = true;
         }
 
         // Bitiş tarihi validasyonu (unlimited değilse)
         if (!unlimited && !endDate) {
-            showEncyclopediaFieldError('end_date', 'Bitiş tarihi zorunludur veya "Süresiz" seçeneğini işaretleyin.');
+            showCourseFieldError('end_date', 'Bitiş tarihi zorunludur veya "Süresiz" seçeneğini işaretleyin.');
             hasErrors = true;
         }
 
         // Tarih mantık kontrolü
         if (startDate && endDate && new Date(startDate) > new Date(endDate)) {
-            showEncyclopediaFieldError('end_date', 'Bitiş tarihi başlangıç tarihinden önce olamaz.');
+            showCourseFieldError('end_date', 'Bitiş tarihi başlangıç tarihinden önce olamaz.');
             hasErrors = true;
         }
 
         // Yönetici seçimi validasyonu
         if (!selectedManager) {
-            showEncyclopediaFieldError('manager', 'Lütfen bir yönetici seçin.');
+            showCourseFieldError('manager', 'Lütfen bir yönetici seçin.');
             hasErrors = true;
         }
 
@@ -547,8 +547,8 @@
                 showPageAlert('success', successMessage, 'İşlem Başarılı');
 
                 // Kurs listesini yenile
-                if (typeof refreshEncyclopediaList === 'function') {
-                    refreshEncyclopediaList();
+                if (typeof refreshCourseList === 'function') {
+                    refreshCourseList();
                 } else {
                     // Fallback: sayfayı yenile
                     setTimeout(() => {
@@ -634,7 +634,7 @@
     }
 
     // Validasyon helper fonksiyonları
-    function showEncyclopediaFieldError(fieldName, message) {
+    function showCourseFieldError(fieldName, message) {
         const errorElement = document.getElementById(fieldName + '-error');
         if (errorElement) {
             errorElement.textContent = message;
@@ -653,7 +653,7 @@
         }
     }
 
-    function clearEncyclopediaFieldError(fieldName) {
+    function clearCourseFieldError(fieldName) {
         const errorElement = document.getElementById(fieldName + '-error');
         if (errorElement) {
             errorElement.style.display = 'none';
@@ -668,16 +668,16 @@
         }
     }
 
-    function clearAllEncyclopediaErrors() {
-        clearEncyclopediaFieldError('course_name');
-        clearEncyclopediaFieldError('course_description');
-        clearEncyclopediaFieldError('start_date');
-        clearEncyclopediaFieldError('end_date');
-        clearEncyclopediaFieldError('manager');
+    function clearAllCourseErrors() {
+        clearCourseFieldError('course_name');
+        clearCourseFieldError('course_description');
+        clearCourseFieldError('start_date');
+        clearCourseFieldError('end_date');
+        clearCourseFieldError('manager');
     }
 
     // Real-time validation için event listener'ları ekle
-    function setupEncyclopediaValidation() {
+    function setupCourseValidation() {
         const nameInput = document.getElementById('course_name-input');
         const descriptionInput = document.getElementById('course_description-input');
         const startDateInput = document.getElementById('start_date-input');
@@ -687,38 +687,38 @@
 
         if (nameInput) {
             nameInput.addEventListener('input', function () {
-                clearEncyclopediaFieldError('course_name');
+                clearCourseFieldError('course_name');
             });
         }
 
         if (descriptionInput) {
             descriptionInput.addEventListener('input', function () {
-                clearEncyclopediaFieldError('course_description');
+                clearCourseFieldError('course_description');
             });
         }
 
         if (startDateInput) {
             startDateInput.addEventListener('change', function () {
-                clearEncyclopediaFieldError('start_date');
-                clearEncyclopediaFieldError('end_date');
+                clearCourseFieldError('start_date');
+                clearCourseFieldError('end_date');
             });
         }
 
         if (endDateInput) {
             endDateInput.addEventListener('change', function () {
-                clearEncyclopediaFieldError('end_date');
+                clearCourseFieldError('end_date');
             });
         }
 
         if (managerInput) {
             managerInput.addEventListener('change', function () {
-                clearEncyclopediaFieldError('manager');
+                clearCourseFieldError('manager');
             });
         }
 
         if (unlimitedCheckbox) {
             unlimitedCheckbox.addEventListener('change', function () {
-                clearEncyclopediaFieldError('end_date');
+                clearCourseFieldError('end_date');
             });
         }
     }
@@ -726,9 +726,9 @@
     // DOM yüklendiğinde event listener'ları ekle
     document.addEventListener('DOMContentLoaded', function () {
         // Validasyon sistemini başlat
-        setupEncyclopediaValidation();
+        setupCourseValidation();
         // Modal açıldığında alert'leri temizle ve kullanıcıları yükle
-        const modal = document.getElementById('addEncyclopediaModal');
+        const modal = document.getElementById('addCourseModal');
         if (modal) {
             // Modal açıldığında alert'leri temizle ve kullanıcıları yükle
             const observer = new MutationObserver(function (mutations) {
@@ -766,7 +766,7 @@
 
         // Modal dışına tıklandığında kapatma
         document.addEventListener('click', function (e) {
-            const modal = document.getElementById('addEncyclopediaModal');
+            const modal = document.getElementById('addCourseModal');
             if (modal && e.target === modal) {
                 closeModal();
             }
@@ -775,7 +775,7 @@
         // ESC tuşu ile modal kapatma
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape') {
-                const modal = document.getElementById('addEncyclopediaModal');
+                const modal = document.getElementById('addCourseModal');
                 if (modal && modal.classList.contains('kt-modal-open')) {
                     closeModal();
                 }
@@ -785,13 +785,13 @@
         // Modal açma butonlarına event listener ekle
         document.addEventListener('click', function (e) {
 
-            // Tüm data-kt-modal-toggle="#addEncyclopediaModal" elementlerini bul
+            // Tüm data-kt-modal-toggle="#addCourseModal" elementlerini bul
             let target = null;
 
-            if (e.target.hasAttribute && e.target.getAttribute('data-kt-modal-toggle') === '#addEncyclopediaModal') {
+            if (e.target.hasAttribute && e.target.getAttribute('data-kt-modal-toggle') === '#addCourseModal') {
                 target = e.target;
-            } else if (e.target.closest && e.target.closest('[data-kt-modal-toggle="#addEncyclopediaModal"]')) {
-                target = e.target.closest('[data-kt-modal-toggle="#addEncyclopediaModal"]');
+            } else if (e.target.closest && e.target.closest('[data-kt-modal-toggle="#addCourseModal"]')) {
+                target = e.target.closest('[data-kt-modal-toggle="#addCourseModal"]');
             }
 
             if (target) {
@@ -801,16 +801,16 @@
                 // Modal açılmadan önce modalı hazırla
                 setTimeout(() => {
                     if (courseId) {
-                        openEncyclopediaModal(courseId);
+                        openCourseModal(courseId);
                     } else {
-                        openEncyclopediaModal();
+                        openCourseModal();
                     }
                 }, 200); // Biraz daha uzun bekleme
             }
         });
 
         // Modal açıldığında da kontrol et
-        const modalElement = document.getElementById('addEncyclopediaModal');
+        const modalElement = document.getElementById('addCourseModal');
         if (modalElement) {
             modalElement.addEventListener('shown.bs.modal', function () {
 
@@ -819,7 +819,7 @@
                 const editId = urlParams.get('edit');
 
                 if (editId) {
-                    openEncyclopediaModal(editId);
+                    openCourseModal(editId);
                 }
             });
         }
