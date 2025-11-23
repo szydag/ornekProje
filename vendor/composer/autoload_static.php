@@ -13,86 +13,86 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
     );
 
     public static $prefixLengthsPsr4 = array (
-        'T' => 
+        'T' =>
         array (
             'Tests\\Support\\' => 14,
         ),
-        'P' => 
+        'P' =>
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
             'PhpParser\\' => 10,
         ),
-        'L' => 
+        'L' =>
         array (
             'Laminas\\Escaper\\' => 16,
         ),
-        'F' => 
+        'F' =>
         array (
             'Faker\\' => 6,
         ),
-        'D' => 
+        'D' =>
         array (
             'DeepCopy\\' => 9,
         ),
-        'C' => 
+        'C' =>
         array (
             'Config\\' => 7,
             'CodeIgniter\\' => 12,
         ),
-        'A' => 
+        'A' =>
         array (
             'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'Tests\\Support\\' => 
+        'Tests\\Support\\' =>
         array (
             0 => __DIR__ . '/../..' . '/tests/_support',
         ),
-        'Psr\\Log\\' => 
+        'Psr\\Log\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
         ),
-        'Psr\\Container\\' => 
+        'Psr\\Container\\' =>
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
-        'PhpParser\\' => 
+        'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Laminas\\Escaper\\' => 
+        'Laminas\\Escaper\\' =>
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
         ),
-        'Faker\\' => 
+        'Faker\\' =>
         array (
             0 => __DIR__ . '/..' . '/fakerphp/faker/src/Faker',
         ),
-        'DeepCopy\\' => 
+        'DeepCopy\\' =>
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-        'Config\\' => 
+        'Config\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app/Config',
         ),
-        'CodeIgniter\\' => 
+        'CodeIgniter\\' =>
         array (
             0 => __DIR__ . '/..' . '/codeigniter4/framework/system',
         ),
-        'App\\' => 
+        'App\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'o' => 
+        'o' =>
         array (
-            'org\\bovigo\\vfs\\' => 
+            'org\\bovigo\\vfs\\' =>
             array (
                 0 => __DIR__ . '/..' . '/mikey179/vfsstream/src/main/php',
             ),
@@ -104,6 +104,8 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
         'App\\Controllers\\BaseController' => __DIR__ . '/../..' . '/app/Controllers/BaseController.php',
         'App\\Controllers\\ContentWorkflow\\LearningMaterialWorkflowController' => __DIR__ . '/../..' . '/app/Controllers/ContentWorkflow/LearningMaterialWorkflowController.php',
         'App\\Controllers\\ContentWorkflow\\UploadController' => __DIR__ . '/../..' . '/app/Controllers/ContentWorkflow/UploadController.php',
+        'App\\Controllers\\Courses\\CourseDetailController' => __DIR__ . '/../..' . '/app/Controllers/Courses/CourseDetailController.php',
+        'App\\Controllers\\Courses\\CourseListController' => __DIR__ . '/../..' . '/app/Controllers/Courses/CourseListController.php',
         'App\\Controllers\\FileController' => __DIR__ . '/../..' . '/app/Controllers/FileController.php',
         'App\\Controllers\\Home' => __DIR__ . '/../..' . '/app/Controllers/Home.php',
         'App\\Controllers\\LearningMaterials\\AllLearningMaterialsController' => __DIR__ . '/../..' . '/app/Controllers/LearningMaterials/AllLearningMaterialsController.php',
@@ -133,6 +135,8 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
         'App\\DTOs\\Courses\\ListCoursesDTO' => __DIR__ . '/../..' . '/app/DTOs/Courses/ListCoursesDTO.php',
         'App\\DTOs\\Courses\\UpdateCourseDTO' => __DIR__ . '/../..' . '/app/DTOs/Courses/UpdateCourseDTO.php',
         'App\\DTOs\\LearningMaterials\\AllLearningMaterialsQueryDTO' => __DIR__ . '/../..' . '/app/DTOs/LearningMaterials/AllLearningMaterialsQueryDTO.php',
+        'App\\DTOs\\LearningMaterials\\LearningMaterialDetailDTO' => __DIR__ . '/../..' . '/app/DTOs/LearningMaterials/LearningMaterialDetailDTO.php',
+        'App\\DTOs\\LearningMaterials\\LearningMaterialTopDTO' => __DIR__ . '/../..' . '/app/DTOs/LearningMaterials/LearningMaterialTopDTO.php',
         'App\\DTOs\\LearningMaterials\\LearningMaterialTranslationDTO' => __DIR__ . '/../..' . '/app/DTOs/LearningMaterials/LearningMaterialTranslationDTO.php',
         'App\\DTOs\\LearningMaterials\\LearningMaterialUpdateDTO' => __DIR__ . '/../..' . '/app/DTOs/LearningMaterials/LearningMaterialUpdateDTO.php',
         'App\\DTOs\\LearningMaterials\\MyLearningMaterialsQueryDTO' => __DIR__ . '/../..' . '/app/DTOs/LearningMaterials/MyLearningMaterialsQueryDTO.php',
@@ -151,8 +155,10 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
         'App\\DTOs\\Users\\SendResetEmailDTO' => __DIR__ . '/../..' . '/app/DTOs/Users/SendResetEmailDTO.php',
         'App\\DTOs\\Users\\UserDetailDTO' => __DIR__ . '/../..' . '/app/DTOs/Users/UserDetailDTO.php',
         'App\\DTOs\\Users\\VerifyDTO' => __DIR__ . '/../..' . '/app/DTOs/Users/VerifyDTO.php',
+        'App\\Database\\Seeds\\CourseSeeder' => __DIR__ . '/../..' . '/app/Database/Seeds/CourseSeeder.php',
         'App\\Database\\Seeds\\ExpertiseAreasSeeder' => __DIR__ . '/../..' . '/app/Database/Seeds/ExpertiseAreasSeeder.php',
         'App\\Database\\Seeds\\InstitutionsSeeder' => __DIR__ . '/../..' . '/app/Database/Seeds/InstitutionsSeeder.php',
+        'App\\Database\\Seeds\\LearningMaterialSeeder' => __DIR__ . '/../..' . '/app/Database/Seeds/LearningMaterialSeeder.php',
         'App\\Exceptions\\DtoValidationException' => __DIR__ . '/../..' . '/app/Exceptions/DtoValidationException.php',
         'App\\Filters\\LoginFilter' => __DIR__ . '/../..' . '/app/Filters/LoginFilter.php',
         'App\\Filters\\ProfileCompletionFilter' => __DIR__ . '/../..' . '/app/Filters/ProfileCompletionFilter.php',
@@ -167,6 +173,7 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
         'App\\Models\\LearningMaterials\\ContentTypeModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/ContentTypeModel.php',
         'App\\Models\\LearningMaterials\\LearningMaterialApprovalsModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/LearningMaterialApprovalsModel.php',
         'App\\Models\\LearningMaterials\\LearningMaterialContributorsModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/LearningMaterialContributorsModel.php',
+        'App\\Models\\LearningMaterials\\LearningMaterialEditorModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/LearningMaterialEditorModel.php',
         'App\\Models\\LearningMaterials\\LearningMaterialExtraInfoModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/LearningMaterialExtraInfoModel.php',
         'App\\Models\\LearningMaterials\\LearningMaterialFilesModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/LearningMaterialFilesModel.php',
         'App\\Models\\LearningMaterials\\LearningMaterialTranslationsModel' => __DIR__ . '/../..' . '/app/Models/LearningMaterials/LearningMaterialTranslationsModel.php',
@@ -177,6 +184,7 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
         'App\\Models\\Users\\CountryModel' => __DIR__ . '/../..' . '/app/Models/Users/CountryModel.php',
         'App\\Models\\Users\\EmailVerificationModel' => __DIR__ . '/../..' . '/app/Models/Users/EmailVerificationModel.php',
         'App\\Models\\Users\\ExpertiseAreaModel' => __DIR__ . '/../..' . '/app/Models/Users/ExpertiseAreaModel.php',
+        'App\\Models\\Users\\InstitutionModel' => __DIR__ . '/../..' . '/app/Models/Users/InstitutionModel.php',
         'App\\Models\\Users\\InstitutionTypeModel' => __DIR__ . '/../..' . '/app/Models/Users/InstitutionTypeModel.php',
         'App\\Models\\Users\\PasswordResetModel' => __DIR__ . '/../..' . '/app/Models/Users/PasswordResetModel.php',
         'App\\Models\\Users\\TitleModel' => __DIR__ . '/../..' . '/app/Models/Users/TitleModel.php',
@@ -189,6 +197,7 @@ class ComposerStaticInit657ac079313fab046eb8c29fe1d6992b
         'App\\Services\\Courses\\CourseService' => __DIR__ . '/../..' . '/app/Services/Courses/CourseService.php',
         'App\\Services\\Courses\\CourseUpdateService' => __DIR__ . '/../..' . '/app/Services/Courses/CourseUpdateService.php',
         'App\\Services\\LearningMaterials\\AllLearningMaterialsService' => __DIR__ . '/../..' . '/app/Services/LearningMaterials/AllLearningMaterialsService.php',
+        'App\\Services\\LearningMaterials\\ContentEditorService' => __DIR__ . '/../..' . '/app/Services/LearningMaterials/ContentEditorService.php',
         'App\\Services\\LearningMaterials\\LearningMaterialDetailService' => __DIR__ . '/../..' . '/app/Services/LearningMaterials/LearningMaterialDetailService.php',
         'App\\Services\\LearningMaterials\\LearningMaterialEditorService' => __DIR__ . '/../..' . '/app/Services/LearningMaterials/LearningMaterialEditorService.php',
         'App\\Services\\LearningMaterials\\LearningMaterialUpdateService' => __DIR__ . '/../..' . '/app/Services/LearningMaterials/LearningMaterialUpdateService.php',

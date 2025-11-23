@@ -1,0 +1,187 @@
+CRITICAL - 2025-11-23 11:26:00 --> ErrorException: Constant expression contains invalid operations
+[Method: CLI, Route: migrate]
+in APPPATH/Config/Database.php on line 27.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+ERROR - 2025-11-23 11:26:12 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-23 11:26:45 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-23 11:27:12 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-23 11:28:45 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+DEBUG - 2025-11-23 11:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 11:34:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-23 11:34:28 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 /var/www/html/vendor/codeigniter4/framework/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/vendor/codeigniter4/framework/system/BaseModel.php(715): CodeIgniter\Model->doFirst()
+#6 /var/www/html/app/Services/Users/LoginService.php(25): CodeIgniter\BaseModel->first()
+#7 /var/www/html/app/Controllers/Users/LoginController.php(23): App\Services\Users\LoginService->login(Object(App\DTOs\Users\LoginDTO))
+#8 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Users\LoginController->login()
+#9 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users\LoginController))
+#10 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /var/www/html/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 /var/www/html/vendor/codeigniter4/framework/system/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/vendor/codeigniter4/framework/system/BaseModel.php(715): CodeIgniter\Model->doFirst()
+#5 /var/www/html/app/Services/Users/LoginService.php(25): CodeIgniter\BaseModel->first()
+#6 /var/www/html/app/Controllers/Users/LoginController.php(23): App\Services\Users\LoginService->login(Object(App\DTOs\Users\LoginDTO))
+#7 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Users\LoginController->login()
+#8 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users\LoginController))
+#9 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /var/www/html/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-11-23 11:34:28 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: POST, Route: auth/login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `users`
+WHERE `mail` = :mail:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(715): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Services/Users/LoginService.php(25): CodeIgniter\BaseModel->first()
+ 6 APPPATH/Controllers/Users/LoginController.php(23): App\Services\Users\LoginService->login(Object(App\DTOs\Users\LoginDTO))
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Users\LoginController->login()
+ 8 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users\LoginController))
+ 9 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

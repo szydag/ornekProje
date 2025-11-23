@@ -26,7 +26,7 @@ class Database extends Config
      */
     public array $default = [
         'DSN'          => '',
-        'hostname'     => '127.0.0.1',
+        'hostname'     => 'mysql',  // Docker içinde container adı
         'username'     => 'root',
         'password'     => 'root123',
         'database'     => 'educontent_db',
@@ -192,6 +192,13 @@ class Database extends Config
     public function __construct()
     {
         parent::__construct();
+
+        // Docker dışında çalışıyorsa localhost kullan
+        // Docker içinde 'mysql' container adını kullan
+        if (!getenv('DOCKER_CONTAINER')) {
+            // Eğer localhost'tan bağlanıyorsa
+            $this->default['hostname'] = '127.0.0.1';
+        }
 
         // Ensure that we always set the database group to 'tests' if
         // we are currently running an automated test suite, so that
