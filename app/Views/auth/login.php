@@ -3,7 +3,7 @@
 <?= $this->section('content') ?>
 <div class="flex items-center justify-center grow bg-center bg-no-repeat auth-bg-simple">
     <div class="kt-card max-w-[370px] w-full">
-        <form action="/auth/login" class="kt-card-content flex flex-col gap-5 p-10" id="sign_in_form" method="post"
+        <form action="<?= base_url('auth/login') ?>" class="kt-card-content flex flex-col gap-5 p-10" id="sign_in_form" method="post"
             novalidate>
             <?= csrf_field() ?>
 
@@ -127,15 +127,12 @@
 
         if (form) {
             form.addEventListener('submit', function (e) {
-                e.preventDefault();
-
                 // Mevcut hata mesajlarını kaldır
                 clearAllErrors();
 
                 // Form verilerini al
                 const email = this.querySelector('input[name="email"]').value.trim();
                 const password = this.querySelector('input[name="password"]').value;
-                const remember = this.querySelector('input[name="remember"]').checked;
 
                 // Client-side validasyon
                 let hasErrors = false;
@@ -156,76 +153,14 @@
                     hasErrors = true;
                 }
 
-                // Validasyon hataları varsa istek gönderme
+                // Validasyon hataları varsa form gönderimini engelle
                 if (hasErrors) {
-                    return;
+                    e.preventDefault();
+                    return false;
                 }
 
-                // JSON data hazırla
-                const jsonData = {
-                    email: email,
-                    password: password,
-                    remember: remember
-                };
-                // AJAX isteği gönder
-                fetch('/auth/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-Requested-With': 'XMLHttpRequest'
-                    },
-                    body: JSON.stringify(jsonData)
-                })
-                    .then(response => {
-                        if (response.ok) {
-                            return response.json();
-                        } else {
-                            // Backend'den gelen hata mesajını almaya çalış
-                            return response.text().then(text => {
-                                try {
-                                    const errorData = JSON.parse(text);
-                                    throw new Error(JSON.stringify(errorData));
-                                } catch (e) {
-                                    throw new Error(text || 'HTTP ' + response.status);
-                                }
-                            });
-                        }
-                    })
-                    .then(data => {
-                        if (data.success) {
-                            const target = data.redirect_to ?? '/';
-                            window.location.href = target;
-                        } else {
-                            // Hata mesajını ekranda göster
-                            showGeneralError(data.message || 'Giriş başarısız. Lütfen bilgilerinizi kontrol edin.');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Hata:', error);
-
-                        // error.message'ı parse et
-                        if (error.message) {
-                            try {
-                                // JSON string olarak geliyorsa parse et
-                                const errorData = JSON.parse(error.message);
-
-                                // Eğer errors objesi varsa (field-specific hatalar)
-                                if (errorData.errors) {
-                                    Object.keys(errorData.errors).forEach(field => {
-                                        showFieldError(field, errorData.errors[field]);
-                                    });
-                                } else {
-                                    // Genel hata mesajı
-                                    showGeneralError(errorData.message || 'Bir hata oluştu. Lütfen tekrar deneyin.');
-                                }
-                            } catch (e) {
-                                // JSON değilse, direkt mesajı kullan
-                                showGeneralError(error.message);
-                            }
-                        } else {
-                            showGeneralError('Bir hata oluştu. Lütfen tekrar deneyin.');
-                        }
-                    });
+                // Validasyon başarılı, form normal şekilde submit edilecek
+                // Backend'de Auth::processLogin işleyecek
             });
         } else {
             console.error('Form bulunamadı!');

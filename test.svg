@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="1000" viewBox="0 0 1200 1000">
+  <!-- Background -->
+  <rect width="1200" height="1000" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#212529">
+    İstek-Cevap Akış Diyagramı
+  </text>
+  
+  <!-- Arrow markers definition (must be before use) -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976d2"/>
+    </marker>
+    <marker id="arrowPink" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#c2185b"/>
+    </marker>
+  </defs>
+  
+  <!-- REQUEST FLOW (Left Side - Top to Bottom) -->
+  
+  <!-- Client -->
+  <rect x="50" y="80" width="200" height="70" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="150" y="110" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">Client</text>
+  <text x="150" y="130" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Browser / HTTP Request</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 150 L 150 190" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Nginx -->
+  <rect x="50" y="190" width="200" height="70" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="150" y="220" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">Nginx</text>
+  <text x="150" y="240" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Web Server / Reverse Proxy</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 260 L 150 300" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- PHP-FPM -->
+  <rect x="50" y="300" width="200" height="70" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="150" y="330" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">PHP-FPM</text>
+  <text x="150" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">PHP Runtime</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 370 L 150 410" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- CodeIgniter Router -->
+  <rect x="50" y="410" width="200" height="70" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="5"/>
+  <text x="150" y="440" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#f57c00">CodeIgniter Router</text>
+  <text x="150" y="460" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">URL Routing</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 480 L 150 520" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Filter -->
+  <rect x="50" y="520" width="200" height="70" fill="#fff3e0" stroke="#f57c00" stroke-width="2" rx="5"/>
+  <text x="150" y="550" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#f57c00">Filter</text>
+  <text x="150" y="570" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Auth / Role / Profile</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 590 L 150 630" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Controller -->
+  <rect x="50" y="630" width="200" height="70" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="150" y="660" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#388e3c">Controller</text>
+  <text x="150" y="680" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">HTTP Request Handler</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 700 L 150 740" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Service -->
+  <rect x="50" y="740" width="200" height="70" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="150" y="770" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#388e3c">Service</text>
+  <text x="150" y="790" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Business Logic</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 810 L 150 850" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Model -->
+  <rect x="50" y="850" width="200" height="70" fill="#fce4ec" stroke="#c2185b" stroke-width="2" rx="5"/>
+  <text x="150" y="880" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c2185b">Model</text>
+  <text x="150" y="900" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Database Access</text>
+  
+  <!-- Arrow down -->
+  <path d="M 150 920 L 150 960" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  
+  <!-- Database -->
+  <rect x="50" y="960" width="200" height="70" fill="#fce4ec" stroke="#c2185b" stroke-width="2" rx="5"/>
+  <text x="150" y="990" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c2185b">Database</text>
+  <text x="150" y="1010" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">MySQL</text>
+  
+  <!-- RESPONSE FLOW (Right Side - Bottom to Top) -->
+  
+  <!-- Database -->
+  <rect x="950" y="960" width="200" height="70" fill="#fce4ec" stroke="#c2185b" stroke-width="2" rx="5"/>
+  <text x="1050" y="990" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c2185b">Database</text>
+  <text x="1050" y="1010" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">MySQL</text>
+  
+  <!-- Arrow up -->
+  <path d="M 1050 960 L 1050 920" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  
+  <!-- Model -->
+  <rect x="950" y="850" width="200" height="70" fill="#fce4ec" stroke="#c2185b" stroke-width="2" rx="5"/>
+  <text x="1050" y="880" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#c2185b">Model</text>
+  <text x="1050" y="900" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Result Set</text>
+  
+  <!-- Arrow up -->
+  <path d="M 1050 850 L 1050 810" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  
+  <!-- Service -->
+  <rect x="950" y="740" width="200" height="70" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="1050" y="770" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#388e3c">Service</text>
+  <text x="1050" y="790" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Data Processing</text>
+  
+  <!-- Arrow up -->
+  <path d="M 1050 740 L 1050 700" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  
+  <!-- CodeIgniter Response -->
+  <rect x="950" y="630" width="200" height="70" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="5"/>
+  <text x="1050" y="660" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#388e3c">CodeIgniter Response</text>
+  <text x="1050" y="680" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">JSON / View</text>
+  
+  <!-- Arrow up -->
+  <path d="M 1050 630 L 1050 590" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  
+  <!-- PHP-FPM -->
+  <rect x="950" y="520" width="200" height="70" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="1050" y="550" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">PHP-FPM</text>
+  <text x="1050" y="570" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Response Processing</text>
+  
+  <!-- Arrow up -->
+  <path d="M 1050 520 L 1050 480" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  
+  <!-- Nginx -->
+  <rect x="950" y="410" width="200" height="70" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="1050" y="440" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">Nginx</text>
+  <text x="1050" y="460" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Response Delivery</text>
+  
+  <!-- Arrow up -->
+  <path d="M 1050 410 L 1050 370" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  
+  <!-- Client -->
+  <rect x="950" y="300" width="200" height="70" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="5"/>
+  <text x="1050" y="330" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1976d2">Client</text>
+  <text x="1050" y="350" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Browser / HTTP Response</text>
+  
+  <!-- Connecting Lines (Horizontal) -->
+  <path d="M 250 995 L 950 995" stroke="#666" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <text x="600" y="990" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">Data Query</text>
+  
+  <path d="M 250 775 L 950 775" stroke="#666" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <text x="600" y="770" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">Business Logic</text>
+  
+  <path d="M 250 665 L 950 665" stroke="#666" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <text x="600" y="660" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#666">Response Format</text>
+  
+  <!-- Labels -->
+  <text x="150" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1976d2">REQUEST FLOW</text>
+  <text x="1050" y="75" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#c2185b">RESPONSE FLOW</text>
+  
+  <!-- Legend -->
+  <rect x="400" y="120" width="400" height="200" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="600" y="150" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333">Açıklama</text>
+  
+  <path d="M 420 180 L 470 180" stroke="#1976d2" stroke-width="3" fill="none" marker-end="url(#arrowBlue)"/>
+  <text x="480" y="185" font-family="Arial, sans-serif" font-size="12" fill="#333">Request (İstek) - Sol Taraf</text>
+  
+  <path d="M 420 210 L 470 210" stroke="#c2185b" stroke-width="3" fill="none" marker-end="url(#arrowPink)"/>
+  <text x="480" y="215" font-family="Arial, sans-serif" font-size="12" fill="#333">Response (Cevap) - Sağ Taraf</text>
+  
+  <rect x="420" y="235" width="25" height="18" fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+  <text x="455" y="248" font-family="Arial, sans-serif" font-size="12" fill="#333">Infrastructure Layer</text>
+  
+  <rect x="420" y="260" width="25" height="18" fill="#fff3e0" stroke="#f57c00" stroke-width="1"/>
+  <text x="455" y="273" font-family="Arial, sans-serif" font-size="12" fill="#333">Framework Layer</text>
+  
+  <rect x="420" y="285" width="25" height="18" fill="#e8f5e9" stroke="#388e3c" stroke-width="1"/>
+  <text x="455" y="298" font-family="Arial, sans-serif" font-size="12" fill="#333">Application Layer</text>
+  
+  <rect x="420" y="310" width="25" height="18" fill="#fce4ec" stroke="#c2185b" stroke-width="1"/>
+  <text x="455" y="323" font-family="Arial, sans-serif" font-size="12" fill="#333">Data Layer</text>
+</svg>

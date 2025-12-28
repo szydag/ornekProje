@@ -65,7 +65,19 @@ class LoginService
         $editorService = new ContentEditorService();
         $editorService->attachUserToAssignments((int) $user['id'], (string) $user['mail']);
         $hasEditorAssignments = $editorService->userHasAssignments((int) $user['id'], (string) $user['mail']);
-        session()->set('has_editor_assignments', $hasEditorAssignments);
+        
+        // Session ayarları
+        session()->regenerate(); // Güvenlik için session'ı yenile
+        session()->set([
+            'user_id' => (int) $user['id'],
+            'user_email' => $user['mail'],
+            'user_name' => ($user['name'] ?? '') . ' ' . ($user['surname'] ?? ''),
+            'role_id' => $roleId,
+            'profile_completed' => $profileCompleted,
+            'has_editor_assignments' => $hasEditorAssignments,
+            'is_logged_in' => true,
+            'login' => true,
+        ]);
 
         return [
             'success' => true,

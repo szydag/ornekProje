@@ -25,6 +25,7 @@ $routes->get('/app/users', 'Users\UsersController::index');
 // Ana sayfa
 $routes->group('', ['filter' => ['loginFilter', 'roleFilter', 'profileGuard']], function ($routes) {
     $routes->get('/', 'Users\UsersController::homeUser');
+    $routes->get('app/home', 'Users\UsersController::homeUser');
 
 
     // app/Config/Routes.php
@@ -66,10 +67,15 @@ $routes->group('user/auth', static function ($routes) {
     $routes->post('login', 'Users\LoginController::login');
 });
  $routes->get('app/courses', 'Courses\CourseListController::index');
+
+// Auth routes (GET ve POST)
+$routes->get('auth/login', 'Auth::login');
+$routes->post('auth/login', 'Auth::processLogin');
+$routes->get('auth/register', 'Auth::register');
 $routes->post('auth/register', 'Auth::processRegister');
+
 $routes->post('api/auth/register', 'Users\RegisterController::register');
 $routes->post('auth/verify-two-factor', 'Users\VerifyController::verify2fa');
-$routes->post('auth/login', 'Users\LoginController::login');
 ////// POSTMAN İLE TEST EDİLEN ROUTELAR//////////
 
 

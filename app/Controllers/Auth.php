@@ -20,43 +20,65 @@ class Auth extends BaseController
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        // Validations - boş kontrolü yapma, sadece format
-        if ($email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        if (empty($email) || empty($password)) {
+            return redirect()->back()->with('error', 'E-posta ve şifre gereklidir.');
+        }
+
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return redirect()->back()->with('error', 'Geçerli bir e-posta adresi girin.');
         }
 
-        // TODO: Burada veritabanı kontrolü yapılacak
-        
-        // Test için app/home sayfasına yönlendir
-        return redirect()->to('/app/home');
+        $loginService = new \App\Services\Users\LoginService();
+        $dto = \App\DTOs\Users\LoginDTO::fromArray(['email' => $email, 'password' => $password]);
+        $result = $loginService->login($dto);
+
+        if (!$result['success']) {
+            return redirect()->back()
+                ->withInput()
+                ->with('error', $result['message'] ?? 'Giriş başarısız.');
+        }
+
+        // Session ayarları LoginService'de yapılıyor
+        // Başarılı login sonrası home sayfasına yönlendir
+        $redirectTo = session('intended_url') ?? '/app/home';
+        session()->remove('intended_url');
+
+        return redirect()->to($redirectTo)->with('success', 'Giriş başarılı! Hoş geldiniz.');
     }
 
     // Register işlemi
     public function processRegister()
     {
-        $firstName = $this->request->getPost('first_name');
-        $lastName = $this->request->getPost('last_name');
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
-        $passwordConfirm = $this->request->getPost('password_repeat');
-
-        // Validations - boş kontrolü yapma
-        if ($email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            return redirect()->back()->with('error', 'Geçerli bir e-posta adresi girin.');
-        }
-
-        if ($password && $passwordConfirm && $password !== $passwordConfirm) {
-            return redirect()->back()->with('error', 'Şifreler eşleşmiyor.');
-        }
-
-        if ($password && strlen($password) < 6) {
-            return redirect()->back()->with('error', 'Şifre en az 6 karakter olmalıdır.');
-        }
-
-        // TODO: Burada kullanıcı kaydı yapılacak
+        $registerService = new \App\Services\Users\RegisterService();
+        $data = $this->request->getPost();
+        $dto = \App\DTOs\Users\RegisterDTO::fromArray($data);
         
-        // Kayıt başarılı, direkt home sayfasına yönlendir
-        return redirect()->to('/')->with('success', 'Kayıt başarılı! Hoş geldiniz.');
+        $result = $registerService->createUserDirectly($dto);
+
+        if (!$result['success']) {
+            // Validation hatalarını detaylı göster
+            $errorMessage = $result['message'] ?? 'Kayıt başarısız.';
+            
+            // Eğer validation hataları varsa, bunları da ekle
+            if (!empty($result['errors'])) {
+                $errorDetails = [];
+                foreach ($result['errors'] as $field => $error) {
+                    $errorDetails[] = is_array($error) ? implode(', ', $error) : $error;
+                }
+                if (!empty($errorDetails)) {
+                    $errorMessage .= ' ' . implode(' ', $errorDetails);
+                }
+            }
+            
+            return redirect()->back()
+                ->withInput()
+                ->with('error', $errorMessage)
+                ->with('errors', $result['errors'] ?? []);
+        }
+
+        // Session ayarları RegisterService'de yapılıyor
+        return redirect()->to('/')
+            ->with('success', 'Kayıt başarılı! Hoş geldiniz.');
     }
 
     // Şifre sıfırlama - email giriş sayfası

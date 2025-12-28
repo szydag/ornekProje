@@ -5,7 +5,7 @@ use App\DTOs\Users\RegisterDTO;
 use App\DTOs\Users\VerifyDTO;
 use App\Models\Users\UserModel;
 use App\Models\Users\EmailVerificationModel;
-use App\Services\Articles\ArticleEditorService;
+use App\Services\LearningMaterials\LearningMaterialEditorService;
 use CodeIgniter\Database\Exceptions\DatabaseException;
 
 class RegisterService
@@ -88,7 +88,7 @@ class RegisterService
                 'login' => true,
             ]);
 
-            $editorService = new ArticleEditorService();
+            $editorService = new LearningMaterialEditorService();
             $editorService->attachUserToAssignments((int) $existing['id'], (string) $sessionUserEmail);
             $hasAssignments = $editorService->userHasAssignments((int) $existing['id'], (string) $sessionUserEmail);
             session()->set('has_editor_assignments', $hasAssignments);
@@ -152,7 +152,7 @@ class RegisterService
                 'login' => true,
             ]);
 
-            $editorService = new ArticleEditorService();
+            $editorService = new LearningMaterialEditorService();
             $editorService->attachUserToAssignments((int) $id, (string) $dto->email);
             $hasAssignments = $editorService->userHasAssignments((int) $id, (string) $dto->email);
             session()->set('has_editor_assignments', $hasAssignments);
@@ -162,6 +162,64 @@ class RegisterService
                 'message' => 'Hesabınız doğrulandı ve oluşturuldu.',
                 'data' => ['id' => $id, 'email' => $dto->email],
             ];
+        } catch (DatabaseException $e) {
+            return ['success' => false, 'message' => 'Veritabanı hatası: ' . $e->getMessage()];
+        }
+    }
+
+    /**
+     * Email doğrulama olmadan direkt kullanıcı oluştur (Sunum/Demo için)
+     */
+    public function createUserDirectly(RegisterDTO $dto): array
+    {
+        // Temel validasyonlar
+        if (empty($dto->first_name) || strlen($dto->first_name) < 2) {
+            return ['success' => false, 'errors' => ['first_name' => 'Ad en az 2 karakter olmalıdır.'], 'message' => 'Doğrulama hatası'];
+        }
+        
+        if (empty($dto->last_name) || strlen($dto->last_name) < 2) {
+            return ['success' => false, 'errors' => ['last_name' => 'Soyad en az 2 karakter olmalıdır.'], 'message' => 'Doğrulama hatası'];
+        }
+        
+        if (empty($dto->email) || !filter_var($dto->email, FILTER_VALIDATE_EMAIL)) {
+            return ['success' => false, 'errors' => ['email' => 'Geçerli bir e-posta adresi giriniz.'], 'message' => 'Doğrulama hatası'];
+        }
+        
+        if (empty($dto->password) || strlen($dto->password) < 6) {
+            return ['success' => false, 'errors' => ['password' => 'Şifre en az 6 karakter olmalıdır.'], 'message' => 'Doğrulama hatası'];
+        }
+        
+        if ($dto->password !== $dto->password_repeat) {
+            return ['success' => false, 'errors' => ['password_repeat' => 'Şifreler eşleşmiyor.'], 'message' => 'Doğrulama hatası'];
+        }
+
+        // Email zaten var mı kontrol et
+        $existing = $this->users->where('mail', $dto->email)->first();
+        if ($existing) {
+            return ['success' => false, 'message' => 'Bu e-posta adresi zaten kullanılıyor.'];
+        }
+
+        try {
+            // Kullanıcı oluştur
+            $userId = $this->users->insert([
+                'name' => $dto->first_name,
+                'surname' => $dto->last_name,
+                'mail' => $dto->email,
+                'password' => password_hash($dto->password, PASSWORD_DEFAULT),
+                'created_at' => date('Y-m-d H:i:s'),
+            ]);
+
+            if (!$userId) {
+                return ['success' => false, 'message' => 'Kullanıcı oluşturulamadı.'];
+            }
+
+            return [
+                'success' => true,
+                'user_id' => $userId,
+                'user_name' => $dto->first_name . ' ' . $dto->last_name,
+                'message' => 'Kullanıcı başarıyla oluşturuldu.',
+            ];
+
         } catch (DatabaseException $e) {
             return ['success' => false, 'message' => 'Veritabanı hatası: ' . $e->getMessage()];
         }

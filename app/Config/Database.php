@@ -193,10 +193,15 @@ class Database extends Config
     {
         parent::__construct();
 
-        // Docker dışında çalışıyorsa localhost kullan
-        // Docker içinde 'mysql' container adını kullan
-        if (!getenv('DOCKER_CONTAINER')) {
-            // Eğer localhost'tan bağlanıyorsa
+        // Docker içinde çalışıyorsa 'mysql' container adını kullan
+        // PHP container'ından MySQL container'ına bağlanmak için
+        // Eğer localhost'tan bağlanıyorsa (Docker dışı) 127.0.0.1 kullan
+        // Docker içinde olduğumuzu kontrol etmek için basit bir yöntem
+        if (file_exists('/.dockerenv') || getenv('DOCKER_CONTAINER')) {
+            // Docker içindeyiz, mysql container adını kullan
+            $this->default['hostname'] = 'mysql';
+        } else {
+            // Docker dışındayız, localhost kullan
             $this->default['hostname'] = '127.0.0.1';
         }
 

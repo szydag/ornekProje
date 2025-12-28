@@ -17,7 +17,7 @@
 <?= $this->section('content') ?>
 <div class="flex items-center justify-center grow bg-center bg-no-repeat auth-bg-simple">
     <div class="kt-card max-w-[440px] w-full">
-        <form action="<?= base_url('user/auth/register') ?>" class="kt-card-content flex flex-col gap-5 p-10" id="sign_up_form" method="post">
+        <form action="<?= base_url('auth/register') ?>" class="kt-card-content flex flex-col gap-5 p-10" id="sign_up_form" method="post">
             <?= csrf_field() ?>
 
             <div class="text-center mb-2.5">
@@ -43,8 +43,25 @@
 
             <?php if (session()->getFlashdata('error')): ?>
                 <div class="kt-alert kt-alert-danger">
-                    <?= session()->getFlashdata('error') ?>
+                    <?= esc(session()->getFlashdata('error')) ?>
                 </div>
+            <?php endif; ?>
+            
+            <?php if (session()->getFlashdata('errors')): ?>
+                <?php $errors = session()->getFlashdata('errors'); ?>
+                <?php if (is_array($errors) && !empty($errors)): ?>
+                    <div class="kt-alert kt-alert-danger">
+                        <strong>Lütfen aşağıdaki hataları düzeltin:</strong>
+                        <ul class="list-disc list-inside space-y-1 mt-2">
+                            <?php foreach ($errors as $field => $error): ?>
+                                <li>
+                                    <strong><?= esc(ucfirst(str_replace('_', ' ', $field))) ?>:</strong>
+                                    <?= is_array($error) ? esc(implode(', ', $error)) : esc($error) ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
             <?php endif; ?>
 
             <!-- 

@@ -185,3 +185,613 @@ WHERE `mail` = :mail:
 10 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-23 11:37:49 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#5 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#4 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-11-23 11:37:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: db:seed/DemoUserSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(null)
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(388): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-11-23 11:40:00 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#5 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#4 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-11-23 11:40:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: db:seed/DemoUserSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(null)
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(388): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-11-23 11:40:53 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#6 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#7 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#11 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#12 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1525): CodeIgniter\Database\BaseConnection->query('SHOW TABLES FRO...')
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(1545): CodeIgniter\Database\BaseConnection->listTables()
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(768): CodeIgniter\Database\BaseConnection->tableExists('migrations')
+#5 /var/www/html/vendor/codeigniter4/framework/system/Database/MigrationRunner.php(162): CodeIgniter\Database\MigrationRunner->ensureTable()
+#6 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Migrate.php(85): CodeIgniter\Database\MigrationRunner->latest(NULL)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Migrate->run(Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('migrate', Array)
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#10 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#11 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-11-23 11:43:27 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#5 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#4 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-11-23 11:43:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: db:seed/DemoUserSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(null)
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(388): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+ERROR - 2025-11-23 11:44:44 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#4 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#5 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#9 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#10 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(NULL)
+#4 /var/www/html/vendor/codeigniter4/framework/system/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+#5 /var/www/html/vendor/codeigniter4/framework/system/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run(Array)
+#6 /var/www/html/vendor/codeigniter4/framework/system/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', Array)
+#7 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(388): CodeIgniter\CLI\Console->run()
+#8 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+#9 /var/www/html/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#10 {main}
+CRITICAL - 2025-11-23 11:44:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: CLI, Route: db:seed/DemoUserSeeder]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/Database.php(72): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/Config.php(109): CodeIgniter\Database\Database->loadForge(Object(CodeIgniter\Database\MySQLi\Connection))
+ 3 SYSTEMPATH/Database/Seeder.php(98): CodeIgniter\Database\Config::forge(null)
+ 4 SYSTEMPATH/Commands/Database/Seed.php(71): CodeIgniter\Database\Seeder->__construct(Object(Config\Database))
+ 5 SYSTEMPATH/CLI/Commands.php(74): CodeIgniter\Commands\Database\Seed->run([...])
+ 6 SYSTEMPATH/CLI/Console.php(47): CodeIgniter\CLI\Commands->run('db:seed', [...])
+ 7 SYSTEMPATH/Boot.php(388): CodeIgniter\CLI\Console->run()
+ 8 SYSTEMPATH/Boot.php(133): CodeIgniter\Boot::runCommand(Object(CodeIgniter\CLI\Console))
+ 9 ROOTPATH/spark(87): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+DEBUG - 2025-11-23 11:45:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 11:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 11:45:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 11:45:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-11-23 11:45:37 --> Error: Call to undefined method App\Services\Users\RegisterService::createUserDirectly()
+[Method: POST, Route: user/auth/register]
+in APPPATH/Controllers/Users/RegisterController.php on line 19.
+ 1 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Users\RegisterController->register()
+ 2 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Users\RegisterController))
+ 3 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 11:46:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-23 11:46:23 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php(201): mysqli->real_connect('127.0.0.1', 'root', Object(SensitiveParameterValue), 'educontent_db', 3306, '', 0)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#3 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#4 /var/www/html/vendor/codeigniter4/framework/system/Validation/Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#5 /var/www/html/vendor/codeigniter4/framework/system/Validation/StrictRules/Rules.php(187): CodeIgniter\Validation\Rules->is_unique('test@test.com', 'users.mail', Array)
+#6 /var/www/html/vendor/codeigniter4/framework/system/Validation/Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('test@test.com', 'users.mail', Array, NULL, 'email')
+#7 /var/www/html/vendor/codeigniter4/framework/system/Validation/Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'E-posta', 'test@test.com', Array, Array, 'email')
+#8 /var/www/html/app/Services/Users/RegisterService.php(177): CodeIgniter\Validation\Validation->run(Array)
+#9 /var/www/html/app/Controllers/Auth.php(55): App\Services\Users\RegisterService->createUserDirectly(Object(App\DTOs\Users\RegisterDTO))
+#10 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+#11 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#12 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#13 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#14 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#15 /var/www/html/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#16 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /var/www/html/vendor/codeigniter4/framework/system/Database/MySQLi/Connection.php:246
+Stack trace:
+#0 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+#2 /var/www/html/vendor/codeigniter4/framework/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1\nFROM `...', Array, false)
+#3 /var/www/html/vendor/codeigniter4/framework/system/Validation/Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+#4 /var/www/html/vendor/codeigniter4/framework/system/Validation/StrictRules/Rules.php(187): CodeIgniter\Validation\Rules->is_unique('test@test.com', 'users.mail', Array)
+#5 /var/www/html/vendor/codeigniter4/framework/system/Validation/Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('test@test.com', 'users.mail', Array, NULL, 'email')
+#6 /var/www/html/vendor/codeigniter4/framework/system/Validation/Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'E-posta', 'test@test.com', Array, Array, 'email')
+#7 /var/www/html/app/Services/Users/RegisterService.php(177): CodeIgniter\Validation\Validation->run(Array)
+#8 /var/www/html/app/Controllers/Auth.php(55): App\Services\Users\RegisterService->createUserDirectly(Object(App\DTOs\Users\RegisterDTO))
+#9 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+#10 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+#11 /var/www/html/vendor/codeigniter4/framework/system/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#12 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(363): CodeIgniter\CodeIgniter->run()
+#13 /var/www/html/vendor/codeigniter4/framework/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#14 /var/www/html/public/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#15 {main}
+CRITICAL - 2025-11-23 11:46:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: POST, Route: auth/register]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(614): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT 1
+FROM `users`
+WHERE `mail` = :mail:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH/Validation/Rules.php(175): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/Validation/StrictRules/Rules.php(187): CodeIgniter\Validation\Rules->is_unique('test@test.com', 'users.mail', [...])
+ 5 SYSTEMPATH/Validation/Validation.php(336): CodeIgniter\Validation\StrictRules\Rules->is_unique('test@test.com', 'users.mail', [...], null, 'email')
+ 6 SYSTEMPATH/Validation/Validation.php(201): CodeIgniter\Validation\Validation->processRules('email', 'E-posta', 'test@test.com', [...], [...], 'email')
+ 7 APPPATH/Services/Users/RegisterService.php(177): CodeIgniter\Validation\Validation->run([...])
+ 8 APPPATH/Controllers/Auth.php(55): App\Services\Users\RegisterService->createUserDirectly(Object(App\DTOs\Users\RegisterDTO))
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Auth->processRegister()
+10 SYSTEMPATH/CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Auth))
+11 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 11:46:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:19:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:20:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:22:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:23:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 16:40:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:15:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:15:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:16:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:16:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:17:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:20:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:20:33 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:20:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:20:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:59:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 17:59:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$pubTypes is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 53.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$contents is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 60.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+WARNING - 2025-11-23 17:59:11 --> [DEPRECATED] Creation of dynamic property App\Services\LearningMaterials\LearningMaterialWizardService::$authors is deprecated in APPPATH/Services/LearningMaterials/LearningMaterialWizardService.php on line 62.
+ 1 APPPATH/Controllers/LearningMaterials/LearningMaterialWizardController.php(17): App\Services\LearningMaterials\LearningMaterialWizardService->__construct()
+ 2 SYSTEMPATH/CodeIgniter.php(903): App\Controllers\LearningMaterials\LearningMaterialWizardController->__construct()
+ 3 SYSTEMPATH/CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 4 SYSTEMPATH/CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-11-23 18:00:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

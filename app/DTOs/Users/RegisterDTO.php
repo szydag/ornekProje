@@ -30,10 +30,10 @@ class RegisterDTO
             'first_name'            => ['label' => 'Ad',                 'rules' => 'required|min_length[2]|max_length[100]'],
             'last_name'             => ['label' => 'Soyad',              'rules' => 'required|min_length[2]|max_length[100]'],
             'email'                 => ['label' => 'E-posta',            'rules' => 'required|valid_email|is_unique[users.mail]'],
-            'password'              => ['label' => 'Şifre',              'rules' => 'required|min_length[8]'],
+            'password'              => ['label' => 'Şifre',              'rules' => 'required|min_length[6]|max_length[255]'],
             'password_repeat'       => ['label' => 'Şifre (tekrar)',     'rules' => 'required|matches[password]'],
-            'kvkk_consent'          => ['label' => 'KVKK Onayı',         'rules' => 'required|in_list[1]'],
-            'kvkk_explicit_consent' => ['label' => 'Açık Rıza',          'rules' => 'required|in_list[1]'],
+            'kvkk_consent'          => ['label' => 'KVKK Onayı',         'rules' => 'permit_empty|in_list[1]'],
+            'kvkk_explicit_consent' => ['label' => 'Açık Rıza',          'rules' => 'permit_empty|in_list[1]'],
         ];
     }
 
