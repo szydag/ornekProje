@@ -25,7 +25,7 @@ use App\DTOs\LearningMaterials\Step4DTO;
 use App\DTOs\LearningMaterials\Step5DTO;
 use CodeIgniter\HTTP\IncomingRequest;
 use RuntimeException;
-use App\Models\Users\İnstitutionModel;
+use App\Models\Users\InstitutionModel;
 use App\Models\Users\CountryModel;
 final class LearningMaterialWizardService
 {
@@ -35,7 +35,7 @@ final class LearningMaterialWizardService
     private TopicModel $topicsModel;
     private CountryModel $countryModel;
     private TitleModel $titleModel;
-    private İnstitutionModel $institutionModel;
+    private InstitutionModel $institutionModel;
     private LearningMaterialsModel $learningMaterials;
     private LearningMaterialTranslationsModel $translations;
     private LearningMaterialContributorsModel $contributors;
@@ -48,24 +48,24 @@ final class LearningMaterialWizardService
         ?TopicModel $topicsModel = null,
         ?CountryModel $countryModel = null,
         ?TitleModel $titleModel = null,
-        ?İnstitutionModel $institutionModel = null,
+        ?InstitutionModel $institutionModel = null,
     ) {
-        $this->pubTypes = $contentTypes ?? new ContentTypeModel();
+        $this->contentTypes = $contentTypes ?? new ContentTypeModel();
         $this->topicsModel = $topicsModel ?? new TopicModel();
         $this->countryModel = $countryModel ?? new CountryModel();
         $this->titleModel = $titleModel ?? new TitleModel();
-        $this->institutionModel = $institutionModel ?? new İnstitutionModel();
+        $this->institutionModel = $institutionModel ?? new InstitutionModel();
 
         // Tüm bağlı modelleri doğrudan örnekle
-        $this->contents = new LearningMaterialsModel();
+        $this->learningMaterials = new LearningMaterialsModel();
         $this->translations = new LearningMaterialTranslationsModel();
-        $this->authors = new LearningMaterialContributorsModel();
+        $this->contributors = new LearningMaterialContributorsModel();
         $this->files = new LearningMaterialFilesModel();
         $this->extraInfo = new LearningMaterialExtraInfoModel();
         $this->approvals = new LearningMaterialApprovalsModel();
 
         // (İsteğe bağlı güvence kontrolleri)
-        if (!$this->pubTypes instanceof ContentTypeModel) {
+        if (!$this->contentTypes instanceof ContentTypeModel) {
             throw new RuntimeException('ContentTypeModel bulunamadı.');
         }
         if (!$this->topicsModel instanceof TopicModel) {
@@ -77,7 +77,7 @@ final class LearningMaterialWizardService
     /** @return array<int,string> id=>name */
     public function getPublicationTypes(): array
     {
-        return $this->pubTypes->listForSelect();
+        return $this->contentTypes->listForSelect();
     }
 
     /** @return array<int,string> id=>name */
@@ -203,7 +203,7 @@ final class LearningMaterialWizardService
         }
 
         $users = model(UserModel::class);
-        $institutions = model(İnstitutionModel::class);
+        $institutions = model(InstitutionModel::class);
         $titles = model(TitleModel::class);
         $countries = model(CountryModel::class);
 
@@ -524,7 +524,7 @@ final class LearningMaterialWizardService
     public function getLastQuery(): ?string
     {
         try {
-            return (string) ($this->contents->db->getLastQuery() ?? '');
+            return (string) ($this->learningMaterials->db->getLastQuery() ?? '');
         } catch (\Throwable $e) {
             return null;
         }
@@ -582,10 +582,10 @@ final class LearningMaterialWizardService
                 'status' => (string) ($s1['status'] ?? ((new \Config\Processes)->firstProcesses() ?? 'on_inceleme')),
             ];
 
-            $learningMaterialId = $this->contents->insert($contentPayload, true);
+            $learningMaterialId = $this->learningMaterials->insert($contentPayload, true);
             if ($learningMaterialId === false) {
-                $errors = $this->contents->errors() ?: ['db' => 'Bilinmeyen hata'];
-                $lastQuery = (string) $this->contents->db->getLastQuery();
+                $errors = $this->learningMaterials->errors() ?: ['db' => 'Bilinmeyen hata'];
+                $lastQuery = (string) $this->learningMaterials->db->getLastQuery();
                 throw new \RuntimeException('Content insert failed: ' . json_encode($errors, JSON_UNESCAPED_UNICODE) . ' | SQL: ' . $lastQuery);
             }
             $learningMaterialId = (int) $learningMaterialId;
@@ -645,9 +645,9 @@ final class LearningMaterialWizardService
                     $authorRows[] = $row;
                 }
 
-                if ($authorRows && $this->authors->insertBatch($authorRows) === false) {
-                    $errors = $this->authors->errors() ?: ['db' => 'Bilinmeyen hata'];
-                    $lastQuery = (string) $this->authors->db->getLastQuery();
+                if ($authorRows && $this->contributors->insertBatch($authorRows) === false) {
+                    $errors = $this->contributors->errors() ?: ['db' => 'Bilinmeyen hata'];
+                    $lastQuery = (string) $this->contributors->db->getLastQuery();
                     throw new \RuntimeException('Authors insert failed: ' . json_encode($errors, JSON_UNESCAPED_UNICODE) . ' | SQL: ' . $lastQuery);
                 }
             }

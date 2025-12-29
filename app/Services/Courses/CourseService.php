@@ -18,7 +18,8 @@ class CourseService
         private CourseModel $courseModel = new CourseModel(),
         private CourseAuthorityModel $authModel = new CourseAuthorityModel(),
         private UserRoleModel $userRoleModel = new UserRoleModel()
-    ) {}
+    ) {
+    }
 
     /**
      * @return array{id:int,title:string,description:string,status:int,start_date:string,end_date:?string,indefinite:int,managers:int[]}
@@ -34,7 +35,7 @@ class CourseService
 
         // tarih normalizasyonu
         $startDate = (new DateTime($dto->startDate))->format('Y-m-d');
-        $endDate   = null;
+        $endDate = null;
 
         if (!$dto->indefinite && $dto->endDate) {
             $endDate = (new DateTime($dto->endDate))->format('Y-m-d');
@@ -51,12 +52,12 @@ class CourseService
 
         // Kurs insert
         $encyId = $this->courseModel->insert([
-            'title'       => $dto->title,
+            'title' => $dto->title,
             'description' => $dto->description,
-            'status'      => 1,
-            'start_date'  => $startDate,
-            'end_date'    => $dto->indefinite ? null : $endDate,
-            'indefinite'  => $dto->indefinite ? 1 : 0,
+            'status' => 1,
+            'start_date' => $startDate,
+            'end_date' => $dto->indefinite ? null : $endDate,
+            'indefinite' => $dto->indefinite ? 1 : 0,
             // eğer useTimestamps=false ise:
             // 'created_at'  => $now,
         ], true);
@@ -71,7 +72,7 @@ class CourseService
         foreach ($validManagerIds as $uid) {
             $row = [
                 'course_id' => $encyId,
-                'user_id'         => $uid,
+                'user_id' => $uid,
             ];
             // eğer model useTimestamps=true değilse:
             // $row['created_at'] = $now;
@@ -90,14 +91,14 @@ class CourseService
         }
 
         return [
-            'id'          => (int) $encyId,
-            'title'       => $dto->title,
+            'id' => (int) $encyId,
+            'title' => $dto->title,
             'description' => $dto->description,
-            'status'      => 1,
-            'start_date'  => $startDate,
-            'end_date'    => $dto->indefinite ? null : $endDate,
-            'indefinite'  => $dto->indefinite ? 1 : 0,
-            'managers'    => $validManagerIds,
+            'status' => 1,
+            'start_date' => $startDate,
+            'end_date' => $dto->indefinite ? null : $endDate,
+            'indefinite' => $dto->indefinite ? 1 : 0,
+            'managers' => $validManagerIds,
         ];
     }
 
@@ -124,7 +125,7 @@ class CourseService
             ->findAll();
 
         $existingIds = array_column($existing, 'user_id');
-        $toInsert    = array_values(array_diff($validManagerIds, $existingIds));
+        $toInsert = array_values(array_diff($validManagerIds, $existingIds));
 
         $added = [];
         if (!empty($toInsert)) {
@@ -132,7 +133,7 @@ class CourseService
             foreach ($toInsert as $uid) {
                 $rows[] = [
                     'course_id' => $dto->courseId,
-                    'user_id'         => $uid,
+                    'user_id' => $uid,
                 ];
             }
             $this->authModel->insertBatch($rows);
@@ -141,8 +142,49 @@ class CourseService
 
         return [
             'course_id' => (int) $dto->courseId,
-            'added'           => $added,
-            'skipped'         => $existingIds,
+            'added' => $added,
+            'skipped' => $existingIds,
         ];
+    }
+
+    public function update(int $courseId, array $data): bool
+    {
+        $course = $this->courseModel->find($courseId);
+        if (!$course) {
+            throw new DatabaseException('Kurs bulunamadı.');
+        }
+
+        $updateData = [
+            'title' => $data['title'] ?? $course['title'],
+            'description' => $data['description'] ?? $course['description'],
+            'start_date' => $data['start_date'] ?? $course['start_date'],
+            'end_date' => array_key_exists('end_date', $data) ? $data['end_date'] : $course['end_date'],
+            'indefinite' => isset($data['unlimited']) ? (int) $data['unlimited'] : (int) $course['indefinite'],
+        ];
+
+        $db = Database::connect();
+        $db->transStart();
+
+        $ok = $this->courseModel->update($courseId, $updateData);
+        if (!$ok) {
+            $db->transRollback();
+            return false;
+        }
+
+        // if manager provided, update authority
+        if (!empty($data['manager'])) {
+            $managerId = (int) $data['manager'];
+            $valid = $this->userRoleModel->filterOnlyManagers([$managerId], 2);
+            if (!empty($valid)) {
+                $this->authModel->where('course_id', $courseId)->delete();
+                $this->authModel->insert([
+                    'course_id' => $courseId,
+                    'user_id' => $managerId,
+                ]);
+            }
+        }
+
+        $db->transComplete();
+        return $db->transStatus() !== false;
     }
 }

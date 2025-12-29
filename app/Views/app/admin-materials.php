@@ -69,7 +69,8 @@
             <div class="grid" data-kt-datatable="true" data-kt-datatable-page-size="10">
                 <!-- Desktop Table -->
                 <div class="kt-scrollable-x-auto">
-                    <table class="kt-table table-auto kt-table-border" data-kt-datatable-table="true" id="admin_contents_table">
+                    <table class="kt-table table-auto kt-table-border" data-kt-datatable-table="true"
+                        id="admin_contents_table">
                         <thead>
                             <tr>
                                 <th class="min-w-[300px]">
@@ -123,11 +124,10 @@
                                 <tr>
                                     <td>
                                         <div class="flex flex-col">
-                                            <a class="text-sm font-semibold text-mono hover:text-primary" 
-                                               href="<?= base_url('admin/apps/materials/' . $encryptedId) ?>" 
-                                               title="<?= esc($content['title']) ?>">
+                                            <span class="text-sm font-semibold text-mono"
+                                                title="<?= esc($content['title']) ?>">
                                                 <?= esc($content['title']) ?>
-                                            </a>
+                                            </span>
                                         </div>
                                     </td>
                                     <td>
@@ -139,7 +139,8 @@
                                     </td>
                                     <td>
                                         <div class="flex items-center justify-center gap-1">
-                                            <span class="kt-badge kt-badge-outline kt-badge-<?= $content['status_color'] ?>">
+                                            <span
+                                                class="kt-badge kt-badge-outline kt-badge-<?= $content['status_color'] ?>">
                                                 <?= esc($content['status_text']) ?>
                                             </span>
                                         </div>
@@ -148,10 +149,10 @@
                                     <td><?= esc($content['updated_at']) ?></td>
                                     <td>
                                         <div class="flex items-center justify-center gap-1">
-                                            <a class="kt-badge kt-badge-outline kt-badge-primary" 
-                                               href="<?= base_url('admin/apps/materials/' . $encryptedId) ?>" 
-                                               title="Detay">
-                                                Detay
+                                            <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost kt-btn-primary"
+                                                href="<?= base_url('admin/apps/materials/' . $encryptedId) ?>"
+                                                title="Detay">
+                                                <i class="ki-filled ki-eye"></i>
                                             </a>
                                         </div>
                                     </td>
@@ -161,7 +162,8 @@
                     </table>
                 </div>
 
-                <div class="kt-card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-secondary-foreground text-sm font-medium">
+                <div
+                    class="kt-card-footer justify-center md:justify-between flex-col md:flex-row gap-5 text-secondary-foreground text-sm font-medium">
                     <div class="per-page-selector flex items-center gap-2">
                         Show
                         <select class="kt-select w-16" data-kt-datatable-size="true" data-kt-select="" name="perpage">

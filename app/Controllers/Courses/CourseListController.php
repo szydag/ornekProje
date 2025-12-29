@@ -19,9 +19,16 @@ class CourseListController extends BaseController
     public function index()
     {
         $dto = ListCoursesDTO::fromRequest($this->request);
-        
+
         $data = $this->service->listAll($dto);
-        
+
+        if ($this->request->isAJAX() || strpos($this->request->getHeaderLine('Accept'), 'application/json') !== false) {
+            return $this->response->setJSON([
+                'status' => 'success',
+                'data' => $data['items']
+            ]);
+        }
+
         return view('app/course-list', [
             'courses' => $data['items'],
             'total' => $data['total']

@@ -69,23 +69,23 @@
 
                         <!-- Dropdown -->
                         <div id="topics_dropdown"
-                            class="hidden absolute z-50 w-full mt-1 bg-white border border-gray-300 rounded-lg shadow-lg max-h-64 overflow-auto">
-                            <div class="p-2 border-b border-gray-200 sticky top-0 bg-white">
+                            class="hidden absolute z-50 w-full mt-1 bg-card border border-border rounded-lg shadow-lg max-h-64 overflow-auto">
+                            <div class="p-2 border-b border-border sticky top-0 bg-card">
                                 <input type="text" class="kt-input" id="topics_filter" placeholder="Konu ara..."
                                     autocomplete="off" oninput="filterTopics()">
                             </div>
                             <div id="topicsList" class="p-2">
                                 <?php if (isset($topics) && !empty($topics)): ?>
                                     <?php foreach ($topics as $topicId => $topicName): ?>
-                                        <div class="topic-item flex items-center p-2 hover:bg-gray-100 rounded cursor-pointer"
+                                        <div class="topic-item flex items-center p-2 hover:bg-accent rounded cursor-pointer"
                                             data-value="<?= esc($topicId) ?>" data-topic="<?= esc($topicName) ?>"
                                             onclick="selectTopic('<?= esc($topicId) ?>', '<?= esc($topicName) ?>')">
-                                            <span class="text-sm"><?= esc($topicName) ?></span>
+                                            <span class="text-sm text-foreground"><?= esc($topicName) ?></span>
                                         </div>
                                     <?php endforeach; ?>
 
                                 <?php else: ?>
-                                    <p class="text-gray-500 text-center py-4">Konu bulunamadı</p>
+                                    <p class="text-muted-foreground text-center py-4 text-sm">Konu bulunamadı</p>
                                 <?php endif; ?>
                             </div>
                         </div>
@@ -183,7 +183,8 @@
                                     Öz <span class="text-danger">*</span>
                                 </label>
                                 <textarea class="kt-textarea" name="abstract_tr" id="abstract_tr" rows="6"
-                                    placeholder="Eğitim İçeriği özünü giriniz" oninput="updateCharacterCount('abstract_tr', 50, 2000)"></textarea>
+                                    placeholder="Eğitim İçeriği özünü giriniz"
+                                    oninput="updateCharacterCount('abstract_tr', 50, 2000)"></textarea>
                                 <div class="flex justify-between items-center mt-1">
                                     <div class="kt-form-description text-2sm">
                                         En az 50, en fazla 2000 karakter
@@ -259,7 +260,8 @@
                                     Öz <span class="text-danger">*</span>
                                 </label>
                                 <textarea class="kt-textarea" name="abstract_en" id="abstract_en" rows="6"
-                                    placeholder="Eğitim İçeriği özünü İngilizce olarak giriniz" oninput="updateCharacterCount('abstract_en', 50, 2000)"></textarea>
+                                    placeholder="Eğitim İçeriği özünü İngilizce olarak giriniz"
+                                    oninput="updateCharacterCount('abstract_en', 50, 2000)"></textarea>
                                 <div class="flex justify-between items-center mt-1">
                                     <div class="kt-form-description text-2sm">
                                         En az 50, en fazla 2000 karakter
@@ -286,7 +288,8 @@
                             <input class="kt-checkbox" name="no_other_journal" id="no_other_journal" type="checkbox"
                                 value="1" required />
                             <span class="kt-checkbox-label">
-                                Eğitim İçeriğimi aynı anda değerlendirmek üzere başka bir dergiye göndermediğimi beyan ederim.
+                                Eğitim İçeriğimi aynı anda değerlendirmek üzere başka bir dergiye göndermediğimi beyan
+                                ederim.
                             </span>
                         </label>
                         <div class="text-red-600 text-sm italic mt-1" id="no_other_journal-error"
@@ -504,12 +507,12 @@
         if (errorElement) {
             errorElement.textContent = message;
             errorElement.style.display = 'block';
-            errorElement.style.color = '#dc2626';
+            errorElement.className = 'text-xs mt-1 text-danger font-medium italic'; // Consistent styling
         }
 
         const inputElement = document.getElementById(fieldName) || document.querySelector(`[name="${fieldName}"]`);
         if (inputElement) {
-            inputElement.classList.add('border-red-600', '!border-red-600');
+            inputElement.classList.add('border-danger', '!border-danger');
         }
     }
 
@@ -522,7 +525,7 @@
 
         const inputElement = document.getElementById(fieldName) || document.querySelector(`[name="${fieldName}"]`);
         if (inputElement) {
-            inputElement.classList.remove('border-red-600', '!border-red-600', 'border-red-500', '!border-red-500');
+            inputElement.classList.remove('border-danger', '!border-danger', 'border-red-600', '!border-red-600', 'border-red-500', '!border-red-500');
         }
     }
 
@@ -600,12 +603,12 @@
         const textarea = document.getElementById(fieldId);
         const countElement = document.getElementById(fieldId + '_count');
         const counterElement = document.getElementById(fieldId + '_counter');
-        
+
         if (!textarea || !countElement || !counterElement) return;
-        
+
         const currentLength = textarea.value.length;
         countElement.textContent = currentLength;
-        
+
         // Renk değişimi
         if (currentLength < minLength) {
             counterElement.className = 'text-sm text-red-600';
@@ -614,7 +617,7 @@
         } else {
             counterElement.className = 'text-sm text-muted-foreground';
         }
-        
+
         // Textarea border rengi
         if (currentLength < minLength) {
             textarea.classList.add('border-red-500');
@@ -626,7 +629,7 @@
             textarea.classList.add('border-green-500');
             textarea.classList.remove('border-red-500');
         }
-        
+
         // Hata mesajı göster/gizle
         if (currentLength > maxLength) {
             showFieldError(fieldId, `En fazla ${maxLength} karakter girebilirsiniz. Şu anda ${currentLength} karakter var.`);
@@ -638,6 +641,18 @@
     }
 
     function validateStep1() {
+        // Auto-add pending keywords if user typed but didn't press Enter
+        ['tr', 'en'].forEach(lang => {
+            const input = document.getElementById(`keywords_${lang}_input`);
+            if (input && input.value.trim()) {
+                const keyword = input.value.trim();
+                if (!keywords[lang].includes(keyword)) {
+                    window.addKeyword(keyword, lang);
+                    input.value = '';
+                }
+            }
+        });
+
         clearAllErrors();
 
         let hasErrors = false;
@@ -715,18 +730,19 @@
         {
             fieldName: 'keywords_tr',
             condition: () => keywords.tr.length < 3,
-            message: 'Türkçe en az 3 anahtar kelime girmelisiniz.'
+            message: () => `Türkçe en az 3 anahtar kelime girmelisiniz (Şu an: ${keywords.tr.length}).`
         },
         {
             fieldName: 'keywords_en',
             condition: () => keywords.en.length < 3,
-            message: 'İngilizce en az 3 anahtar kelime girmelisiniz.'
+            message: () => `İngilizce en az 3 anahtar kelime girmelisiniz (Şu an: ${keywords.en.length}).`
         }
         ];
 
         validations.forEach(validation => {
             if (validation.condition()) {
-                showFieldError(validation.fieldName, validation.message);
+                const message = typeof validation.message === 'function' ? validation.message() : validation.message;
+                showFieldError(validation.fieldName, message);
                 if (!hasErrors && validation.focus) {
                     const focusElement = document.getElementById(validation.focus) || document.querySelector(`[name="${validation.focus}"]`);
                     if (focusElement) focusElement.focus();
@@ -1051,8 +1067,14 @@
         const originalAddKeyword = window.addKeyword;
         window.addKeyword = function (keyword, language) {
             originalAddKeyword(keyword, language);
-            if (keywords[language].length >= 3) {
+
+            const count = keywords[language].length;
+            if (count >= 3) {
                 clearFieldError('keywords_' + language);
+            } else if (count > 0) {
+                // Update error message to be more specific
+                const langName = language === 'tr' ? 'Türkçe' : 'İngilizce';
+                showFieldError('keywords_' + language, `${langName} en az 3 anahtar kelime girmelisiniz (Şu an: ${count}).`);
             }
         };
     }
@@ -1073,7 +1095,7 @@
         // Karakter sayacını başlat
         updateCharacterCount('abstract_tr', 50, 2000);
         updateCharacterCount('abstract_en', 50, 2000);
-        
+
         setupValidationListeners();
         const courseSelect = document.getElementById('course_select');
         if (courseSelect) {

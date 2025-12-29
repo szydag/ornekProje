@@ -11,7 +11,8 @@
     </style>
     <!-- Form Content - Step 2 -->
     <form method="post" action="#" enctype="multipart/form-data" id="step2_form" style="width: 100%;">
-        <div class="flex flex-col items-stretch gap-5 lg:gap-7.5 w-full max-w-full px-1 sm:px-4 sm:max-w-4xl sm:mx-auto overflow-x-hidden">
+        <div
+            class="flex flex-col items-stretch gap-5 lg:gap-7.5 w-full max-w-full px-1 sm:px-4 sm:max-w-4xl sm:mx-auto overflow-x-hidden">
 
             <!-- Step 2: Katkıda Bulunanlar -->
             <div class="kt-card pb-2.5">
@@ -30,7 +31,8 @@
                                 </div>
                             </div>
                             <div class="text-gray-700 text-sm leading-relaxed">
-                                Eğitim İçeriğiyi gönderen kişi sorumlu yazar olarak otomatik eklenir. Başka yazar eklemek için
+                                Eğitim İçeriğiyi gönderen kişi sorumlu yazar olarak otomatik eklenir. Başka yazar
+                                eklemek için
                                 bu alanı kullanabilirsiniz. Ekleyeceğiniz e-posta sistemde kayıtlı ise yazar ekranı size
                                 açılacaktır. Kayıtlı değilse sizin ekleyeceğiniz e-posta adresine onay bildirimi
                                 gidecek, yazar kabul ettiğinde içerik dergiye gönderilecektir.
@@ -38,7 +40,8 @@
                         </div>
 
                         <!-- Validation Error Display -->
-                        <div id="authors-error" style="display: none; color: #dc2626; font-size: 0.875rem; margin-top: 0.5rem;"></div>
+                        <div id="authors-error"
+                            style="display: none; color: #dc2626; font-size: 0.875rem; margin-top: 0.5rem;"></div>
 
                         <!-- Katkıda Bulunanlar Listesi -->
                         <div class="space-y-3 sm:space-y-4">
@@ -46,7 +49,7 @@
                             <!-- Sorumlu Katkıda Bulunan -->
                             <div class="space-y-4">
                                 <div id="responsible_author_card" class="space-y-4"></div>
-                                        </div>
+                            </div>
 
                             <!-- Diğer Katkıda Bulunanlar -->
                             <div id="authors_container" class="mt-3 sm:mt-5 space-y-3 sm:space-y-4"></div>
@@ -75,7 +78,8 @@
                         <div id="translation_authors" class="<?= "hidden" ? '' : 'hidden' ?> mt-5">
                             <div class="kt-card">
                                 <div class="kt-card-header">
-                                    <div class="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between min-w-0" style="display: flex; flex-direction: row; justify-content: space-between;">
+                                    <div class="flex w-full flex-col gap-3 sm:flex-row sm:items-center sm:justify-between min-w-0"
+                                        style="display: flex; flex-direction: row; justify-content: space-between;">
                                         <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
                                             <div
                                                 class="flex size-10 items-center justify-center self-start rounded-full bg-info text-white sm:self-auto">
@@ -95,7 +99,8 @@
                             </div>
 
                             <!-- Çevirmen Ekleme -->
-                            <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-2.5 mt-3 min-w-0" style="display: flex; flex-direction: row; justify-content: space-between;">
+                            <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:items-center sm:gap-2.5 mt-3 min-w-0"
+                                style="display: flex; flex-direction: row; justify-content: space-between;">
                                 <div class="flex-1 min-w-0 w-full sm:w-auto">
                                     <input class="kt-input w-full" name="translator_email" type="email"
                                         placeholder="Eklenecek Çevirmen E-Postası" />
@@ -619,8 +624,8 @@
             if (!dom.authors) return;
             if (!entries.length) {
                 dom.authors.innerHTML = placeholderCard('Henüz yardımcı yazar eklenmedi.');
-            return;
-        }
+                return;
+            }
             dom.authors.innerHTML = entries
                 .map((entry, idx) => createAuthorCard(entry.author, entry.index, { order: entry.author.order ?? idx + 1 }))
                 .join('');
@@ -660,7 +665,7 @@
             renderTranslators(translators);
         }
 
-        function collectAddModalValues() {
+        function collectModalValues() {
             const modal = dom.addModal;
             if (!modal) return null;
 
@@ -706,67 +711,31 @@
             };
         }
 
+        function collectAddModalValues() {
+            return collectModalValues();
+        }
+
         function collectEditModalValues(index) {
-            const modal = dom.editModal;
-            if (!modal) return null;
-
-            const author = state.authors[index];
-            if (!author) return null;
-
-            const name = modal.querySelector('input[name="edit_author_name"]')?.value.trim() ?? '';
-            const surname = modal.querySelector('input[name="edit_author_surname"]')?.value.trim() ?? '';
-            const email = modal.querySelector('input[name="edit_author_email"]')?.value.trim() ?? '';
-            const titleSelect = modal.querySelector('select[name="edit_author_title"]');
-            const institutionSelect = modal.querySelector('select[name="edit_author_institution"]');
-            const phone = modal.querySelector('input[name="edit_author_phone"]')?.value.trim() ?? '';
-            const orcid = modal.querySelector('input[name="edit_author_orcid"]')?.value.trim() ?? '';
-            const countrySelect = modal.querySelector('select[name="edit_author_country"]');
-            const cityInput = modal.querySelector('input[name="edit_author_city"]') ?? modal.querySelector('select[name="edit_author_city"]');
-            const address = modal.querySelector('textarea[name="edit_author_address"]')?.value.trim() ?? '';
-            const isCorrespondingInput = modal.querySelector('input[name="edit_author_is_corresponding"]');
-            const noInstitutionCheckbox = modal.querySelector('#edit_no_institution_checkbox') ?? modal.querySelector('#no_institution_checkbox');
-
-            let affiliation = author.affiliation;
-            let affiliationId = author.affiliation_id;
-
-            if (noInstitutionCheckbox?.checked) {
-                affiliation = 'Kurum Yok';
-                affiliationId = null;
-            } else if (institutionSelect) {
-                affiliationId = institutionSelect.value || null;
-                affiliation = optionLabel(institutionSelect);
-            }
-
-            return {
-                first_name: name,
-                last_name: surname,
-                email,
-                title: optionLabel(titleSelect),
-                title_id: titleSelect?.value ?? null,
-                affiliation,
-                affiliation_id: affiliationId,
-                phone,
-                orcid,
-                country: optionLabel(countrySelect),
-                country_code: countrySelect?.value ?? null,
-                city: cityInput?.value?.trim() ?? '',
-                address,
-                is_corresponding: author.type === 'author' ? (isCorrespondingInput ? isCorrespondingInput.checked : author.is_corresponding) : false,
-            };
+            return collectModalValues();
         }
 
         function resetAddModal() {
             const modal = dom.addModal;
             if (!modal) return;
 
-            ['author_name', 'author_surname', 'author_email_modal', 'author_phone', 'author_orcid'].forEach((name) => {
+            ['author_name', 'author_surname', 'author_email_modal', 'author_phone', 'orcid'].forEach((name) => {
                 const input = modal.querySelector(`[name="${name}"]`);
                 if (input) input.value = '';
             });
 
             ['author_title', 'author_institution', 'author_country', 'author_city'].forEach((name) => {
                 const select = modal.querySelector(`[name="${name}"]`);
-                if (select) select.value = '';
+                if (select) {
+                    select.value = '';
+                    if (typeof $(select).trigger === 'function') {
+                        $(select).trigger('change');
+                    }
+                }
             });
 
             const address = modal.querySelector('textarea[name="author_address"]');
@@ -793,9 +762,9 @@
 
         function openModal(modal) {
             if (!modal) return;
-                modal.classList.add('kt-modal-open');
-                modal.style.display = 'flex';
-                document.body.classList.add('kt-modal-open');
+            modal.classList.add('kt-modal-open');
+            modal.style.display = 'flex';
+            document.body.classList.add('kt-modal-open');
         }
 
         function closeModal(modal) {
@@ -842,38 +811,38 @@
             validate() {
                 this.clearError();
                 const regularAuthors = state.authors.filter((author) => author.type === 'author');
-                
+
                 if (!regularAuthors.length) {
                     this.showError('En az bir yazar eklemelisiniz.');
                     return false;
                 }
-                
+
                 // Sorumlu yazar kontrolü
                 const correspondingAuthor = regularAuthors.find((author) => author.is_corresponding);
                 if (!correspondingAuthor) {
                     this.showError('Bir sorumlu yazar seçmelisiniz.');
                     return false;
                 }
-                
+
                 // Sorumlu yazar bilgilerinin tamamlanmış olup olmadığını kontrol et
                 const requiredFields = ['first_name', 'last_name', 'email'];
                 const missingFields = requiredFields.filter(field => !correspondingAuthor[field] || correspondingAuthor[field].trim() === '');
-                
+
                 if (missingFields.length > 0) {
                     const fieldLabels = {
                         'first_name': 'Ad',
-                        'last_name': 'Soyad', 
+                        'last_name': 'Soyad',
                         'email': 'E-posta'
                     };
                     const missingFieldLabels = missingFields.map(field => fieldLabels[field] || field);
                     this.showError(`Sorumlu yazarın ${missingFieldLabels.join(', ')} bilgileri eksik. Lütfen tamamlayınız.`);
                     return false;
                 }
-                
+
                 // Sorumlu yazarın diğer önemli bilgilerini de kontrol et
                 const additionalFields = ['affiliation', 'country', 'city'];
                 const missingAdditionalFields = additionalFields.filter(field => !correspondingAuthor[field] || correspondingAuthor[field].trim() === '');
-                
+
                 if (missingAdditionalFields.length > 0) {
                     const fieldLabels = {
                         'affiliation': 'Kurum',
@@ -884,7 +853,7 @@
                     this.showError(`Sorumlu yazarın ${missingFieldLabels.join(', ')} bilgileri eksik. Lütfen tamamlayınız.`);
                     return false;
                 }
-                
+
                 return true;
             },
             showError(message) {
@@ -924,9 +893,9 @@
 
                 // Email kontrolü sadece ekleme modunda yap
                 if (state.modal.mode !== 'edit' && data.type === 'author' && state.authors.some((author) => author.type === 'author' && author.email.toLowerCase() === data.email.toLowerCase())) {
-                        alert('Bu e-posta adresiyle zaten bir yazar eklediniz.');
-                        return;
-                    }
+                    alert('Bu e-posta adresiyle zaten bir yazar eklediniz.');
+                    return;
+                }
 
                 if (data.type === 'author' && data.is_corresponding) {
                     state.authors.forEach((author) => {
@@ -946,36 +915,36 @@
 
                 const authorData = {
                     type: data.type,
-                        first_name: data.first_name,
-                        last_name: data.last_name,
-                        email: data.email,
+                    first_name: data.first_name,
+                    last_name: data.last_name,
+                    email: data.email,
                     is_corresponding: data.type === 'author' ? data.is_corresponding : false,
                     order,
-                        affiliation: data.affiliation,
-                        affiliation_id: data.affiliation_id,
-                        orcid: data.orcid,
+                    affiliation: data.affiliation,
+                    affiliation_id: data.affiliation_id,
+                    orcid: data.orcid,
                     user_id: null,
-                        title: data.title,
-                        title_id: data.title_id,
-                        phone: data.phone,
-                        country: data.country,
-                        country_code: data.country_code,
-                        city: data.city,
-                        address: data.address,
+                    title: data.title,
+                    title_id: data.title_id,
+                    phone: data.phone,
+                    country: data.country,
+                    country_code: data.country_code,
+                    city: data.city,
+                    address: data.address,
                 };
 
                 if (state.modal.mode === 'edit' && state.modal.index !== null) {
                     // Düzenleme modu
                     state.authors[state.modal.index] = authorData;
-                    } else {
+                } else {
                     // Ekleme modu
                     state.authors.push(authorData);
-                    }
+                }
 
-                    ensureCorrespondingAuthor();
-                    renderAuthors();
+                ensureCorrespondingAuthor();
+                renderAuthors();
                 closeAuthorModal();
-                    resetAddModal();
+                resetAddModal();
             },
             updateAuthorFromModal() {
                 const index = state.modal.index;
@@ -983,7 +952,7 @@
                 const target = state.authors[index];
                 if (!target) return;
 
-                const updates = collectEditModalValues(index);
+                const updates = collectModalValues(); // Use consolidated collector
                 if (!updates) return;
 
                 if (!updates.first_name || !updates.last_name || !updates.email) {
@@ -1006,49 +975,12 @@
 
                 ensureCorrespondingAuthor();
                 renderAuthors();
-                closeModal(dom.editModal);
+                closeAuthorModal(); // Use closeAuthorModal
             },
             openEdit(index) {
-                const author = state.authors[index];
-                if (!author) return;
-                state.modal.mode = 'edit';
-                state.modal.index = index;
-
-                const modal = dom.editModal;
-                if (!modal) return;
-                openModal(modal);
-
-                const setValue = (selector, value) => {
-                    const el = modal.querySelector(selector);
-                    if (el) el.value = value ?? '';
-                };
-
-                setValue('input[name="edit_author_name"]', author.first_name);
-                setValue('input[name="edit_author_surname"]', author.last_name);
-                setValue('input[name="edit_author_email"]', author.email);
-                setValue('input[name="edit_author_phone"]', author.phone);
-                setValue('input[name="edit_author_orcid"]', author.orcid);
-                setValue('textarea[name="edit_author_address"]', author.address);
-                setValue('input[name="edit_author_city"]', author.city);
-
-                const titleSelect = modal.querySelector('select[name="edit_author_title"]');
-                setSelectValue(titleSelect, author.title_id, author.title);
-
-                const institutionSelect = modal.querySelector('select[name="edit_author_institution"]');
-                setSelectValue(institutionSelect, author.affiliation_id, author.affiliation);
-
-                const countrySelect = modal.querySelector('select[name="edit_author_country"]');
-                setSelectValue(countrySelect, author.country_code, author.country);
-
-                const correspondingInput = modal.querySelector('input[name="edit_author_is_corresponding"]');
-                if (correspondingInput) {
-                    correspondingInput.checked = Boolean(author.is_corresponding);
-                    correspondingInput.disabled = author.type === 'translator';
-                }
-
-                const modalTitle = modal.querySelector('#edit_author_modal_title');
-                if (modalTitle) {
-                    modalTitle.textContent = author.type === 'translator' ? 'Çevirmen Düzenle' : 'Katkıda Bulunan Düzenle';
+                // Sadece openAuthorModal kullanıyoruz, bu fonksiyonu openAuthorModal'a yönlendiriyoruz
+                if (typeof window.openAuthorModal === 'function') {
+                    window.openAuthorModal('edit', index);
                 }
             },
             remove(index) {
@@ -1192,6 +1124,8 @@
                 countrySelect.value = author.country_code ?? author.country_id ?? '';
             }
 
+            setValue('input[name="author_is_corresponding"]', author.is_corresponding);
+
             // Şehir alanı için (hem input hem select olabilir)
             if (cityInput) {
                 cityInput.value = author.city ?? '';
@@ -1288,7 +1222,7 @@
             }
         }
 
-        // Form temizleme fonksiyonu
+        // Form doldurma fonksiyonu
         function getAddAuthorModalInstance() {
             if (!dom.addModal) return null;
             if (dom.addModalInstance) return dom.addModalInstance;
@@ -1332,7 +1266,7 @@
         }
 
         // Tek modal fonksiyonu - hem ekleme hem düzenleme için
-        window.openAuthorModal = function(mode, index, type) {
+        window.openAuthorModal = function (mode, index, type) {
             const modal = dom.addModal;
             if (!modal) {
                 console.error('[Step2] add_author_modal bulunamadı');
@@ -1381,18 +1315,34 @@
                 submitButton.textContent = mode === 'edit' ? 'Güncelle' : 'Kaydet';
             }
 
+            // Manuel olarak aç (Robustluk için)
+            modal.style.display = 'flex';
+            modal.style.zIndex = '9999';
+            modal.classList.add('kt-modal-open');
+            document.body.classList.add('kt-modal-open');
+            document.body.style.overflow = 'hidden';
+
+            // Instance varsa senkronize et
             const instance = getAddAuthorModalInstance();
-            if (instance) {
-                instance.show();
-            } else {
-                modal.classList.add('kt-modal-open');
-                modal.style.display = 'flex';
-                document.body.classList.add('kt-modal-open');
-                document.body.style.overflow = 'hidden';
+            if (instance && typeof instance.show === 'function') {
+                try { 
+                    instance.show(); 
+                } catch(e) { 
+                    console.warn('[Step2] instance.show error', e); 
+                }
+            }
+
+            // Content görünürlüğünü zorla
+            const content = modal.querySelector('.kt-modal-content');
+            if (content) {
+                content.style.opacity = '1';
+                content.style.visibility = 'visible';
+                content.style.display = 'block';
+                content.style.zIndex = '10000';
             }
         };
 
-        window.closeAuthorModal = function() {
+        window.closeAuthorModal = function () {
             const modal = dom.addModal;
             if (!modal) return;
 
@@ -1401,19 +1351,27 @@
             }
             clearResponsibleModalHighlights();
 
+            // Instance temizliği
             const instance = getAddAuthorModalInstance();
-            if (instance) {
-                instance.hide();
-            } else {
-                modal.style.display = 'none';
-                modal.classList.remove('kt-modal-open');
-                document.body.classList.remove('kt-modal-open');
-                document.body.style.overflow = '';
+            if (instance && typeof instance.hide === 'function') {
+                try { instance.hide(); } catch (e) { console.warn('[Step2] instance.hide error', e); }
             }
+
+            // Manuel temizlik (add-file-modal.php pattern)
+            modal.style.display = 'none';
+            modal.classList.remove('kt-modal-open');
+            document.body.classList.remove('kt-modal-open');
+            document.body.style.overflow = '';
+
+            // Backdrop'ları temizle (Blur sorunu için)
+            document.querySelectorAll('.kt-modal-backdrop, .modal-backdrop, [data-kt-modal-backdrop]').forEach(b => b.remove());
+
+            // Filter temizliği
+            document.body.style.filter = '';
+            document.body.style.backdropFilter = '';
 
             state.modal.mode = 'create';
             state.modal.index = null;
-            state.modal.type = 'author';
             resetAddModal();
         };
 
@@ -1429,22 +1387,12 @@
         window.openEditAuthorModal = (index) => step2.openEdit(index);
         window.removeAuthor = (index) => step2.remove(index);
         window.setModalTitle = (type) => step2.setModalType(type);
-        window.closeEditAuthorModal = () => {
-            if (!dom.editModal) return;
-            dom.editModal.classList.remove('kt-modal-open');
-            dom.editModal.style.display = 'none';
-            document.body.classList.remove('kt-modal-open');
-            document.querySelectorAll('.kt-modal-backdrop, [data-kt-modal-backdrop]').forEach((backdrop) => backdrop.remove());
-            document.body.style.filter = '';
-            document.body.style.backdropFilter = '';
-            document.body.style.overflow = '';
-            document.body.style.paddingRight = '';
-        };
+        window.closeEditAuthorModal = () => window.closeAuthorModal();
 
         document.addEventListener('DOMContentLoaded', () => {
             dom.addModal = document.getElementById('add_author_modal');
             dom.addModalTitle = document.getElementById('author_modal_title');
-            dom.editModal = document.getElementById('edit_author_modal');
+            dom.editModal = null; // We use addModal for both now
 
             if (dom.addModal && typeof window.KTModal !== 'undefined') {
                 dom.addModalInstance = window.KTModal.getInstance(dom.addModal) || new window.KTModal(dom.addModal);

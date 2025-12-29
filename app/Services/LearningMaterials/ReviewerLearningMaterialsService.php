@@ -55,7 +55,7 @@ final class ReviewerLearningMaterialsService
             ];
         }
 
-        $contentRows = (clone $this->contents)
+        $contentRows = $this->learningMaterials
             ->select('id, course_id, content_type_id, first_language, topics, status, created_at')
             ->whereIn('id', $pagedIds)
             ->where('status', 'korhakemlik')

@@ -151,10 +151,10 @@
                                         ?>
                                         <td>
                                             <div class="flex items-center justify-center gap-1">
-                                                <a class="kt-badge kt-badge-outline kt-badge-primary"
-                                                href="<?= base_url('apps/materials/' . $encryptedId) ?>" title="Detay">
-                                                Detay
-                                            </a>
+                                                <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost kt-btn-primary"
+                                                    href="<?= base_url('apps/materials/' . $encryptedId) ?>" title="Detay">
+                                                    <i class="ki-filled ki-eye"></i>
+                                                </a>
                                             </div>
                                         </td>
                                         <!--

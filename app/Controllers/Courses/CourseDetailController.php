@@ -15,16 +15,36 @@ class CourseDetailController extends BaseController
         $this->service = new CourseDetailService();
     }
 
-    public function detail(int $courseId)
+    public function detail($courseId)
     {
-        // Use direct course ID
-        
+        // Hem numerik hem de şifrelenmiş ID desteği
+        if (!is_numeric($courseId)) {
+            $decrypted = \App\Helpers\EncryptHelper::decrypt((string) $courseId);
+            if ($decrypted !== false && is_numeric($decrypted)) {
+                $courseId = (int) $decrypted;
+            } else {
+                throw new \CodeIgniter\Exceptions\PageNotFoundException('Geçersiz kurs kimliği.');
+            }
+        } else {
+            $courseId = (int) $courseId;
+        }
+
         $data = $this->service->getDetail($courseId);
-        
+
         if (!$data) {
+            if ($this->request->isAJAX() || str_contains($this->request->getHeaderLine('Accept'), 'json')) {
+                return $this->response->setJSON(['success' => false, 'message' => 'Kurs bulunamadı.'])->setStatusCode(404);
+            }
             throw new \CodeIgniter\Exceptions\PageNotFoundException('Kurs bulunamadı.');
         }
-        
+
+        if ($this->request->isAJAX() || str_contains($this->request->getHeaderLine('Accept'), 'json')) {
+            return $this->response->setJSON([
+                'success' => true,
+                'data' => $data
+            ]);
+        }
+
         return view('app/course-detail', [
             'course' => $data
         ]);

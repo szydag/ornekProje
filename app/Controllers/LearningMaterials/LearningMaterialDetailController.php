@@ -6,14 +6,14 @@ namespace App\Controllers\LearningMaterials;
 use App\Controllers\BaseController;
 use App\DTOs\LearningMaterials\LearningMaterialDetailDTO;
 use App\DTOs\LearningMaterials\LearningMaterialTranslationDTO;
-use App\DTOs\LearningMaterials\ContributorDTO;
 use App\DTOs\LearningMaterials\AuthorDTO;
+use App\DTOs\LearningMaterials\ApprovalDTO;
 use App\DTOs\LearningMaterials\FileDTO;
 use App\DTOs\LearningMaterials\ExtraInfoDTO;
 use App\Models\LearningMaterials\LearningMaterialsModel;
 use App\Services\LearningMaterials\LearningMaterialDetailService;
 use App\Services\LearningMaterials\LearningMaterialEditorService;
-use App\Models\Users\İnstitutionModel;
+use App\Models\Users\InstitutionModel;
 use App\Models\Users\TitleModel;
 use App\Models\Users\UserModel;
 use CodeIgniter\Exceptions\PageNotFoundException;
@@ -34,7 +34,7 @@ final class LearningMaterialDetailController extends BaseController
         private LearningMaterialEditorService $editorService = new LearningMaterialEditorService(),
         private UserModel $userModel = new UserModel(),
         private TitleModel $titleModel = new TitleModel(),
-        private İnstitutionModel $institutionModel = new İnstitutionModel(),
+        private InstitutionModel $institutionModel = new InstitutionModel(),
 
     ) {
     }
@@ -104,7 +104,7 @@ final class LearningMaterialDetailController extends BaseController
     private function formatForView(LearningMaterialDetailDTO $dto, array $meta, array $reviewerStats = [], array $history = [], array $editors = []): array
     {
         $translations = $dto->top->translations;
-        $primaryLang = $dto->top->firstLanguage ?: 'tr';
+        $primaryLang = $dto->top->first_language ?: 'tr';
 
         /** @var LearningMaterialTranslationDTO|null $primary */
         $primary = $translations[$primaryLang] ?? ($translations['tr'] ?? (reset($translations) ?: null));
@@ -131,8 +131,8 @@ final class LearningMaterialDetailController extends BaseController
             'status' => $statusCode,
             'status_label' => LearningMaterialStatusFormatter::label($statusCode),
             'status_color' => LearningMaterialStatusFormatter::color($statusCode),
-            'publication_type' => $dto->top->contentTypeName,
-            'primary_language' => $dto->top->firstLanguage,
+            'publication_type' => $dto->top->content_type_name,
+            'primary_language' => $dto->top->first_language,
             'course' => [
                 'id' => $courseId,
                 'title' => $courseTitle,
@@ -144,11 +144,11 @@ final class LearningMaterialDetailController extends BaseController
             'abstract_en' => $en?->self_description,
             'created_at' => $meta['created_at'] ?? null,
             'authors' => array_map(
-                fn (AuthorDTO $author) => $this->formatAuthor($author, $userMeta, $titleMap, $institutionMap),
+                fn(AuthorDTO $author) => $this->formatAuthor($author, $userMeta, $titleMap, $institutionMap),
                 $dto->authors
             ),
             'files' => array_map([$this, 'formatFile'], $dto->files),
-            'additional_info' => $this->formatExtra($dto->extraInfo),
+            'additional_info' => $this->formatExtra($dto->extraInfoByLang, $dto->approvals),
             'reviewers' => $reviewerStats,
             'history' => $history,
             'editors' => $this->formatEditors($editors),
@@ -320,7 +320,7 @@ final class LearningMaterialDetailController extends BaseController
 
         return [
             'id' => $file->id,
-            'content_id' => $file->content_id,
+            'content_id' => $file->learning_material_id,
             'name' => $info['display_name'],
             'type' => $this->fileTypeLabel($file->file_type),
             'mime' => $info['mime'],
@@ -379,7 +379,7 @@ final class LearningMaterialDetailController extends BaseController
         $displayName = $file->name ?? ('Dosya #' . $file->id);
         $extension = strtolower((string) pathinfo($displayName, PATHINFO_EXTENSION));
 
-        $baseDir = rtrim(WRITEPATH, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . 'contents' . DIRECTORY_SEPARATOR . $file->content_id . DIRECTORY_SEPARATOR;
+        $baseDir = rtrim(WRITEPATH, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR . 'uploads' . DIRECTORY_SEPARATOR . 'contents' . DIRECTORY_SEPARATOR . $file->learning_material_id . DIRECTORY_SEPARATOR;
         if (!is_dir($baseDir)) {
             return [
                 'display_name' => $displayName,
@@ -500,9 +500,10 @@ final class LearningMaterialDetailController extends BaseController
 
     /**
      * @param array<string,ExtraInfoDTO> $extraByLang
+     * @param ApprovalDTO|null $approvals
      * @return array<string,mixed>
      */
-    private function formatExtra(array $extraByLang): array
+    private function formatExtra(array $extraByLang, ?ApprovalDTO $approvals = null): array
     {
         /** @var ExtraInfoDTO|null $tr */
         $tr = $extraByLang['tr'] ?? null;
@@ -517,6 +518,7 @@ final class LearningMaterialDetailController extends BaseController
             'ethics_statement_en' => $en?->ethics_declaration,
             'supporting_institution_en' => $en?->supporting_institution,
             'acknowledgments_en' => $en?->thanks_description,
+            'editor_notes' => $approvals?->description,
         ];
     }
 

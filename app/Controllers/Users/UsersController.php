@@ -11,13 +11,13 @@ use App\Models\Users\UserModel;
 
 final class UsersController extends BaseController
 {
-     public function homeAdmin(): string
+    public function homeAdmin(): string
     {
-       return view('app/home');
+        return view('app/home');
     }
-     public function homeUser(): string
+    public function homeUser(): string
     {
-       return view('app/homeUser');
+        return view('app/homeUser');
     }
 
     public function index()
@@ -87,58 +87,58 @@ final class UsersController extends BaseController
     }
     // app/Controllers/Users/UsersController.php
 
-public function optionsAll() // GET /api/users/options
-{
-    $userM = new UserModel();
-    $rows = $userM->select('id, name, surname, mail')
-        ->orderBy('name', 'ASC')
-        ->findAll();
+    public function optionsAll() // GET /api/users/options
+    {
+        $userM = new UserModel();
+        $rows = $userM->select('id, name, surname, mail')
+            ->orderBy('name', 'ASC')
+            ->findAll();
 
-    // Select2/Choices için basit format
-    $data = array_map(fn($r) => [
-        'id'    => (int)$r['id'],
-        'text'  => trim(($r['name'] ?? '').' '.($r['surname'] ?? '')),
-        'email' => $r['mail'] ?? '',
-    ], $rows);
+        // Select2/Choices için basit format
+        $data = array_map(fn($r) => [
+            'id' => (int) $r['id'],
+            'text' => trim(($r['name'] ?? '') . ' ' . ($r['surname'] ?? '')),
+            'email' => $r['mail'] ?? '',
+        ], $rows);
 
-    return $this->response->setJSON(['success' => true, 'data' => $data]);
-}
-
-public function listByRole()
-{
-    $roleId = (int) $this->request->getGet('role_id');
-    $query  = trim((string) $this->request->getGet('q'));
-
-    $userModel = new UserModel();
-    $builder   = $userModel->select('users.id, users.name, users.surname, users.mail')
-        ->join('user_roles ur', 'ur.user_id = users.id', 'inner')
-        ->groupBy('users.id')
-        ->orderBy('users.name', 'ASC');
-
-    if ($roleId > 0) {
-        $builder->where('ur.role_id', $roleId);
+        return $this->response->setJSON(['success' => true, 'data' => $data]);
     }
 
-    if ($query !== '') {
-        $builder->groupStart()
-            ->like('users.name', $query)
-            ->orLike('users.surname', $query)
-            ->orLike('users.mail', $query)
-        ->groupEnd();
+    public function listByRole()
+    {
+        $roleId = (int) $this->request->getGet('role_id');
+        $query = trim((string) $this->request->getGet('q'));
+
+        $userModel = new UserModel();
+        $builder = $userModel->select('users.id, users.name, users.surname, users.mail')
+            ->join('user_roles ur', 'ur.user_id = users.id', 'inner')
+            ->groupBy('users.id')
+            ->orderBy('users.name', 'ASC');
+
+        if ($roleId > 0) {
+            $builder->where('ur.role_id', $roleId);
+        }
+
+        if ($query !== '') {
+            $builder->groupStart()
+                ->like('users.name', $query)
+                ->orLike('users.surname', $query)
+                ->orLike('users.mail', $query)
+                ->groupEnd();
+        }
+
+        $rows = $builder->findAll();
+
+        $users = array_map(fn($row) => [
+            'id' => (int) $row['id'],
+            'name' => trim(($row['name'] ?? '') . ' ' . ($row['surname'] ?? '')),
+            'email' => $row['mail'] ?? '',
+        ], $rows);
+
+        return $this->response->setJSON([
+            'success' => true,
+            'data' => ['users' => $users],
+        ]);
     }
-
-    $rows = $builder->findAll();
-
-    $users = array_map(fn($row) => [
-        'id'    => (int) $row['id'],
-        'name'  => trim(($row['name'] ?? '') . ' ' . ($row['surname'] ?? '')),
-        'email' => $row['mail'] ?? '',
-    ], $rows);
-
-    return $this->response->setJSON([
-        'success' => true,
-        'data'    => ['users' => $users],
-    ]);
-}
 
 }

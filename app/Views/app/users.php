@@ -175,11 +175,9 @@ foreach ($roles as $roleRow) {
                                     <td>
                                         <div class="flex items-start gap-3">
                                             <div class="flex flex-col">
-                                                <a class="text-sm font-semibold text-mono hover:text-primary"
-                                                    href="<?= base_url('admin/app/user-detail/' . $encryptedUserId) ?>"
-                                                    title="<?= esc($fullName) ?>">
+                                                <span class="text-sm font-semibold text-mono" title="<?= esc($fullName) ?>">
                                                     <?= esc($fullName) ?>
-                                                </a>
+                                                </span>
                                             </div>
                                         </div>
                                     </td>
@@ -211,9 +209,10 @@ foreach ($roles as $roleRow) {
                                     <td><?= $createdAt ? date('d.m.Y', strtotime($createdAt)) : '-' ?></td>
                                     <td>
                                         <div class="flex items-start justify-center gap-1">
-                                            <a class="kt-badge kt-badge-outline kt-badge-primary"
-                                                href="<?= base_url('admin/app/user-detail/' . $encryptedUserId) ?>" title="Detay">
-                                                Detay
+                                            <a class="kt-btn kt-btn-sm kt-btn-icon kt-btn-ghost kt-btn-primary"
+                                                href="<?= base_url('admin/app/user-detail/' . $encryptedUserId) ?>"
+                                                title="Detay">
+                                                <i class="ki-filled ki-eye"></i>
                                             </a>
                                         </div>
                                     </td>
@@ -292,7 +291,7 @@ foreach ($roles as $roleRow) {
     <?php endif; ?>
 </div>
 <script>
-  const ROLE_NAMES = <?= json_encode($rolesById, JSON_UNESCAPED_UNICODE) ?>;
+    const ROLE_NAMES = <?= json_encode($rolesById, JSON_UNESCAPED_UNICODE) ?>;
 </script>
 <script>
     const assignRoleUrl = '<?= base_url('admin/api/users/assign-role') ?>';
@@ -347,16 +346,16 @@ foreach ($roles as $roleRow) {
 
     let currentRoleFilter = <?= json_encode($selectedRole) ?> || '';
 
-   window.filterByRole = function (role) {
-    const url = new URL(window.location.href);
-    if (role) {
-        url.searchParams.set('role', role);
-    } else {
-        url.searchParams.delete('role');
-    }
-    // sayfayı tam yenile
-    window.location.href = url.toString();
-};
+    window.filterByRole = function (role) {
+        const url = new URL(window.location.href);
+        if (role) {
+            url.searchParams.set('role', role);
+        } else {
+            url.searchParams.delete('role');
+        }
+        // sayfayı tam yenile
+        window.location.href = url.toString();
+    };
 
 
     function updateActiveTab(role) {
@@ -474,7 +473,7 @@ foreach ($roles as $roleRow) {
         const container = document.querySelector('#content');
         if (!container) return;
 
-       const roleLabel = role ? escapeHtml(ROLE_NAMES[Number(role)] ?? role) : 'Henüz kullanıcı bulunmuyor';
+        const roleLabel = role ? escapeHtml(ROLE_NAMES[Number(role)] ?? role) : 'Henüz kullanıcı bulunmuyor';
         const description = role
             ? 'Bu role sahip kullanıcılar henüz eklenmemiş. Yetki atama sayfasından yeni kullanıcılar ekleyebilirsiniz.'
             : 'Sistemde henüz kullanıcı bulunmuyor. İlk kullanıcıları eklemek için yetki atama sayfasını kullanabilirsiniz.';

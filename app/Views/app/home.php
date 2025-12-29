@@ -229,14 +229,18 @@
                     <div class="kt-card-content">
                         <div class="space-y-3">
                             <?php foreach ($currentData['reviewerWorkload'] as $reviewer): ?>
-                                <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-info/5">
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-info/5">
                                     <div class="flex flex-col gap-1">
                                         <span class="text-sm font-medium text-foreground"><?= esc($reviewer['name']) ?></span>
-                                        <span class="text-xs text-secondary-foreground"><?= esc($reviewer['assigned']) ?> atama • <?= esc($reviewer['completed']) ?> tamamlandı</span>
+                                        <span class="text-xs text-secondary-foreground"><?= esc($reviewer['assigned']) ?> atama
+                                            • <?= esc($reviewer['completed']) ?> tamamlandı</span>
                                     </div>
                                     <div class="flex gap-2">
-                                        <span class="text-xs px-2 py-1 bg-success/10 text-success rounded"><?= esc($reviewer['completed']) ?></span>
-                                        <span class="text-xs px-2 py-1 bg-warning/10 text-warning rounded"><?= esc($reviewer['pending']) ?></span>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-success/10 text-success rounded"><?= esc($reviewer['completed']) ?></span>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-warning/10 text-warning rounded"><?= esc($reviewer['pending']) ?></span>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -257,10 +261,12 @@
                     <div class="kt-card-content">
                         <div class="space-y-3">
                             <?php foreach ($currentData['applications'] as $app): ?>
-                                <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
                                     <div class="flex flex-col gap-1">
                                         <span class="text-sm font-medium text-foreground"><?= esc($app['title']) ?></span>
-                                        <span class="text-xs text-secondary-foreground"><?= esc($app['author']) ?> • <?= esc($app['submittedAt']) ?></span>
+                                        <span class="text-xs text-secondary-foreground"><?= esc($app['author']) ?> •
+                                            <?= esc($app['submittedAt']) ?></span>
                                         <div class="flex gap-2 mt-1">
                                             <span class="text-xs text-info"><?= esc($app['documents']) ?> belge</span>
                                             <?php if ($app['missing'] > 0): ?>
@@ -269,8 +275,10 @@
                                         </div>
                                     </div>
                                     <div class="flex gap-2">
-                                        <span class="text-xs px-2 py-1 bg-primary/10 text-primary rounded"><?= esc($app['id']) ?></span>
-                                        <span class="text-xs px-2 py-1 bg-<?= esc($app['priority'] === 'high' ? 'danger' : ($app['priority'] === 'medium' ? 'warning' : 'info')) ?>/10 text-<?= esc($app['priority'] === 'high' ? 'danger' : ($app['priority'] === 'medium' ? 'warning' : 'info')) ?> rounded"><?= esc($app['status']) ?></span>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-primary/10 text-primary rounded"><?= esc($app['id']) ?></span>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-<?= esc($app['priority'] === 'high' ? 'danger' : ($app['priority'] === 'medium' ? 'warning' : 'info')) ?>/10 text-<?= esc($app['priority'] === 'high' ? 'danger' : ($app['priority'] === 'medium' ? 'warning' : 'info')) ?> rounded"><?= esc($app['status']) ?></span>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
@@ -287,13 +295,15 @@
                     <div class="kt-card-content">
                         <div class="space-y-3">
                             <?php foreach ($currentData['communicationLog'] as $comm): ?>
-                                <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-info/5">
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-info/5">
                                     <div class="flex flex-col gap-1">
                                         <span class="text-sm font-medium text-foreground"><?= esc($comm['author']) ?></span>
                                         <span class="text-xs text-secondary-foreground"><?= esc($comm['subject']) ?></span>
                                     </div>
                                     <div class="flex flex-col gap-1 text-right">
-                                        <span class="text-xs px-2 py-1 bg-<?= esc($comm['status'] === 'Yanıtlandı' ? 'success' : ($comm['status'] === 'Yanıt bekliyor' ? 'warning' : 'info')) ?>/10 text-<?= esc($comm['status'] === 'Yanıtlandı' ? 'success' : ($comm['status'] === 'Yanıt bekliyor' ? 'warning' : 'info')) ?> rounded"><?= esc($comm['status']) ?></span>
+                                        <span
+                                            class="text-xs px-2 py-1 bg-<?= esc($comm['status'] === 'Yanıtlandı' ? 'success' : ($comm['status'] === 'Yanıt bekliyor' ? 'warning' : 'info')) ?>/10 text-<?= esc($comm['status'] === 'Yanıtlandı' ? 'success' : ($comm['status'] === 'Yanıt bekliyor' ? 'warning' : 'info')) ?> rounded"><?= esc($comm['status']) ?></span>
                                         <span class="text-xs text-secondary-foreground"><?= esc($comm['time']) ?></span>
                                     </div>
                                 </div>
@@ -331,12 +341,15 @@
                     <div class="kt-card-content">
                         <div class="space-y-3">
                             <?php foreach (array_slice($latestContents, 0, 5) as $content): ?>
-                                <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
+                                <div
+                                    class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
                                     <div class="flex flex-col gap-1">
                                         <span class="text-sm font-medium text-foreground"><?= esc($content['title']) ?></span>
-                                        <span class="text-xs text-secondary-foreground"><?= esc($content['author']) ?> • <?= esc($content['submittedAt']) ?></span>
+                                        <span class="text-xs text-secondary-foreground"><?= esc($content['author']) ?> •
+                                            <?= esc($content['submittedAt']) ?></span>
                                     </div>
-                                    <span class="text-xs px-2 py-1 bg-primary/10 text-primary rounded"><?= esc($content['id']) ?></span>
+                                    <span
+                                        class="text-xs px-2 py-1 bg-primary/10 text-primary rounded"><?= esc($content['id']) ?></span>
                                 </div>
                             <?php endforeach; ?>
                         </div>
@@ -358,19 +371,27 @@
                         <div class="kt-card-content">
                             <div class="space-y-3">
                                 <?php foreach ($currentData['contents'] as $content): ?>
-                                    <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
+                                    <div
+                                        class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
                                         <div class="flex flex-col gap-1">
                                             <span class="text-sm font-medium text-foreground"><?= esc($content['title']) ?></span>
-                                            <span class="text-xs text-secondary-foreground"><?= esc($content['author_name']) ?> • <?= esc($content['referee_status']) ?></span>
+                                            <span class="text-xs text-secondary-foreground"><?= esc($content['author_name']) ?> •
+                                                <?= esc($content['referee_status']) ?></span>
                                             <div class="flex gap-2 mt-1">
-                                                <span class="text-xs text-info">Kalite: <?= esc($content['quality_score']) ?>/10</span>
-                                                <span class="text-xs text-<?= esc($content['reviewer_agreement'] === 'Yüksek' ? 'success' : ($content['reviewer_agreement'] === 'Orta' ? 'warning' : 'danger')) ?>">Uyum: <?= esc($content['reviewer_agreement']) ?></span>
+                                                <span class="text-xs text-info">Kalite:
+                                                    <?= esc($content['quality_score']) ?>/10</span>
+                                                <span
+                                                    class="text-xs text-<?= esc($content['reviewer_agreement'] === 'Yüksek' ? 'success' : ($content['reviewer_agreement'] === 'Orta' ? 'warning' : 'danger')) ?>">Uyum:
+                                                    <?= esc($content['reviewer_agreement']) ?></span>
                                             </div>
                                         </div>
                                         <div class="flex gap-2">
-                                            <span class="text-xs px-2 py-1 bg-<?= esc($content['status_color']) ?>/10 text-<?= esc($content['status_color']) ?> rounded"><?= esc($content['status_text']) ?></span>
-                                            <span class="text-xs px-2 py-1 bg-<?= esc($content['priority'] === 'high' ? 'danger' : ($content['priority'] === 'medium' ? 'warning' : 'info')) ?>/10 text-<?= esc($content['priority'] === 'high' ? 'danger' : ($content['priority'] === 'medium' ? 'warning' : 'info')) ?> rounded"><?= esc(ucfirst($content['priority'])) ?></span>
-                                            <button class="kt-btn kt-btn-sm kt-btn-primary"><i class="ki-filled ki-eye"></i></button>
+                                            <span
+                                                class="text-xs px-2 py-1 bg-<?= esc($content['status_color']) ?>/10 text-<?= esc($content['status_color']) ?> rounded"><?= esc($content['status_text']) ?></span>
+                                            <span
+                                                class="text-xs px-2 py-1 bg-<?= esc($content['priority'] === 'high' ? 'danger' : ($content['priority'] === 'medium' ? 'warning' : 'info')) ?>/10 text-<?= esc($content['priority'] === 'high' ? 'danger' : ($content['priority'] === 'medium' ? 'warning' : 'info')) ?> rounded"><?= esc(ucfirst($content['priority'])) ?></span>
+                                            <button class="kt-btn kt-btn-sm kt-btn-primary"><i
+                                                    class="ki-filled ki-eye"></i></button>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -395,7 +416,8 @@
                                             <span class="text-xs text-secondary-foreground"><?= esc($metric['value']) ?></span>
                                         </div>
                                         <div class="flex items-center gap-2">
-                                            <span class="text-xs px-2 py-1 bg-<?= esc(strpos($metric['trend'], '+') !== false ? 'success' : 'danger') ?>/10 text-<?= esc(strpos($metric['trend'], '+') !== false ? 'success' : 'danger') ?> rounded"><?= esc($metric['trend']) ?></span>
+                                            <span
+                                                class="text-xs px-2 py-1 bg-<?= esc(strpos($metric['trend'], '+') !== false ? 'success' : 'danger') ?>/10 text-<?= esc(strpos($metric['trend'], '+') !== false ? 'success' : 'danger') ?> rounded"><?= esc($metric['trend']) ?></span>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -418,7 +440,8 @@
                             <input class="kt-switch" name="check" type="checkbox" value="1" />
                             <span class="kt-label">Sadece yayınlananlar</span>
                         </label>
-                        <select class="kt-select w-36" data-kt-select="true" data-kt-select-placeholder="Zaman aralığı seç" name="kt-select">
+                        <select class="kt-select w-36" data-kt-select="true"
+                            data-kt-select-placeholder="Zaman aralığı seç" name="kt-select">
                             <option>Yok</option>
                             <option value="1">1 ay</option>
                             <option value="2">3 ay</option>
@@ -435,7 +458,7 @@
     </div>
     <script>
         // Enhanced chart initialization with pie chart
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Completion trend chart
             const chartEl = document.querySelector("#completion_chart");
             if (chartEl && typeof ApexCharts !== 'undefined') {
@@ -514,17 +537,17 @@
 
                 new ApexCharts(performanceChartEl, {
                     series: [{
-                            name: 'CPU',
-                            data: performanceData.cpu
-                        },
-                        {
-                            name: 'Bellek',
-                            data: performanceData.memory
-                        },
-                        {
-                            name: 'Disk',
-                            data: performanceData.disk
-                        }
+                        name: 'CPU',
+                        data: performanceData.cpu
+                    },
+                    {
+                        name: 'Bellek',
+                        data: performanceData.memory
+                    },
+                    {
+                        name: 'Disk',
+                        data: performanceData.disk
+                    }
                     ],
                     chart: {
                         type: 'line',
@@ -558,7 +581,7 @@
                                 colors: '#6B7280',
                                 fontSize: '10px'
                             },
-                            formatter: function(val) {
+                            formatter: function (val) {
                                 return val + '%';
                             }
                         }
@@ -569,7 +592,7 @@
                     },
                     tooltip: {
                         y: {
-                            formatter: function(val) {
+                            formatter: function (val) {
                                 return val + '%';
                             }
                         }
@@ -598,7 +621,7 @@
                         labels: categoryData.map(item => item.category),
                         dataLabels: {
                             enabled: true,
-                            formatter: function(val, opts) {
+                            formatter: function (val, opts) {
                                 return opts.w.config.labels[opts.seriesIndex];
                             },
                             style: {
@@ -612,7 +635,7 @@
                         },
                         tooltip: {
                             y: {
-                                formatter: function(val, opts) {
+                                formatter: function (val, opts) {
                                     const data = categoryData[opts.dataPointIndex];
                                     return data.category + ': ' + data.count + ' içerik (' + data.percentage + '%)';
                                 }

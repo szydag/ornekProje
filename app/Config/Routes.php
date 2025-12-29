@@ -6,7 +6,7 @@ use CodeIgniter\Router\RouteCollection;
  * @var RouteCollection $routes
  */
 // Test sayfası (filter olmadan)
-$routes->get('/test', function() {
+$routes->get('/test', function () {
     return view('test');
 });
 
@@ -66,7 +66,7 @@ $routes->group('user/auth', static function ($routes) {
     $routes->get('login', 'Users\LoginController::show');
     $routes->post('login', 'Users\LoginController::login');
 });
- $routes->get('app/courses', 'Courses\CourseListController::index');
+$routes->get('app/courses', 'Courses\CourseListController::index');
 
 // Auth routes (GET ve POST)
 $routes->get('auth/login', 'Auth::login');
@@ -80,8 +80,20 @@ $routes->post('auth/verify-two-factor', 'Users\VerifyController::verify2fa');
 
 
 
-$routes->group('admin', ['filter' => ['loginFilter', 'roleFilter', 'profileGuard']], function ($routes) {
+$routes->group('admin', ['namespace' => 'App\Controllers', 'filter' => ['loginFilter', 'roleFilter', 'profileGuard']], function ($routes) {
     $routes->get('/', 'Users\UsersController::homeAdmin');
+
+    // Kullanıcılar
+    $routes->get('app/users', 'Users\UsersController::index');
+    $routes->get('app/user-detail/(:any)', 'Users\UserDetailController::show/$1');
+
+    // Eğitim İçerikleri
+    $routes->get('apps/materials', 'LearningMaterials\AllLearningMaterialsController::index');
+    $routes->get('apps/materials/(:any)', 'LearningMaterials\LearningMaterialDetailController::detail/$1');
+
+    // Kurslar
+    $routes->get('apps/courses', 'Courses\CourseListController::index');
+    $routes->get('apps/courses/(:any)', 'Courses\CourseDetailController::detail/$1');
 
     $routes->group('api', ['namespace' => 'App\Controllers\Courses'], static function ($routes) {
         // Yöneticiler (role_id=2 olanlar)
@@ -90,19 +102,21 @@ $routes->group('admin', ['filter' => ['loginFilter', 'roleFilter', 'profileGuard
         // Kurslar
         $routes->post('courses', 'CoursesController::create');
         $routes->get('courses', 'CourseListController::index');
+        $routes->post('courses/(:num)', 'CoursesController::update/$1');
+        $routes->get('courses/(:num)', 'CourseDetailController::detail/$1');
         $routes->post('courses/(:num)/managers', 'CoursesController::assignManagers/$1');
     });
 
-
+    $routes->post('api/users/assign-role', 'Users\RoleController::assign');
 });
 
 // Public routes (no login required)
 $routes->get('apps/courses', 'Courses\CourseListController::index');
-$routes->get('apps/courses/(:num)', 'Courses\CourseDetailController::detail/$1');
+$routes->get('apps/courses/(:any)', 'Courses\CourseDetailController::detail/$1');
 $routes->get('apps/materials', 'LearningMaterials\AllLearningMaterialsController::index');
-$routes->get('apps/materials/(:segment)', 'LearningMaterials\LearningMaterialDetailController::detail/$1');
+$routes->get('apps/materials/(:any)', 'LearningMaterials\LearningMaterialDetailController::detail/$1');
 $routes->get('app/users', 'Users\UsersController::index');
-$routes->get('app/user-detail/(:segment)', 'Users\UserDetailController::show/$1');
+$routes->get('app/user-detail/(:any)', 'Users\UserDetailController::show/$1');
 $routes->get('app/my-profile', 'Users\ProfileUpdateController::edit');
 $routes->post('app/profile/update', 'Users\ProfileUpdateController::update');
 $routes->post('api/users/assign-role', 'Users\RoleController::assign');

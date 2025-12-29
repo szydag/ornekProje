@@ -208,7 +208,8 @@
                             <input class="kt-switch" name="check" type="checkbox" value="1" />
                             <span class="kt-label">Sadece yayınlananlar</span>
                         </label>
-                        <select class="kt-select w-36" data-kt-select="true" data-kt-select-placeholder="Zaman aralığı seç" name="kt-select">
+                        <select class="kt-select w-36" data-kt-select="true"
+                            data-kt-select-placeholder="Zaman aralığı seç" name="kt-select">
                             <option>Yok</option>
                             <option value="1">1 ay</option>
                             <option value="2">3 ay</option>
@@ -235,7 +236,8 @@
                 </div>
                 <div class="kt-card-content">
                     <div class="space-y-3">
-                        <a href="<?= base_url('app/add-material') ?>" class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
+                        <a href="<?= base_url('app/add-material') ?>"
+                            class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm font-medium text-foreground">Yeni İçerik Gönder</span>
                                 <span class="text-xs text-secondary-foreground">Yeni bir içerik başvurusu yapın</span>
@@ -244,7 +246,8 @@
                                 <i class="ki-filled ki-plus"></i>
                             </button>
                         </a>
-                        <a href="<?= base_url('apps/my-materials') ?>" class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
+                        <a href="<?= base_url('apps/my-materials') ?>"
+                            class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm font-medium text-foreground">İçeriklerim</span>
                                 <span class="text-xs text-secondary-foreground">Tüm içeriklerinizi görüntüleyin</span>
@@ -253,7 +256,8 @@
                                 <i class="ki-filled ki-book"></i>
                             </button>
                         </a>
-                        <a href="<?= base_url('app/my-profile') ?>" class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
+                        <a href="<?= base_url('app/my-profile') ?>"
+                            class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-primary/5">
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm font-medium text-foreground">Profilim</span>
                                 <span class="text-xs text-secondary-foreground">Profil bilgilerinizi düzenleyin</span>
@@ -276,16 +280,19 @@
                 </div>
                 <div class="kt-card-content">
                     <div class="space-y-3">
-                        <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm font-medium text-foreground">Revizyon Gerekli</span>
-                                <span class="text-xs text-secondary-foreground">İçerik #3 için değerlendirici önerileri geldi</span>
+                                <span class="text-xs text-secondary-foreground">İçerik #3 için değerlendirici önerileri
+                                    geldi</span>
                             </div>
                             <button class="kt-btn kt-btn-sm kt-btn-warning">
                                 <i class="ki-filled ki-pencil"></i>
                             </button>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm font-medium text-foreground">İçerik Yayında</span>
                                 <span class="text-xs text-secondary-foreground">İçerik #1 başarıyla yayınlandı</span>
@@ -294,10 +301,12 @@
                                 <i class="ki-filled ki-eye"></i>
                             </button>
                         </div>
-                        <div class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
+                        <div
+                            class="flex items-center justify-between p-3 rounded-lg border border-gray-300 hover:bg-warning/5">
                             <div class="flex flex-col gap-1">
                                 <span class="text-sm font-medium text-foreground">Değerlendirici Ataması</span>
-                                <span class="text-xs text-secondary-foreground">İçerik #2 için değerlendirici ataması tamamlandı</span>
+                                <span class="text-xs text-secondary-foreground">İçerik #2 için değerlendirici ataması
+                                    tamamlandı</span>
                             </div>
                             <button class="kt-btn kt-btn-sm kt-btn-warning">
                                 <i class="ki-filled ki-user"></i>

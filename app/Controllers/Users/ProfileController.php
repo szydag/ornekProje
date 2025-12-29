@@ -9,7 +9,7 @@ use App\Exceptions\DtoValidationException;
 use App\Models\Users\CountryModel;
 use App\Models\Users\TitleModel;
 use App\Models\Users\UserModel;
-use App\Models\Users\İnstitutionModel;
+use App\Models\Users\InstitutionModel;
 use App\Services\Users\ProfileCompletionService;
 use CodeIgniter\HTTP\ResponseInterface;
 
@@ -19,7 +19,7 @@ class ProfileController extends BaseController
         private ProfileCompletionService $service = new ProfileCompletionService(),
         private CountryModel $countryModel = new CountryModel(),
         private TitleModel $titleModel = new TitleModel(),
-        private İnstitutionModel $institutionModel = new İnstitutionModel(),
+        private InstitutionModel $institutionModel = new InstitutionModel(),
         private UserModel $userModel = new UserModel(),
     ) {
     }
@@ -47,7 +47,7 @@ class ProfileController extends BaseController
                 ->setStatusCode(ResponseInterface::HTTP_OK)
                 ->setJSON([
                     'success' => true,
-                    'data'    => $viewData,
+                    'data' => $viewData,
                 ]);
         }
 
@@ -56,7 +56,7 @@ class ProfileController extends BaseController
 
     public function completePost()
     {
-        $userId    = (int) (session()->get('user_id') ?? 0);
+        $userId = (int) (session()->get('user_id') ?? 0);
         $wantsJson = $this->isJsonRequest();
 
         try {
@@ -91,7 +91,7 @@ class ProfileController extends BaseController
             $payload = [
                 'success' => false,
                 'message' => $e->getMessage(),
-                'errors'  => $e->getErrors(),
+                'errors' => $e->getErrors(),
             ];
 
             if ($wantsJson) {
@@ -127,14 +127,14 @@ class ProfileController extends BaseController
 
         return [
             'user' => [
-                'id'          => $userId,
-                'phone'       => $user['phone'] ?? null,
-                'title'       => isset($user['title_id']) ? (int) $user['title_id'] : null,
-                'country'     => $this->resolveCountryCode((int) ($user['country_id'] ?? 0)),
+                'id' => $userId,
+                'phone' => $user['phone'] ?? null,
+                'title' => isset($user['title_id']) ? (int) $user['title_id'] : null,
+                'country' => $this->resolveCountryCode((int) ($user['country_id'] ?? 0)),
                 'institution' => isset($user['institution_id']) ? (int) $user['institution_id'] : null,
             ],
-            'titles'       => $this->titleModel->asMap(),
-            'countries'    => $this->countryModel->asRichMap(),
+            'titles' => $this->titleModel->asMap(),
+            'countries' => $this->countryModel->asRichMap(),
             'institutions' => $this->institutionModel->asMap(),
         ];
     }

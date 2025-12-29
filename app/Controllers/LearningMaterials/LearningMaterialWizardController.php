@@ -235,38 +235,38 @@ final class LearningMaterialWizardController extends BaseController
 
 
     // POST /apps/add-content/step-5
-  public function step5Post()
-{
-    try {
-        $clean = $this->service->handleStep5($this->request);
+    public function step5Post()
+    {
+        try {
+            $clean = $this->service->handleStep5($this->request);
 
-        // İsteğe bağlı: mevcut içerik için Step 5'i anında kaydet
-        $learningMaterialId = (int) ($this->request->getPost('content_id') ?? 0);
-        if ($learningMaterialId > 0) {
-            // Step 5 kaydetme işlemi burada yapılabilir
+            // İsteğe bağlı: mevcut içerik için Step 5'i anında kaydet
+            $learningMaterialId = (int) ($this->request->getPost('content_id') ?? 0);
+            if ($learningMaterialId > 0) {
+                // Step 5 kaydetme işlemi burada yapılabilir
+            }
+
+            return $this->response->setJSON([
+                'step' => 5,
+                'status' => 'success',
+                'data' => $clean,
+                'next' => '/apps/add-content/finish',
+            ]);
+        } catch (DtoValidationException $e) {
+            return $this->response->setJSON([
+                'step' => 5,
+                'status' => 'error',
+                'errors' => $e->getErrors(),
+            ])->setStatusCode(422);
+        } catch (\Throwable $e) {
+            log_message('error', '[Step5] ' . $e->getMessage());
+            return $this->response->setJSON([
+                'step' => 5,
+                'status' => 'fatal',
+                'error' => 'Beklenmeyen bir hata oluştu',
+            ])->setStatusCode(500);
         }
-
-        return $this->response->setJSON([
-            'step'   => 5,
-            'status' => 'success',
-            'data'   => $clean,
-            'next'   => '/apps/add-content/finish',
-        ]);
-    } catch (DtoValidationException $e) {
-        return $this->response->setJSON([
-            'step'   => 5,
-            'status' => 'error',
-            'errors' => $e->getErrors(),
-        ])->setStatusCode(422);
-    } catch (\Throwable $e) {
-        log_message('error', '[Step5] ' . $e->getMessage());
-        return $this->response->setJSON([
-            'step'   => 5,
-            'status' => 'fatal',
-            'error'  => 'Beklenmeyen bir hata oluştu',
-        ])->setStatusCode(500);
     }
-}
 
 
     // POST /apps/add-content/finalize
@@ -282,7 +282,7 @@ final class LearningMaterialWizardController extends BaseController
             return $this->response->setJSON([
                 'status' => 'success',
                 'content_id' => $learningMaterialId,
-                'next' => '/apps/contents/' . $encryptedId,
+                'next' => '/apps/materials/' . $encryptedId,
             ]);
         } catch (\Throwable $e) {
             $wizardData = $wizardData ?? ($this->request->getJSON(true) ?? []);

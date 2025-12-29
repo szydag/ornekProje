@@ -4,14 +4,14 @@ namespace App\Services\Users;
 
 use App\DTOs\Users\ProfileCompleteDTO;
 use App\Models\Users\UserModel;
-use App\Models\Users\İnstitutionModel;
+use App\Models\Users\InstitutionModel;
 use CodeIgniter\Database\Exceptions\DatabaseException;
 
 final class ProfileCompletionService
 {
     public function __construct(
         private UserModel $users = new UserModel(),
-        private İnstitutionModel $institutions = new İnstitutionModel(),
+        private InstitutionModel $institutions = new InstitutionModel(),
     ) {
     }
 
